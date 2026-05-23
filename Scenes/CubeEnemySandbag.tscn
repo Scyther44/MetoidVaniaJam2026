@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dt220mwnplpvy"]
+
+[ext_resource type="Script" uid="uid://di0drpp7fyhfn" path="res://Scripts/cube_enemy_sandbag.gd" id="1_7mhof"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_30v6e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w8j5e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7mhof"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7mhof"]
+material = SubResource("StandardMaterial3D_7mhof")
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=413625480 groups=["enemy"]]
+script = ExtResource("1_7mhof")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=270263818]
+shape = SubResource("BoxShape3D_30v6e")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=403907405]
+material_override = SubResource("StandardMaterial3D_w8j5e")
+mesh = SubResource("BoxMesh_7mhof")
