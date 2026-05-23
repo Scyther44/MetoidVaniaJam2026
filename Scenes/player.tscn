@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b76lvtawi056b" path="res://Scripts/player.gd" id="1_i3pqv"]
 [ext_resource type="PackedScene" uid="uid://bie0sgk8f8qjs" path="res://AnimationLibraries/glbs/WitchT-Pose.glb" id="2_onrkg"]
 [ext_resource type="AnimationLibrary" uid="uid://bhbri7qpewuax" path="res://AnimationLibraries/AnimPack1.res" id="3_i3pqv"]
+[ext_resource type="AnimationLibrary" uid="uid://dtc4fs0i6rlo4" path="res://AnimationLibraries/glbs/AnimPack2.glb" id="3_vgqql"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mf4mk"]
 height = 1.5
@@ -1260,7 +1261,7 @@ material = SubResource("StandardMaterial3D_i3pqv")
 radius = 0.1
 height = 0.2
 
-[node name="Player" type="CharacterBody3D" unique_id=775848779]
+[node name="Player" type="CharacterBody3D" unique_id=775848779 groups=["player"]]
 script = ExtResource("1_i3pqv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=921126812]
@@ -1280,6 +1281,7 @@ size = 43.99
 root_node = NodePath("../visuals/WitchT-Pose")
 libraries/ = SubResource("AnimationLibrary_dw050")
 libraries/AnimPack1 = ExtResource("3_i3pqv")
+libraries/AnimPack2 = ExtResource("3_vgqql")
 libraries/jumpanimpack = SubResource("AnimationLibrary_1jxqw")
 
 [node name="RHitBoxArea3D" type="Area3D" parent="." unique_id=701731873]
@@ -1330,7 +1332,7 @@ tangential_accel_max = 40.35
 
 [node name="visuals" type="Node3D" parent="." unique_id=607989661]
 
-[node name="WitchT-Pose" parent="visuals" unique_id=1226825591 instance=ExtResource("2_onrkg")]
+[node name="WitchT-Pose" parent="visuals" unique_id=163107877 instance=ExtResource("2_onrkg")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 
 [connection signal="body_entered" from="RHitBoxArea3D" to="." method="_on_hit_box_area_3d_body_entered"]

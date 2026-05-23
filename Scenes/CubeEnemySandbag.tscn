@@ -1,8 +1,12 @@
 [gd_scene format=3 uid="uid://dt220mwnplpvy"]
 
 [ext_resource type="Script" uid="uid://di0drpp7fyhfn" path="res://Scripts/cube_enemy_sandbag.gd" id="1_7mhof"]
+[ext_resource type="PackedScene" uid="uid://c1jllq2jwkl8o" path="res://Assets/M_GhostEnemy.fbx" id="2_1u15f"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_30v6e"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_x7i3e"]
+radius = 5.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w8j5e"]
 
@@ -11,12 +15,30 @@
 [sub_resource type="BoxMesh" id="BoxMesh_7mhof"]
 material = SubResource("StandardMaterial3D_7mhof")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1u15f"]
+
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=413625480 groups=["enemy"]]
 script = ExtResource("1_7mhof")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=270263818]
 shape = SubResource("BoxShape3D_30v6e")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=403907405]
+[node name="PlayerDetectionArea" type="Area3D" parent="." unique_id=1650822834]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerDetectionArea" unique_id=959806120]
+shape = SubResource("SphereShape3D_x7i3e")
+
+[node name="visuals" type="Node3D" parent="." unique_id=457490808]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="visuals" unique_id=403907405]
+visible = false
 material_override = SubResource("StandardMaterial3D_w8j5e")
 mesh = SubResource("BoxMesh_7mhof")
+
+[node name="M_GhostEnemy" parent="visuals" unique_id=1085379057 instance=ExtResource("2_1u15f")]
+transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, 0, 0, 0)
+
+[node name="GhostEnemy" parent="visuals/M_GhostEnemy" index="0" unique_id=70468087]
+material_override = SubResource("StandardMaterial3D_1u15f")
+
+[editable path="visuals/M_GhostEnemy"]
