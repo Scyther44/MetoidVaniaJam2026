@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b57vqcptrtjyk" path="res://Scenes/pause_menu.tscn" id="6_g14j6"]
 
 [sub_resource type="Environment" id="Environment_mf4mk"]
+glow_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ykrsh"]
 size = Vector3(2, 1, 2)
@@ -52,10 +53,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1.4035759, 0)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=236545775]
 environment = SubResource("Environment_mf4mk")
 
-[node name="OmniLight3D" type="DirectionalLight3D" parent="." unique_id=1300057894]
+[node name="DirectionalLight1" type="DirectionalLight3D" parent="." unique_id=1300057894]
 transform = Transform3D(0.75887364, 0.0042509246, 0.6512241, -0.65123796, 0.004953511, 0.7588574, 0, -0.9999788, 0.0065274513, 6, 5, 0)
-light_indirect_energy = 1.495
+light_energy = 0.5
 shadow_enabled = true
+
+[node name="DirectionalLight2" type="DirectionalLight3D" parent="." unique_id=1002388229]
+transform = Transform3D(-3.090862e-08, 0.7071068, -0.7071068, 3.090862e-08, 0.7071068, 0.7071068, 1, 0, -4.3711392e-08, -27, 9, 0)
+light_color = Color(0, 0.89443463, 0.8944345, 1)
+light_energy = 0.5
 
 [node name="BackgroundSprite" type="Sprite3D" parent="." unique_id=1135876303]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.571815, 26, -11.71154)

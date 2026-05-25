@@ -26,9 +26,6 @@ var is_facing_left = false
 @onready var visuals = $visuals
 @onready var animation_player = $AnimationPlayer
 
-@onready var left_particles = $LHitBoxArea3D/CPUParticles3D
-@onready var right_particles = $RHitBoxArea3D/CPUParticles3D
-
 @onready var left_hitbox = $LHitBoxArea3D
 @onready var right_hitbox = $RHitBoxArea3D
 
@@ -211,7 +208,11 @@ func start_attack(left_attack):
 
 	if left_attack:
 
-		left_particles.emitting = true
+		var explosion = preload("res://Scenes/particle_explosion.tscn").instantiate()
+
+		get_tree().current_scene.add_child(explosion)
+
+		explosion.global_position = left_hitbox.global_position
 		left_hitbox.monitoring = true
 
 		visuals.rotation.y = deg_to_rad(180)
@@ -220,7 +221,11 @@ func start_attack(left_attack):
 
 	else:
 
-		right_particles.emitting = true
+		var explosion = preload("res://Scenes/particle_explosion.tscn").instantiate()
+
+		get_tree().current_scene.add_child(explosion)
+
+		explosion.global_position = right_hitbox.global_position
 		right_hitbox.monitoring = true
 
 		visuals.rotation.y = deg_to_rad(0)

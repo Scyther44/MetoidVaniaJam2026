@@ -19,14 +19,6 @@ height = 2.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_i3pqv"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i3pqv"]
-albedo_color = Color(1, 0.18039216, 0, 1)
-
-[sub_resource type="SphereMesh" id="SphereMesh_hqtel"]
-material = SubResource("StandardMaterial3D_i3pqv")
-radius = 0.1
-height = 0.2
-
 [node name="Player" type="CharacterBody3D" unique_id=775848779 groups=["player"]]
 script = ExtResource("1_i3pqv")
 
@@ -51,21 +43,6 @@ monitoring = false
 shape = SubResource("BoxShape3D_i3pqv")
 debug_color = Color(0.9863978, 0, 0.32880265, 0.41960785)
 
-[node name="CPUParticles3D" type="CPUParticles3D" parent="RHitBoxArea3D" unique_id=2037740356]
-emitting = false
-lifetime = 0.7
-one_shot = true
-explosiveness = 0.5
-mesh = SubResource("SphereMesh_hqtel")
-emission_shape = 1
-emission_sphere_radius = 1.0
-direction = Vector3(0, 1, 0)
-spread = 100.38
-radial_accel_min = 30.59
-radial_accel_max = 56.47
-tangential_accel_min = 31.44
-tangential_accel_max = 40.35
-
 [node name="LHitBoxArea3D" type="Area3D" parent="." unique_id=1508422027]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 0)
 monitoring = false
@@ -73,21 +50,6 @@ monitoring = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LHitBoxArea3D" unique_id=2046698224]
 shape = SubResource("BoxShape3D_i3pqv")
 debug_color = Color(0.9863978, 0, 0.32880265, 0.41960785)
-
-[node name="CPUParticles3D" type="CPUParticles3D" parent="LHitBoxArea3D" unique_id=776418167]
-emitting = false
-lifetime = 0.7
-one_shot = true
-explosiveness = 0.5
-mesh = SubResource("SphereMesh_hqtel")
-emission_shape = 1
-emission_sphere_radius = 1.0
-direction = Vector3(0, 1, 0)
-spread = 100.38
-radial_accel_min = 30.59
-radial_accel_max = 56.47
-tangential_accel_min = 31.44
-tangential_accel_max = 40.35
 
 [node name="visuals" type="Node3D" parent="." unique_id=607989661]
 
