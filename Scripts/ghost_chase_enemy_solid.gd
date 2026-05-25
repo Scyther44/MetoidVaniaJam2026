@@ -1,15 +1,15 @@
 extends CharacterBody3D
 
-const SPEED = 2.0
-const ATTACK_RANGE = 0
+const SPEED = 1.5
+const ATTACK_RANGE = 1.5
 var health = 1
 
 var player = null
 
 @onready var detection_area = $PlayerDetectionArea
-#@onready var animation_player = $AnimationPlayer
+@onready var animation_player = $visuals/M_GhostEnemyRigged/AnimationPlayer
 @onready var visuals = $visuals
-@onready var mesh = $visuals/M_GhostEnemy/GhostEnemy
+@onready var mesh = $visuals/M_GhostEnemyRigged
 
 func _ready():
 
@@ -39,28 +39,26 @@ func _physics_process(_delta):
 			else:
 				visuals.rotation.y = deg_to_rad(180)
 
-			#play_anim("run")
-
 		# Attack player
 		else:
 
 			velocity = Vector3.ZERO
 
-			#play_anim("attack")
+			play_anim("Attack")
 
 	else:
 
 		velocity = Vector3.ZERO
 
-		#play_anim("idle")
+		play_anim("Idle")
 
 	move_and_slide()
 
 
-#func play_anim(anim_name):
+func play_anim(anim_name):
 
-	#if animation_player.current_animation != anim_name:
-		#animation_player.play(anim_name)
+	if animation_player.current_animation != anim_name:
+		animation_player.play(anim_name)
 
 
 func _on_body_entered(body):
@@ -87,9 +85,4 @@ func take_damage():
 
 
 func flash_damage():
-
-	mesh.material_override.albedo_color = Color.RED
-
-	await get_tree().create_timer(0.1).timeout
-
-	mesh.material_override.albedo_color = Color.WHITE
+	pass

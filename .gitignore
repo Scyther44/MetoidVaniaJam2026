@@ -1,7 +1,5 @@
-# Godot 4+ specific ignores
+.import/
+.export/
 .godot/
 /android/
 
-# Other
-.import
-.export/

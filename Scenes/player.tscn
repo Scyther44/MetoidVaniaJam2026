@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bie0sgk8f8qjs" path="res://AnimationLibraries/glbs/WitchT-Pose.glb" id="2_onrkg"]
 [ext_resource type="AnimationLibrary" uid="uid://bhbri7qpewuax" path="res://AnimationLibraries/AnimPack1.res" id="3_i3pqv"]
 [ext_resource type="AnimationLibrary" uid="uid://dtc4fs0i6rlo4" path="res://AnimationLibraries/glbs/AnimPack2.glb" id="3_vgqql"]
+[ext_resource type="PackedScene" uid="uid://bjik1ss8kuq3" path="res://asset/characters/M_WitchPlayer.glb" id="5_fkybt"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mf4mk"]
 height = 1.5
@@ -1274,7 +1275,7 @@ material_override = SubResource("StandardMaterial3D_mf4mk")
 mesh = SubResource("SphereMesh_mf4mk")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=251604487]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.5, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 6)
 size = 43.99
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1670112954]
@@ -1335,5 +1336,77 @@ tangential_accel_max = 40.35
 [node name="WitchT-Pose" parent="visuals" unique_id=163107877 instance=ExtResource("2_onrkg")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 
+[node name="GeneralSkeleton" parent="visuals/WitchT-Pose/Armature" parent_id_path=PackedInt32Array(163107877, 199463808) index="0" unique_id=1927851977]
+bones/0/position = Vector3(-0.0131613305, 0.9252669, 0.0076700076)
+bones/0/rotation = Quaternion(-0.0057082307, -0.48722002, 0.03865057, 0.8724049)
+bones/1/rotation = Quaternion(0.097459786, 0.0033056422, -0.025724592, 0.9949015)
+bones/2/rotation = Quaternion(0.07343989, 0.0038282298, -0.048632964, 0.99610585)
+bones/3/rotation = Quaternion(0.07363502, 0.0038389266, -0.048628226, 0.9960916)
+bones/4/rotation = Quaternion(-0.15913995, 0.23115183, 0.060408294, 0.9579114)
+bones/5/rotation = Quaternion(-0.008672662, 0.22024964, -0.027876578, 0.97500664)
+bones/7/rotation = Quaternion(0.4816239, -0.5584383, -0.5297377, -0.41900253)
+bones/8/rotation = Quaternion(0.11958521, 0.85741675, -0.31520733, -0.38881886)
+bones/9/rotation = Quaternion(0.6232294, 0.43605417, -0.5315869, 0.3726357)
+bones/10/rotation = Quaternion(0.00578513, -0.6382149, -0.13711846, 0.7575268)
+bones/11/rotation = Quaternion(-0.33624685, -0.6656582, -0.20650524, 0.6333979)
+bones/12/rotation = Quaternion(0.15160355, 0.007510632, -0.024344143, 0.988113)
+bones/13/rotation = Quaternion(0.11299456, -0.07359557, 0.039598778, 0.99007463)
+bones/14/scale = Vector3(1.0005778, 1.0004863, 1.0001515)
+bones/15/rotation = Quaternion(-0.097610906, -0.15577848, -0.114834026, 0.97622657)
+bones/16/rotation = Quaternion(0.15674374, 0.0013730675, 0.0025720894, 0.987635)
+bones/17/rotation = Quaternion(0.20156306, 0.0011622458, 0.0022321937, 0.9794723)
+bones/19/rotation = Quaternion(-0.041137666, -0.036760658, -0.022812992, 0.99821645)
+bones/20/rotation = Quaternion(0.23249952, -0.0019853264, 0.004637599, 0.9725835)
+bones/21/rotation = Quaternion(0.33417815, -0.004252091, 3.8295984e-05, 0.94250035)
+bones/23/rotation = Quaternion(0.05526696, 0.06544773, 0.089874625, 0.9922625)
+bones/24/rotation = Quaternion(0.22627507, -0.0007543266, 0.0010302365, 0.9740626)
+bones/25/rotation = Quaternion(0.28621224, -0.0025343, 0.0051798522, 0.95814896)
+bones/27/rotation = Quaternion(0.08029301, 0.17497075, 0.16425972, 0.9674487)
+bones/28/rotation = Quaternion(0.31601667, -0.0014980882, 0.0012978613, 0.94875157)
+bones/29/rotation = Quaternion(0.31292713, -0.0019738674, 0.0011667609, 0.9497744)
+bones/31/rotation = Quaternion(0.48553067, 0.55799466, 0.5369906, -0.4056391)
+bones/32/rotation = Quaternion(-0.01496668, 0.9216746, -0.3227315, 0.21479337)
+bones/33/rotation = Quaternion(0.26029682, -0.6572304, 0.2599594, 0.6578107)
+bones/34/rotation = Quaternion(-0.035983592, 0.81973433, 0.14279082, 0.5534904)
+bones/35/rotation = Quaternion(-0.31250218, 0.6619755, 0.2059466, 0.6493974)
+bones/36/rotation = Quaternion(0.17382693, 0.006094023, 0.021357864, 0.98452574)
+bones/37/rotation = Quaternion(0.010636002, 0.019260585, -0.01459682, 0.99965143)
+bones/38/scale = Vector3(1.000578, 1.0004867, 1.0001519)
+bones/39/rotation = Quaternion(-0.091435835, 0.11483733, 0.019499883, 0.9889751)
+bones/40/rotation = Quaternion(0.26812884, -0.00211668, -0.002284765, 0.9633781)
+bones/41/rotation = Quaternion(0.27778804, -0.0019853115, -0.002293229, 0.9606377)
+bones/43/rotation = Quaternion(0.008178443, 0.07412894, 0.0022765696, 0.9972125)
+bones/44/rotation = Quaternion(0.25797558, 0.00046305358, -0.006095737, 0.96613216)
+bones/45/rotation = Quaternion(0.3774838, 0.0029393733, -0.00316599, 0.92600614)
+bones/47/rotation = Quaternion(0.1392872, 0.0489603, -0.034750134, 0.9884303)
+bones/48/rotation = Quaternion(0.2598744, -0.0003388524, -0.0028102994, 0.96563834)
+bones/49/rotation = Quaternion(0.35947895, 0.00072041154, -0.007936925, 0.9331192)
+bones/51/rotation = Quaternion(0.12368913, -0.05681202, -0.06068924, 0.98883283)
+bones/52/rotation = Quaternion(0.39544606, 0.0008496343, -0.0030066664, 0.9184839)
+bones/53/rotation = Quaternion(0.39302808, 0.0013348013, -0.0027956665, 0.9195213)
+bones/55/rotation = Quaternion(-0.13450581, 0.25101078, 0.94138235, 0.18083481)
+bones/56/rotation = Quaternion(0.052182436, 0.9155158, -0.39653292, 0.043238852)
+bones/57/rotation = Quaternion(0.1534841, 0.5738164, -0.80090654, -0.07567117)
+bones/58/rotation = Quaternion(0.008728662, 0.9999318, 0.0027114453, 0.007280127)
+bones/60/rotation = Quaternion(0.14847627, 0.26689184, 0.938354, -0.16191176)
+bones/61/rotation = Quaternion(0.101564564, 0.9240617, -0.36744696, -0.027883)
+bones/62/rotation = Quaternion(-0.06459983, 0.6395889, -0.7657103, 0.020996254)
+bones/63/rotation = Quaternion(-0.010828428, 0.9999112, 0.002775073, -0.0072606527)
+
+[node name="M_WitchPlayer" parent="visuals" unique_id=1859482017 instance=ExtResource("5_fkybt")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+visible = false
+
+[node name="Armature" parent="visuals/M_WitchPlayer" index="0" unique_id=1659726497]
+transform = Transform3D(-0.005, 7.5497897e-10, -3.300118e-17, 0, -2.1855694e-10, -0.005, -7.5497897e-10, -0.005, 2.1855694e-10, 0, 0, 0)
+
+[node name="Camera3D2" type="Camera3D" parent="." unique_id=1899174219]
+transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881907, 0, -0.25881907, 0.9659258, 0, 4.5, 4)
+projection = 1
+size = 10.0
+
 [connection signal="body_entered" from="RHitBoxArea3D" to="." method="_on_hit_box_area_3d_body_entered"]
 [connection signal="body_entered" from="LHitBoxArea3D" to="." method="_on_hit_box_area_3d_body_entered"]
+
+[editable path="visuals/WitchT-Pose"]
+[editable path="visuals/M_WitchPlayer"]

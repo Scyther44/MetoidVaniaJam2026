@@ -1,22 +1,25 @@
-extends CharacterBody3D
+extends Area3D
 
-const SPEED = 2.0
-const ATTACK_RANGE = 0
+const SPEED = 1.5
+const ATTACK_RANGE = 1
+
 var health = 1
-
 var player = null
 
+
 @onready var detection_area = $PlayerDetectionArea
-#@onready var animation_player = $AnimationPlayer
+@onready var animation_player = $visuals/M_GhostEnemyRigged/AnimationPlayer
 @onready var visuals = $visuals
-@onready var mesh = $visuals/M_GhostEnemy/GhostEnemy
+@onready var mesh = $visuals/M_GhostEnemyRigged
+
 
 func _ready():
 
 	detection_area.body_entered.connect(_on_body_entered)
 	detection_area.body_exited.connect(_on_body_exited)
 
-func _physics_process(_delta):
+
+func _physics_process(delta):
 
 	if player != null:
 
@@ -29,9 +32,8 @@ func _physics_process(_delta):
 				player.global_position - global_position
 			).normalized()
 
-			velocity.x = direction.x * SPEED
-			velocity.y = direction.y * SPEED
-			velocity.z = direction.z * SPEED
+			# Manual movement
+			global_position += direction * SPEED * delta
 
 			# Face player
 			if direction.x > 0:
@@ -39,28 +41,22 @@ func _physics_process(_delta):
 			else:
 				visuals.rotation.y = deg_to_rad(180)
 
-			#play_anim("run")
+			play_anim("Idle")
 
 		# Attack player
 		else:
 
-			velocity = Vector3.ZERO
-
-			#play_anim("attack")
+			play_anim("Attack")
 
 	else:
 
-		velocity = Vector3.ZERO
-
-		#play_anim("idle")
-
-	move_and_slide()
+		play_anim("Idle")
 
 
-#func play_anim(anim_name):
+func play_anim(anim_name):
 
-	#if animation_player.current_animation != anim_name:
-		#animation_player.play(anim_name)
+	if animation_player.current_animation != anim_name:
+		animation_player.play(anim_name)
 
 
 func _on_body_entered(body):
@@ -73,6 +69,7 @@ func _on_body_exited(body):
 
 	if body == player:
 		player = null
+
 
 func take_damage():
 
@@ -87,6 +84,10 @@ func take_damage():
 
 
 func flash_damage():
+
+	# Create override material if needed
+	if mesh.material_override == null:
+		mesh.material_override = StandardMaterial3D.new()
 
 	mesh.material_override.albedo_color = Color.RED
 

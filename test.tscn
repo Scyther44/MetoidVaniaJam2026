@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://2hfjj034svw7" path="res://Scenes/player.tscn" id="1_6uqi0"]
 [ext_resource type="Texture2D" uid="uid://dyo0fu02bg3c2" path="res://Assets/icon.svg" id="2_8uh7m"]
 [ext_resource type="PackedScene" uid="uid://dt220mwnplpvy" path="res://Scenes/CubeEnemySandbag.tscn" id="3_6uqi0"]
+[ext_resource type="PackedScene" uid="uid://bbdxng4ostxq7" path="res://Scenes/GhostChaseEnemy.tscn" id="4_ppyta"]
+[ext_resource type="PackedScene" uid="uid://dimq4twyqegsa" path="res://Scenes/GhostChaseEnemySmall.tscn" id="5_ykrsh"]
 
 [sub_resource type="Environment" id="Environment_mf4mk"]
 
@@ -63,9 +65,6 @@ texture = ExtResource("2_8uh7m")
 
 [node name="CharacterBody3D" parent="." unique_id=413625480 instance=ExtResource("3_6uqi0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62, -4.5, 0)
-
-[node name="CharacterBody3D2" parent="." unique_id=1855125772 instance=ExtResource("3_6uqi0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 1.5, 0)
 
 [node name="Room" type="Node3D" parent="." unique_id=1927021752]
 
@@ -703,3 +702,9 @@ shape = SubResource("BoxShape3D_ykrsh")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Room/StaticBody3D50" unique_id=471423061]
 mesh = SubResource("BoxMesh_6uqi0")
+
+[node name="GhostChaseEnemy" parent="." unique_id=1089440601 instance=ExtResource("4_ppyta")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 1, 0)
+
+[node name="GhostChaseEnemySmall" parent="." unique_id=2019244243 instance=ExtResource("5_ykrsh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, 0)
