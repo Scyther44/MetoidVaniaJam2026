@@ -126,7 +126,6 @@ _data = {
 size = Vector3(0.5, 0.5, 0.5)
 
 [node name="GhostChaseEnemySmall" type="Area3D" unique_id=881452545 groups=["enemy"]]
-collision_layer = 0
 script = ExtResource("1_qshd6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=270263818]

@@ -77,20 +77,5 @@ func take_damage():
 
 	print("Enemy hit! Health:", health)
 
-	flash_damage()
-
 	if health <= 0:
 		queue_free()
-
-
-func flash_damage():
-
-	# Create override material if needed
-	if mesh.material_override == null:
-		mesh.material_override = StandardMaterial3D.new()
-
-	mesh.material_override.albedo_color = Color.RED
-
-	await get_tree().create_timer(0.1).timeout
-
-	mesh.material_override.albedo_color = Color.WHITE
