@@ -13,12 +13,15 @@ The core mechanic revolves around recoil-based magic attacks that double as move
 # TODO
 
 - Fine tune player movement
-- Improve explosions particle effect Implement player health system and enemy damage
-- Create basic player hud Implement game over screen or scenario (maybe just respawn player)
+- Improve explosions particle effect
+- Implement player health system and enemy damage
+- Create basic player hud
+- Implement game over screen or scenario (maybe just respawn player)
 - Setup a save feature (Also load game button)
 - Build levels Fine tune camera and lighting
 - Implement room changing feature (to switch between rooms)
-- Implement dialog/tutorial Implement pick up item system
+- Implement dialog/tutorial
+- Implement pick up item system
 - Implement boss fight
 - Add Music
 - Add sound
