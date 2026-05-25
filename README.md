@@ -13,7 +13,6 @@ The core mechanic revolves around recoil-based magic attacks that double as move
 # TODO
 
 - Fine tune player movement
-- Improve explosions particle effect
 - Implement player health system and enemy damage
 - Create basic player hud
 - Implement game over screen or scenario (maybe just respawn player)
@@ -28,6 +27,7 @@ The core mechanic revolves around recoil-based magic attacks that double as move
 - Implement Game Options (sound, display)
 
 # Done: 
+- Improve explosions particle effect
 - Create a main menu
 - Create a pause menu
 - 3D player controller
