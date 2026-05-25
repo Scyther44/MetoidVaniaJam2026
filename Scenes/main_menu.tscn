@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://da0lwtluhme5w"]
+
+[ext_resource type="Script" uid="uid://bl7w5sjho2ue7" path="res://Scripts/main_menu.gd" id="1_1ehe0"]
+[ext_resource type="Texture2D" uid="uid://bf4e1htefbpj1" path="res://concept/ConceptArt1.png" id="1_48xlc"]
+[ext_resource type="FontFile" uid="uid://dnc68q4frrr3t" path="res://Assets/Fonts/Agbalumo-Regular.ttf" id="2_1ehe0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ehe0"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+corner_radius_top_right = 300
+corner_radius_bottom_left = 300
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ce3w2"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+corner_radius_top_right = 300
+corner_radius_bottom_left = 300
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n45e2"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.41215247, 0.41215247, 0.41215247, 0.6)
+corner_radius_top_right = 300
+corner_radius_bottom_left = 300
+corner_detail = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_ce3w2"]
+font = ExtResource("2_1ehe0")
+font_size = 38
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Main Menu" type="Control" unique_id=280595302]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1ehe0")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1928753674]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.3768744, 0.19815534, 0.416718, 1)
+
+[node name="ConceptArt1" type="Sprite2D" parent="." unique_id=455375794]
+position = Vector2(1682, 728)
+texture = ExtResource("1_48xlc")
+
+[node name="NewGameButton" type="Button" parent="." unique_id=1669515135]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 173.0
+offset_top = -475.0
+offset_right = 439.0
+offset_bottom = -356.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_1ehe0")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_1ehe0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ce3w2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_n45e2")
+text = "New Game"
+
+[node name="LoadGameButton" type="Button" parent="." unique_id=1574073510]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 173.0
+offset_top = -340.0
+offset_right = 439.0
+offset_bottom = -221.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_1ehe0")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_1ehe0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ce3w2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_n45e2")
+text = "Load Game"
+
+[node name="OptionsButton" type="Button" parent="." unique_id=939672740]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 173.0
+offset_top = -208.0
+offset_right = 439.0
+offset_bottom = -89.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_1ehe0")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_1ehe0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ce3w2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_n45e2")
+text = "Options"
+
+[node name="Label" type="Label" parent="." unique_id=1133811338]
+layout_mode = 0
+offset_right = 602.0
+offset_bottom = 200.0
+text = "WIP TITLES:
+BACKFIRED
+Witch's Field Trip"
+label_settings = SubResource("LabelSettings_ce3w2")
+horizontal_alignment = 1

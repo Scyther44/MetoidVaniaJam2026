@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://cnem2s7md2dw5"]
+
+[ext_resource type="FontFile" uid="uid://dnc68q4frrr3t" path="res://Assets/Fonts/Agbalumo-Regular.ttf" id="1_aolvu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ehe0"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+corner_radius_top_right = 300
+corner_radius_bottom_left = 300
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ce3w2"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+corner_radius_top_right = 300
+corner_radius_bottom_left = 300
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n45e2"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.41215247, 0.41215247, 0.41215247, 0.6)
+corner_radius_top_right = 300
+corner_radius_bottom_left = 300
+corner_detail = 5
+
+[node name="NewGameButton" type="Button" unique_id=558398751]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 173.0
+offset_top = -475.0
+offset_right = 439.0
+offset_bottom = -356.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_aolvu")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_1ehe0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ce3w2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_n45e2")
+text = "New Game"

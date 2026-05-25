@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dt220mwnplpvy" path="res://Scenes/CubeEnemySandbag.tscn" id="3_6uqi0"]
 [ext_resource type="PackedScene" uid="uid://bbdxng4ostxq7" path="res://Scenes/GhostChaseEnemy.tscn" id="4_ppyta"]
 [ext_resource type="PackedScene" uid="uid://dimq4twyqegsa" path="res://Scenes/GhostChaseEnemySmall.tscn" id="5_ykrsh"]
+[ext_resource type="PackedScene" uid="uid://b57vqcptrtjyk" path="res://Scenes/pause_menu.tscn" id="6_g14j6"]
 
 [sub_resource type="Environment" id="Environment_mf4mk"]
 
@@ -708,3 +709,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 1, 0)
 
 [node name="GhostChaseEnemySmall" parent="." unique_id=2019244243 instance=ExtResource("5_ykrsh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, 0)
+
+[node name="PauseMenu" parent="." unique_id=1771188108 instance=ExtResource("6_g14j6")]
+process_mode = 3
+visible = false

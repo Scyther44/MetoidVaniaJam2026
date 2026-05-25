@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dmfhebk7l3dg3"]
+
+[ext_resource type="PackedScene" uid="uid://bjik1ss8kuq3" path="res://asset/characters/M_WitchPlayer.glb" id="1_noarx"]
+[ext_resource type="AnimationLibrary" uid="uid://bjc5dl56opdhp" path="res://AnimationLibraries/glbs/jumpanimpack.glb" id="2_a0tk4"]
+[ext_resource type="AnimationLibrary" uid="uid://bhbri7qpewuax" path="res://AnimationLibraries/AnimPack1.res" id="2_r3fl7"]
+[ext_resource type="AnimationLibrary" uid="uid://bmppr7pgskeqm" path="res://AnimationLibraries/Animation1.res" id="3_jka67"]
+
+[node name="Node3D" type="Node3D" unique_id=448505703]
+
+[node name="M_WitchPlayer" parent="." unique_id=705858199 instance=ExtResource("1_noarx")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1853287642]
+root_node = NodePath("../M_WitchPlayer")
+libraries/AnimPack1 = ExtResource("2_r3fl7")
+libraries/Animation1 = ExtResource("3_jka67")
+libraries/jumpanimpack = ExtResource("2_a0tk4")
