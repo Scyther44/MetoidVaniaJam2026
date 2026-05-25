@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://oqhrf30deorw"]
 
 [ext_resource type="PackedScene" uid="uid://2hfjj034svw7" path="res://Scenes/player.tscn" id="1_6uqi0"]
-[ext_resource type="Texture2D" uid="uid://dxnknyikpg83f" path="res://Assets/icon.svg" id="2_8uh7m"]
+[ext_resource type="Texture2D" uid="uid://dyo0fu02bg3c2" path="res://Assets/icon.svg" id="2_8uh7m"]
 [ext_resource type="PackedScene" uid="uid://dt220mwnplpvy" path="res://Scenes/CubeEnemySandbag.tscn" id="3_6uqi0"]
 [ext_resource type="PackedScene" uid="uid://bbdxng4ostxq7" path="res://Scenes/GhostChaseEnemy.tscn" id="4_ppyta"]
 [ext_resource type="PackedScene" uid="uid://dimq4twyqegsa" path="res://Scenes/GhostChaseEnemySmall.tscn" id="5_ykrsh"]
