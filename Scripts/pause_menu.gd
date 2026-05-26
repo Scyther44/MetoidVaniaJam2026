@@ -1,8 +1,8 @@
 extends Control
 
-func _ready():
-	pass
-
+func _process(_delta):
+	if FileAccess.file_exists(SaveManager.SAVE_PATH):
+		$Reload.disabled = false
 
 func _input(event):
 
@@ -34,3 +34,7 @@ func _on_quit_pressed():
 
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+
+
+func _on_reload_pressed() -> void:
+	SaveManager.load_checkpoint()

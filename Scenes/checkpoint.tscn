@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dyotpar3l50sq"]
+
+[ext_resource type="Script" uid="uid://ctneslqyadxq3" path="res://Scripts/checkpoint.gd" id="1_lbcco"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jkya8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jkya8"]
+albedo_color = Color(1, 0, 1, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_lbcco"]
+top_radius = 0.0
+height = 1.0
+
+[node name="Checkpoint" type="Area3D" unique_id=345723494]
+script = ExtResource("1_lbcco")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1915352699]
+shape = SubResource("BoxShape3D_jkya8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2058363196]
+material_override = SubResource("StandardMaterial3D_jkya8")
+mesh = SubResource("CylinderMesh_lbcco")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

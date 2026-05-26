@@ -18,7 +18,8 @@ const FRICTION = 15.0
 const GROUND_RECOIL = 4.0
 const AIR_RECOIL = 5.0
 
-
+var max_health = 3
+var health = max_health
 var current_state = State.IDLE
 var is_facing_left = false
 
@@ -31,7 +32,6 @@ var is_facing_left = false
 
 
 func _physics_process(delta):
-
 	apply_gravity(delta)
 
 	handle_input()
@@ -281,3 +281,16 @@ func _on_hit_box_area_3d_area_entered(body):
 	
 	if body.is_in_group("enemy"):
 		body.take_damage()
+		
+func take_damage(amount):
+
+	health -= amount
+
+	print("Health:", health)
+
+	if health <= 0:
+		die()
+		
+func die():
+
+	SaveManager.load_checkpoint()

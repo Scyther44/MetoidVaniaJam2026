@@ -34,6 +34,18 @@ corner_radius_top_right = 300
 corner_radius_bottom_left = 300
 corner_detail = 5
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_opfnp"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+corner_radius_top_left = 3
+corner_radius_top_right = 300
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 300
+corner_detail = 5
+
 [sub_resource type="LabelSettings" id="LabelSettings_ce3w2"]
 font = ExtResource("2_1ehe0")
 font_size = 38
@@ -94,6 +106,8 @@ theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_1ehe0")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ce3w2")
 theme_override_styles/hover = SubResource("StyleBoxFlat_n45e2")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_opfnp")
+disabled = true
 text = "Load Game"
 
 [node name="OptionsButton" type="Button" parent="." unique_id=939672740]
@@ -122,3 +136,7 @@ BACKFIRED
 Witch's Field Trip"
 label_settings = SubResource("LabelSettings_ce3w2")
 horizontal_alignment = 1
+
+[connection signal="pressed" from="NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="LoadGameButton" to="." method="_on_load_game_button_pressed"]
+[connection signal="pressed" from="OptionsButton" to="." method="_on_options_button_pressed"]
