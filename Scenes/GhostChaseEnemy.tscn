@@ -122,12 +122,14 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5euxl"]
+size = Vector3(1, 1, 2)
 
 [node name="GhostChaseEnemy" type="CharacterBody3D" unique_id=413625480 groups=["enemy"]]
 script = ExtResource("1_5euxl")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=270263818]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+visible = false
 shape = SubResource("BoxShape3D_30v6e")
 
 [node name="PlayerDetectionArea" type="Area3D" parent="." unique_id=1650822834]
@@ -145,19 +147,25 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Skeleton3D" parent="visuals/M_GhostEnemyRigged/Armature" index="0" unique_id=808727058]
-bones/3/position = Vector3(-0.2985167, 0.7018984, -0.35504347)
-bones/3/rotation = Quaternion(-0.7029302, 0.034836687, 0.011681444, 0.7103092)
-bones/4/position = Vector3(0.2985167, 0.7018984, -0.35504347)
-bones/4/rotation = Quaternion(-0.7029302, -0.034836687, -0.011681444, 0.7103092)
+bones/0/rotation = Quaternion(-0.013508185, -4.2202344e-05, 0.0016544347, 0.99990743)
+bones/1/rotation = Quaternion(0.14214684, -2.5141975e-05, -0.008764569, 0.9898068)
+bones/2/rotation = Quaternion(0.070873104, -2.3342014e-10, -0.004651181, 0.9974745)
+bones/3/position = Vector3(-0.3100188, 0.8670615, -0.32722014)
+bones/3/rotation = Quaternion(-0.5832638, 0.037572864, 0.026878715, 0.810968)
+bones/4/position = Vector3(0.28686765, 0.873183, -0.33896562)
+bones/4/rotation = Quaternion(-0.58326375, -0.027589832, -0.0070824707, 0.81178325)
 
 [node name="AnimationPlayer" parent="visuals/M_GhostEnemyRigged" index="1" unique_id=368704224]
 libraries/ = SubResource("AnimationLibrary_6jgyj")
 
 [node name="PlayerHitboxArea3D" type="Area3D" parent="visuals/M_GhostEnemyRigged" unique_id=56362408]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="visuals/M_GhostEnemyRigged/PlayerHitboxArea3D" unique_id=1283964254]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.371139e-08, 1, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3711385e-08, 1, -0.5)
 shape = SubResource("BoxShape3D_5euxl")
 debug_color = Color(0.96168846, 1.540184e-06, 0.51167804, 0.41960785)
+
+[connection signal="body_entered" from="visuals/M_GhostEnemyRigged/PlayerHitboxArea3D" to="." method="_on_player_hitbox_area_3d_body_entered"]
 
 [editable path="visuals/M_GhostEnemyRigged"]

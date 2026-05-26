@@ -34,9 +34,9 @@ func load_checkpoint():
 	if !FileAccess.file_exists(SAVE_PATH):
 		print("No save file found")
 		return
-		
+
 	get_tree().paused = false
-	
+
 	var file = FileAccess.open(SAVE_PATH, FileAccess.READ)
 
 	var json_text = file.get_as_text()
@@ -56,18 +56,27 @@ func load_checkpoint():
 	)
 
 	player_health = data["health"]
+
+	call_deferred(
+		"_deferred_load_scene"
+	)
+	
+func _deferred_load_scene():
+
 	get_tree().change_scene_to_file(checkpoint_scene)
 
-	await get_tree().create_timer(0.1).timeout
+	await get_tree().process_frame
 
-	var player = get_tree().get_first_node_in_group("player")
+	var player = null
 
-	if player != null:
-		player.global_position = checkpoint_position
-		player.health = player_health
-		("Game Loaded")
-	else:
-		print("Player not found!")
+	while player == null:
+
+		await get_tree().process_frame
+
+		player = get_tree().get_first_node_in_group("player")
+
+	player.global_position = checkpoint_position
+	player.health = player_health
 
 func delete_save():
 	if FileAccess.file_exists(SAVE_PATH):

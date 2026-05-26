@@ -79,3 +79,8 @@ func take_damage():
 
 	if health <= 0:
 		queue_free()
+
+
+func _on_player_hitbox_area_3d_body_entered(body: Node3D) -> void:
+	if(body.is_in_group("player")):
+		body.take_damage(1)

@@ -86,3 +86,8 @@ func take_damage():
 
 func flash_damage():
 	pass
+
+
+func _on_player_hitbox_area_3d_body_entered(body: Node3D) -> void:
+	if(body.is_in_group("player")):
+		body.take_damage(1)

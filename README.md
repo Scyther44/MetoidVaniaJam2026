@@ -16,7 +16,6 @@ The core mechanic revolves around recoil-based magic attacks that double as move
 - Implement player health system and enemy damage
 - Create basic player hud
 - Implement game over screen or scenario (maybe just respawn player)
-- Setup a save feature (Also load game button)
 - Build levels Fine tune camera and lighting
 - Implement room changing feature (to switch between rooms)
 - Implement dialog/tutorial
@@ -27,6 +26,7 @@ The core mechanic revolves around recoil-based magic attacks that double as move
 - Implement Game Options (sound, display)
 
 # Done: 
+- Setup a save feature (Also load game button)
 - Improve explosions particle effect
 - Create a main menu
 - Create a pause menu
