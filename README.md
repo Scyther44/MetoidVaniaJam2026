@@ -4,16 +4,13 @@ A 2.5D Metroidvania-style game being developed for the Metroidvania Jam 2026.
 
 ## Game Concept
 
-You play as a witch’s apprentice who becomes lost deep within a mysterious world after experimenting with unstable magic. Armed with dangerous spells that have powerful side effects, you must find your way back to the witch’s coven.
+You play as a witch’s apprentice who becomes lost deep within a mysterious forest after experimenting with unstable magic. Armed with dangerous spells that have powerful side effects, you must find your way back to the witch’s coven.
 
 The core mechanic revolves around recoil-based magic attacks that double as movement abilities, allowing players to traverse environments, fight enemies, and discover hidden paths.
 
 ---
 
 # TODO
-
-- Fine tune player movement
-- Implement player health system and enemy damage
 - Create basic player hud
 - Implement game over screen or scenario (maybe just respawn player)
 - Build levels Fine tune camera and lighting
@@ -26,6 +23,7 @@ The core mechanic revolves around recoil-based magic attacks that double as move
 - Implement Game Options (sound, display)
 
 # Done: 
+- Implement player health system and enemy damage
 - Setup a save feature (Also load game button)
 - Improve explosions particle effect
 - Create a main menu
@@ -38,14 +36,15 @@ The core mechanic revolves around recoil-based magic attacks that double as move
 - Low poly 3D art pipeline
 
 # Bonus: 
+- Fine tune player movement
 - Implement second enemy (grounded)
--  Add second level Implement second boss fight
--   Add polish to level design (improve environment and visuals)
--    Add ladders for vertical climbing
--    Add a second movement ability (downblast that propels upward?)
--    Add secret areas (breakable/passthrough walls)
--    Add locked doors that require keys
--    Add lore related pickup items
+- Add second level Implement second boss fight
+- Add polish to level design (improve environment and visuals)
+- Add ladders for vertical climbing
+- Add a second movement ability (downblast that propels upward?)
+- Add secret areas (breakable/passthrough walls)
+- Add locked doors that require keys
+- Add lore related pickup items
 
 ---
 

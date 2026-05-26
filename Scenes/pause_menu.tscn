@@ -4,6 +4,18 @@
 [ext_resource type="PackedScene" uid="uid://cnem2s7md2dw5" path="res://Scenes/StyledUIButton.tscn" id="1_k0w1u"]
 [ext_resource type="FontFile" uid="uid://dnc68q4frrr3t" path="res://Assets/Fonts/Agbalumo-Regular.ttf" id="2_1och7"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1och7"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+corner_radius_top_left = 3
+corner_radius_top_right = 300
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 300
+corner_detail = 5
+
 [sub_resource type="LabelSettings" id="LabelSettings_bpi0q"]
 font = ExtResource("2_1och7")
 font_size = 54
@@ -55,6 +67,7 @@ offset_right = 133.0
 offset_bottom = 76.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/disabled = SubResource("StyleBoxFlat_1och7")
 disabled = true
 text = "Reload Checkpoint"
 
