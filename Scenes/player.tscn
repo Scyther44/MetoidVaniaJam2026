@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://2hfjj034svw7"]
 
 [ext_resource type="Script" uid="uid://b76lvtawi056b" path="res://Scripts/player.gd" id="1_i3pqv"]
-[ext_resource type="AnimationLibrary" uid="uid://bhbri7qpewuax" path="res://AnimationLibraries/AnimPack1.res" id="3_i3pqv"]
+[ext_resource type="AnimationLibrary" uid="uid://bhbri7qpewuax" path="res://AnimationLibraries/glbs/AnimPack1.res" id="3_i3pqv"]
 [ext_resource type="AnimationLibrary" uid="uid://dtc4fs0i6rlo4" path="res://AnimationLibraries/glbs/AnimPack2.glb" id="3_vgqql"]
-[ext_resource type="AnimationLibrary" uid="uid://bmppr7pgskeqm" path="res://AnimationLibraries/Animation1.res" id="4_fkybt"]
 [ext_resource type="PackedScene" uid="uid://bjik1ss8kuq3" path="res://asset/characters/M_WitchPlayer.glb" id="5_fkybt"]
 [ext_resource type="AnimationLibrary" uid="uid://bjc5dl56opdhp" path="res://AnimationLibraries/glbs/jumpanimpack.glb" id="5_x3wgy"]
 
@@ -65,7 +64,6 @@ size = 10.0
 root_node = NodePath("../visuals/M_WitchPlayer")
 libraries/AnimPack1 = ExtResource("3_i3pqv")
 libraries/AnimPack2 = ExtResource("3_vgqql")
-libraries/Animation1 = ExtResource("4_fkybt")
 libraries/jumpanimpack = ExtResource("5_x3wgy")
 
 [connection signal="area_entered" from="RHitBoxArea3D" to="." method="_on_hit_box_area_3d_area_entered"]
