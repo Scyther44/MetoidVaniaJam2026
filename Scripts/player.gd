@@ -6,7 +6,8 @@ enum State {
 	JUMP,
 	FALL,
 	ATTACK,
-	STUMBLE
+	STUMBLE,
+	CLIMB
 }
 
 
@@ -22,6 +23,7 @@ var max_health = 3
 var health = max_health
 var current_state = State.IDLE
 var is_facing_left = false
+var current_ladder = null
 
 
 @onready var visuals = $visuals
@@ -42,6 +44,9 @@ func _physics_process(delta):
 
 
 func apply_gravity(delta):
+	
+	if current_state == State.CLIMB:
+		return
 
 	if !is_on_floor():
 		velocity += get_gravity() * delta
@@ -61,6 +66,14 @@ func handle_input():
 	# Right attack
 	if Input.is_action_just_pressed("attack_right"):
 		start_attack(false)
+	
+	# Climb
+	if (
+		current_ladder != null
+		and (Input.is_action_pressed("ui_up") or Input.is_action_pressed("ui_down"))
+		and current_state != State.CLIMB
+	):
+		change_state(State.CLIMB)
 
 
 func handle_state(delta):
@@ -84,6 +97,9 @@ func handle_state(delta):
 			
 		State.STUMBLE:
 			state_stumble(delta)
+			
+		State.CLIMB:
+			state_climb(delta)
 
 
 func state_idle(delta):
@@ -294,3 +310,67 @@ func take_damage(amount):
 func die():
 
 	SaveManager.load_checkpoint()
+	
+func state_climb(_delta):
+	
+	if(current_ladder):
+		global_position.x = current_ladder.global_position.x
+	
+	velocity = Vector3.ZERO
+
+	var climb_direction = 0
+
+	if Input.is_action_pressed("ui_up"):
+		climb_direction = 1
+
+	elif Input.is_action_pressed("ui_down"):
+		climb_direction = -1
+
+
+	velocity.y = climb_direction * SPEED
+
+
+	# Face ladder
+	visuals.rotation.y = deg_to_rad(-90)
+
+
+	# Animation
+	if climb_direction != 0:
+
+		play_anim("AnimPack3/Climb", climb_direction)
+
+	else:
+
+		animation_player.pause()
+
+
+	# Jump off ladder
+	if Input.is_action_just_pressed("ui_accept"):
+
+		velocity.y = JUMP_VELOCITY
+		#velocity.x = 4
+
+		change_state(State.JUMP)
+
+		return
+
+
+	# Exit ladder
+	if current_ladder == null:
+
+		change_state(State.FALL)
+
+		return
+
+
+func _on_climb_detector_area_area_entered(area: Area3D) -> void:
+	
+	if area.is_in_group("climbable"):
+		current_ladder = area
+		
+
+
+func _on_climb_detector_area_area_exited(area: Area3D) -> void:
+	
+	if area == current_ladder:
+		current_ladder = null

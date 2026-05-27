@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dimq4twyqegsa" path="res://Scenes/GhostChaseEnemySmall.tscn" id="5_ykrsh"]
 [ext_resource type="PackedScene" uid="uid://b57vqcptrtjyk" path="res://Scenes/pause_menu.tscn" id="6_g14j6"]
 [ext_resource type="PackedScene" uid="uid://dyotpar3l50sq" path="res://Scenes/checkpoint.tscn" id="7_vbegm"]
+[ext_resource type="PackedScene" uid="uid://582f4j8e66h2" path="res://Scenes/ladder.tscn" id="8_ehkex"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vbegm"]
 sky_top_color = Color(0.03163817, 0, 0.89537793, 1)
@@ -1174,3 +1175,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Checkpoint2" parent="." unique_id=990115270 instance=ExtResource("7_vbegm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 5, 0)
+
+[node name="Ladder1" parent="." unique_id=1076454426 instance=ExtResource("8_ehkex")]
+transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, 8, 3, 0)
+
+[node name="Ladder5" parent="." unique_id=538493219 instance=ExtResource("8_ehkex")]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 9, 7, 0)
+
+[node name="Ladder6" parent="." unique_id=97662326 instance=ExtResource("8_ehkex")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 7, 0)
