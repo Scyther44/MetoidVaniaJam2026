@@ -28,6 +28,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 2
 script = ExtResource("1_1och7")
 
 [node name="BG" type="ColorRect" parent="." unique_id=115972159]
@@ -52,6 +53,12 @@ offset_right = 133.0
 offset_bottom = -81.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_neighbor_left = NodePath("../Quit")
+focus_neighbor_top = NodePath("../Quit")
+focus_neighbor_right = NodePath("../Reload")
+focus_neighbor_bottom = NodePath("../Reload")
+focus_next = NodePath("../Reload")
+focus_previous = NodePath("../Quit")
 text = "Resume"
 
 [node name="Reload" parent="." unique_id=1643316335 instance=ExtResource("1_k0w1u")]
@@ -67,6 +74,12 @@ offset_right = 133.0
 offset_bottom = 76.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_neighbor_left = NodePath("../Resume")
+focus_neighbor_top = NodePath("../Resume")
+focus_neighbor_right = NodePath("../Quit")
+focus_neighbor_bottom = NodePath("../Quit")
+focus_next = NodePath("../Quit")
+focus_previous = NodePath("../Resume")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_1och7")
 disabled = true
 text = "Reload Checkpoint"
@@ -84,6 +97,12 @@ offset_right = 133.0
 offset_bottom = 248.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_neighbor_left = NodePath("../Reload")
+focus_neighbor_top = NodePath("../Reload")
+focus_neighbor_right = NodePath("../Resume")
+focus_neighbor_bottom = NodePath("../Resume")
+focus_next = NodePath("../Resume")
+focus_previous = NodePath("../Reload")
 text = "Quit To Main Menu"
 
 [node name="Label" type="Label" parent="." unique_id=383881752]
