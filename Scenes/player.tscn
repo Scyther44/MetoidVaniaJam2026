@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://2hfjj034svw7"]
 
 [ext_resource type="Script" uid="uid://b76lvtawi056b" path="res://Scripts/player.gd" id="1_i3pqv"]
+[ext_resource type="PackedScene" uid="uid://b3xskro5mg6ve" path="res://Scenes/m_witch_player_v_1.tscn" id="3_3smsa"]
 [ext_resource type="AnimationLibrary" uid="uid://bhbri7qpewuax" path="res://AnimationLibraries/glbs/AnimPack1.res" id="3_i3pqv"]
 [ext_resource type="AnimationLibrary" uid="uid://dtc4fs0i6rlo4" path="res://AnimationLibraries/glbs/AnimPack2.glb" id="3_vgqql"]
 [ext_resource type="PackedScene" uid="uid://bjik1ss8kuq3" path="res://asset/characters/M_WitchPlayer.glb" id="5_fkybt"]
 [ext_resource type="AnimationLibrary" uid="uid://bjc5dl56opdhp" path="res://AnimationLibraries/glbs/jumpanimpack.glb" id="5_x3wgy"]
+[ext_resource type="AnimationLibrary" uid="uid://cva6d18g4x8pn" path="res://AnimationLibraries/glbs/AnimPack3.glb" id="6_8erm5"]
+[ext_resource type="PackedScene" uid="uid://cecc8p51wi57p" path="res://Scenes/player_hud.tscn" id="6_x3wgy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mf4mk"]
 height = 1.5
@@ -18,6 +21,16 @@ height = 2.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_i3pqv"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3smsa"]
+load_path = "res://.godot/imported/M_WitchPlayerV1_RGB.png-fe7500aa350a8503d33eca0fb14bbdb5.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8erm5"]
+albedo_texture = SubResource("CompressedTexture2D_3smsa")
+metallic_specular = 0.4
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8erm5"]
+height = 1.6
+
 [node name="Player" type="CharacterBody3D" unique_id=775848779 groups=["player"]]
 script = ExtResource("1_i3pqv")
 
@@ -30,8 +43,8 @@ visible = false
 material_override = SubResource("StandardMaterial3D_mf4mk")
 mesh = SubResource("SphereMesh_mf4mk")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=251604487]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 6)
+[node name="PerspectiveCamera" type="Camera3D" parent="." unique_id=251604487]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4)
 size = 43.99
 
 [node name="RHitBoxArea3D" type="Area3D" parent="." unique_id=701731873]
@@ -54,19 +67,66 @@ debug_color = Color(0.9863978, 0, 0.32880265, 0.41960785)
 
 [node name="M_WitchPlayer" parent="visuals" unique_id=705858199 instance=ExtResource("5_fkybt")]
 transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.1855694e-08, 0, 0, 0)
+visible = false
 
-[node name="Camera3D2" type="Camera3D" parent="." unique_id=1899174219]
+[node name="M_WitchPlayerV1" parent="visuals" unique_id=318145538 instance=ExtResource("3_3smsa")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="GeneralSkeleton" parent="visuals/M_WitchPlayerV1/Armature_001" parent_id_path=PackedInt32Array(318145538, 925019670) index="0" unique_id=912650001]
+bones/0/position = Vector3(-0.051560342, 0.7133176, 0.29055178)
+bones/0/rotation = Quaternion(0.01774923, 0.9902731, 0.13537727, 0.026782377)
+bones/1/rotation = Quaternion(0.037352234, 0.008586712, -0.0014228811, 0.99926436)
+bones/2/rotation = Quaternion(0.07453599, 0.018508045, 0.009816579, 0.9969983)
+bones/3/rotation = Quaternion(0.0745361, 0.018508058, 0.009816568, 0.99699825)
+bones/4/rotation = Quaternion(-0.013762605, -0.030006988, 0.015925998, 0.9993281)
+bones/5/rotation = Quaternion(-0.2816864, -0.11944438, -0.07242475, 0.9492842)
+bones/7/rotation = Quaternion(0.45993325, 0.5348726, 0.46375626, -0.5360064)
+bones/8/rotation = Quaternion(0.5445225, 0.7471149, -0.19388862, 0.32821006)
+bones/9/rotation = Quaternion(0.37075895, -0.57630736, 0.35214865, 0.63749427)
+bones/10/rotation = Quaternion(-0.06250652, 0.77927923, -0.10333812, 0.61492926)
+bones/11/rotation = Quaternion(0.46737057, -0.5029734, -0.6322344, -0.358974)
+bones/12/rotation = Quaternion(-0.29939935, 0.8562664, -0.3558865, -0.2247506)
+bones/13/rotation = Quaternion(0.49588093, 0.5213674, -0.49028954, 0.49182755)
+bones/14/rotation = Quaternion(-0.044068765, -0.94722986, 0.26385462, 0.17661916)
+bones/15/rotation = Quaternion(0.29534712, 0.28899655, 0.90997046, 0.034711845)
+bones/16/rotation = Quaternion(0.014031241, 0.9164109, -0.39996886, 0.0043784254)
+bones/17/rotation = Quaternion(-0.070556395, 0.6433018, -0.75824934, -0.0790099)
+bones/18/rotation = Quaternion(0.00024125536, 0.99992406, 0.012307286, -0.0005771846)
+bones/20/rotation = Quaternion(-0.21564011, 0.42400566, 0.86996067, 0.12994996)
+bones/21/rotation = Quaternion(-0.024797874, 0.6397852, -0.76806456, -0.011702901)
+bones/22/rotation = Quaternion(0.12360029, 0.6548841, -0.7454033, -0.014956819)
+bones/23/rotation = Quaternion(0.00095164153, 0.9999959, 0.001495302, -0.002284825)
+
+[node name="Witch" parent="visuals/M_WitchPlayerV1/Armature_001/GeneralSkeleton" index="0" unique_id=1135318609]
+surface_material_override/0 = SubResource("StandardMaterial3D_8erm5")
+
+[node name="OrthogonalCamera" type="Camera3D" parent="." unique_id=1899174219]
 transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881907, 0, -0.25881907, 0.9659258, 0, 4.5, 4)
 projection = 1
 size = 10.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1055735053]
-root_node = NodePath("../visuals/M_WitchPlayer")
+root_node = NodePath("../visuals/M_WitchPlayerV1")
 libraries/AnimPack1 = ExtResource("3_i3pqv")
 libraries/AnimPack2 = ExtResource("3_vgqql")
+libraries/AnimPack3 = ExtResource("6_8erm5")
 libraries/jumpanimpack = ExtResource("5_x3wgy")
+
+[node name="PlayerHud" parent="." unique_id=536243102 node_paths=PackedStringArray("player") instance=ExtResource("6_x3wgy")]
+player = NodePath("..")
+
+[node name="ClimbDetectorArea" type="Area3D" parent="." unique_id=105069003]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ClimbDetectorArea" unique_id=731798683]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7624333, 0)
+shape = SubResource("CapsuleShape3D_8erm5")
+debug_color = Color(0, 0.6, 0.23529412, 0.07058824)
 
 [connection signal="area_entered" from="RHitBoxArea3D" to="." method="_on_hit_box_area_3d_area_entered"]
 [connection signal="body_entered" from="RHitBoxArea3D" to="." method="_on_hit_box_area_3d_body_entered"]
 [connection signal="area_entered" from="LHitBoxArea3D" to="." method="_on_hit_box_area_3d_area_entered"]
 [connection signal="body_entered" from="LHitBoxArea3D" to="." method="_on_hit_box_area_3d_body_entered"]
+[connection signal="area_entered" from="ClimbDetectorArea" to="." method="_on_climb_detector_area_area_entered"]
+[connection signal="area_exited" from="ClimbDetectorArea" to="." method="_on_climb_detector_area_area_exited"]
+
+[editable path="visuals/M_WitchPlayerV1"]
