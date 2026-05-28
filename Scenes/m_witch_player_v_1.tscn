@@ -6,6 +6,7 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qs11j"]
 albedo_texture = ExtResource("2_mpgh8")
 metallic_specular = 0.0
+texture_filter = 0
 
 [node name="M_WitchPlayerV1" unique_id=1495565456 instance=ExtResource("1_q61ul")]
 

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dimq4twyqegsa"]
 
 [ext_resource type="Script" uid="uid://boggjtjv2a764" path="res://Scripts/ghost_chase_enemy_passthrough.gd" id="1_qshd6"]
-[ext_resource type="PackedScene" uid="uid://cfdfnikv0c6mx" path="res://asset/characters/M_GhostEnemyRigged.glb" id="2_6d7ju"]
+[ext_resource type="PackedScene" uid="uid://kk08ebym88fd" path="res://Scenes/m_ghost_enemy_rigged.tscn" id="2_oo87m"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_30v6e"]
 size = Vector3(0.5, 0.5, 0.5)
@@ -9,7 +9,7 @@ size = Vector3(0.5, 0.5, 0.5)
 [sub_resource type="SphereShape3D" id="SphereShape3D_x7i3e"]
 radius = 4.0
 
-[sub_resource type="Animation" id="Animation_5euxl"]
+[sub_resource type="Animation" id="Animation_qshd6"]
 resource_name = "ArmatureAction"
 length = 0.7083333
 loop_mode = 2
@@ -69,13 +69,13 @@ tracks/7/path = NodePath("PlayerHitboxArea3D:monitoring")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.35),
+"times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
 }
 
-[sub_resource type="Animation" id="Animation_q5v4q"]
+[sub_resource type="Animation" id="Animation_6d7ju"]
 resource_name = "Unposed"
 length = 0.041666668
 tracks/0/type = "rotation_3d"
@@ -128,7 +128,7 @@ tracks/6/interp = 0
 tracks/6/loop_wrap = true
 tracks/6/keys = PackedFloat32Array(0, 1, -0.70293015, -0.034836683, -0.011681441, 0.7103092)
 
-[sub_resource type="Animation" id="Animation_qshd6"]
+[sub_resource type="Animation" id="Animation_oo87m"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -143,15 +143,15 @@ tracks/0/keys = {
 "values": [false]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_6jgyj"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oo87m"]
 _data = {
-&"Attack": SubResource("Animation_5euxl"),
-&"Idle": SubResource("Animation_q5v4q"),
-&"RESET": SubResource("Animation_qshd6")
+&"Attack": SubResource("Animation_qshd6"),
+&"Idle": SubResource("Animation_6d7ju"),
+&"RESET": SubResource("Animation_oo87m")
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5euxl"]
-size = Vector3(0.5, 0.5, 0.5)
+size = Vector3(0.25, 0.25, 0.25)
 
 [node name="GhostChaseEnemySmall" type="Area3D" unique_id=881452545 groups=["enemy"]]
 script = ExtResource("1_qshd6")
@@ -167,29 +167,24 @@ shape = SubResource("SphereShape3D_x7i3e")
 
 [node name="visuals" type="Node3D" parent="." unique_id=457490808]
 
-[node name="M_GhostEnemyRigged" parent="visuals" unique_id=81631802 instance=ExtResource("2_6d7ju")]
+[node name="M_GhostEnemyRigged2" parent="visuals" unique_id=1742923672 instance=ExtResource("2_oo87m")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 
-[node name="Armature" parent="visuals/M_GhostEnemyRigged" index="0" unique_id=280206064]
+[node name="Armature" parent="visuals/M_GhostEnemyRigged2" index="0" unique_id=280206064]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
-[node name="Skeleton3D" parent="visuals/M_GhostEnemyRigged/Armature" index="0" unique_id=1348167099]
-bones/3/position = Vector3(-0.2985167, 0.7018984, -0.35504347)
-bones/3/rotation = Quaternion(-0.7029302, 0.034836687, 0.011681444, 0.7103092)
-bones/4/position = Vector3(0.2985167, 0.7018984, -0.35504347)
-bones/4/rotation = Quaternion(-0.7029302, -0.034836687, -0.011681444, 0.7103092)
+[node name="AnimationPlayer" parent="visuals/M_GhostEnemyRigged2" index="1" unique_id=71589769]
+libraries/ = SubResource("AnimationLibrary_oo87m")
 
-[node name="AnimationPlayer" parent="visuals/M_GhostEnemyRigged" index="1" unique_id=71589769]
-libraries/ = SubResource("AnimationLibrary_6jgyj")
-
-[node name="PlayerHitboxArea3D" type="Area3D" parent="visuals/M_GhostEnemyRigged" unique_id=56362408]
+[node name="PlayerHitboxArea3D" type="Area3D" parent="visuals/M_GhostEnemyRigged2" unique_id=56362408]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 monitoring = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="visuals/M_GhostEnemyRigged/PlayerHitboxArea3D" unique_id=1283964254]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.556708e-08, 0.5, -0.5)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="visuals/M_GhostEnemyRigged2/PlayerHitboxArea3D" unique_id=879937262]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.649493e-08, 0.25, -0.25)
 shape = SubResource("BoxShape3D_5euxl")
 debug_color = Color(0.96168846, 1.540184e-06, 0.51167804, 0.41960785)
 
-[connection signal="body_entered" from="visuals/M_GhostEnemyRigged/PlayerHitboxArea3D" to="." method="_on_player_hitbox_area_3d_body_entered"]
+[connection signal="body_entered" from="visuals/M_GhostEnemyRigged2/PlayerHitboxArea3D" to="." method="_on_player_hitbox_area_3d_body_entered"]
 
-[editable path="visuals/M_GhostEnemyRigged"]
+[editable path="visuals/M_GhostEnemyRigged2"]
