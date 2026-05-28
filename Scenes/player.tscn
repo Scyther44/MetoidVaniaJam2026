@@ -8,6 +8,7 @@
 [ext_resource type="AnimationLibrary" uid="uid://2fyjgveup2sd" path="res://AnimationLibraries/glbs/jumpanimpack.glb" id="5_x3wgy"]
 [ext_resource type="AnimationLibrary" uid="uid://qucla2nw88ow" path="res://AnimationLibraries/glbs/AnimPack3.glb" id="6_8erm5"]
 [ext_resource type="PackedScene" uid="uid://cecc8p51wi57p" path="res://Scenes/player_hud.tscn" id="6_x3wgy"]
+[ext_resource type="AnimationLibrary" uid="uid://cpvkfwjdmalhq" path="res://AnimationLibraries/glbs/AnimPack4.glb" id="7_f1ek2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mf4mk"]
 height = 1.5
@@ -100,6 +101,7 @@ root_node = NodePath("../visuals/M_WitchPlayerV1")
 libraries/AnimPack1 = ExtResource("3_i3pqv")
 libraries/AnimPack2 = ExtResource("3_vgqql")
 libraries/AnimPack3 = ExtResource("6_8erm5")
+libraries/AnimPack4 = ExtResource("7_f1ek2")
 libraries/jumpanimpack = ExtResource("5_x3wgy")
 
 [node name="PlayerHud" parent="." unique_id=536243102 node_paths=PackedStringArray("player") instance=ExtResource("6_x3wgy")]
