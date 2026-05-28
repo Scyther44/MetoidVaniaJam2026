@@ -1186,7 +1186,10 @@ transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 1, -36, 0, -40)
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 1, 16, 0, -56)
 
 [node name="Tree3" parent="Props" unique_id=957760697 instance=ExtResource("8_xersf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, -13, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -7.7, 2)
+
+[node name="Tree4" parent="Props" unique_id=378004589 instance=ExtResource("8_xersf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -5.7, 2)
 
 [node name="Ladders" type="Node3D" parent="." unique_id=2119141648]
 

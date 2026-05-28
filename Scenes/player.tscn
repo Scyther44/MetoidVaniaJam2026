@@ -21,13 +21,6 @@ height = 2.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_i3pqv"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3smsa"]
-load_path = "res://.godot/imported/M_WitchPlayerV1_RGB.png-fe7500aa350a8503d33eca0fb14bbdb5.s3tc.ctex"
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8erm5"]
-albedo_texture = SubResource("CompressedTexture2D_3smsa")
-metallic_specular = 0.4
-
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8erm5"]
 height = 1.6
 
@@ -96,9 +89,6 @@ bones/20/rotation = Quaternion(-0.21564011, 0.42400566, 0.86996067, 0.12994996)
 bones/21/rotation = Quaternion(-0.024797874, 0.6397852, -0.76806456, -0.011702901)
 bones/22/rotation = Quaternion(0.12360029, 0.6548841, -0.7454033, -0.014956819)
 bones/23/rotation = Quaternion(0.00095164153, 0.9999959, 0.001495302, -0.002284825)
-
-[node name="Witch" parent="visuals/M_WitchPlayerV1/Armature_001/GeneralSkeleton" index="0" unique_id=1135318609]
-surface_material_override/0 = SubResource("StandardMaterial3D_8erm5")
 
 [node name="OrthogonalCamera" type="Camera3D" parent="." unique_id=1899174219]
 transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881907, 0, -0.25881907, 0.9659258, 0, 4.5, 4)
