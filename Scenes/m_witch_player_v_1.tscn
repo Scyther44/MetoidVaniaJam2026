@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://b3xskro5mg6ve"]
 
-[ext_resource type="PackedScene" uid="uid://ccfvp7bwub63k" path="res://asset/characters/M_WitchPlayerV1.glb" id="1_q61ul"]
-[ext_resource type="Texture2D" uid="uid://ci2ndsiqo0av2" path="res://asset/characters/M_WitchPlayerV1_RGB.png" id="2_mpgh8"]
+[ext_resource type="PackedScene" uid="uid://difx83ulwold6" path="res://asset/characters/M_WitchPlayerV1.glb" id="1_q61ul"]
+[ext_resource type="Texture2D" uid="uid://q455fe1uxlc0" path="res://asset/characters/M_WitchPlayerV1_RGB.png" id="2_mpgh8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qs11j"]
 albedo_texture = ExtResource("2_mpgh8")
 metallic_specular = 0.0
 
-[node name="M_WitchPlayerV1" unique_id=318145538 instance=ExtResource("1_q61ul")]
+[node name="M_WitchPlayerV1" unique_id=1495565456 instance=ExtResource("1_q61ul")]
 
-[node name="Witch" parent="Armature_001/GeneralSkeleton" parent_id_path=PackedInt32Array(912650001) index="0" unique_id=1135318609]
+[node name="Witch" parent="Armature_001/GeneralSkeleton" parent_id_path=PackedInt32Array(148599704) index="0" unique_id=964177351]
 surface_material_override/0 = SubResource("StandardMaterial3D_qs11j")

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dimq4twyqegsa"]
 
 [ext_resource type="Script" uid="uid://boggjtjv2a764" path="res://Scripts/ghost_chase_enemy_passthrough.gd" id="1_qshd6"]
-[ext_resource type="PackedScene" uid="uid://nxnd34avrcls" path="res://asset/characters/M_GhostEnemyRigged.glb" id="2_6d7ju"]
+[ext_resource type="PackedScene" uid="uid://cfdfnikv0c6mx" path="res://asset/characters/M_GhostEnemyRigged.glb" id="2_6d7ju"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_30v6e"]
 size = Vector3(0.5, 0.5, 0.5)
@@ -170,16 +170,16 @@ shape = SubResource("SphereShape3D_x7i3e")
 [node name="M_GhostEnemyRigged" parent="visuals" unique_id=81631802 instance=ExtResource("2_6d7ju")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 
-[node name="Armature" parent="visuals/M_GhostEnemyRigged" index="0" unique_id=446710553]
+[node name="Armature" parent="visuals/M_GhostEnemyRigged" index="0" unique_id=280206064]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
-[node name="Skeleton3D" parent="visuals/M_GhostEnemyRigged/Armature" index="0" unique_id=808727058]
+[node name="Skeleton3D" parent="visuals/M_GhostEnemyRigged/Armature" index="0" unique_id=1348167099]
 bones/3/position = Vector3(-0.2985167, 0.7018984, -0.35504347)
 bones/3/rotation = Quaternion(-0.7029302, 0.034836687, 0.011681444, 0.7103092)
 bones/4/position = Vector3(0.2985167, 0.7018984, -0.35504347)
 bones/4/rotation = Quaternion(-0.7029302, -0.034836687, -0.011681444, 0.7103092)
 
-[node name="AnimationPlayer" parent="visuals/M_GhostEnemyRigged" index="1" unique_id=368704224]
+[node name="AnimationPlayer" parent="visuals/M_GhostEnemyRigged" index="1" unique_id=71589769]
 libraries/ = SubResource("AnimationLibrary_6jgyj")
 
 [node name="PlayerHitboxArea3D" type="Area3D" parent="visuals/M_GhostEnemyRigged" unique_id=56362408]
