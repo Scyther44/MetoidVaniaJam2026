@@ -32,6 +32,20 @@ var current_ladder = null
 @onready var left_hitbox = $LHitBoxArea3D
 @onready var right_hitbox = $RHitBoxArea3D
 
+const EXPLOSION_SCENE = preload(
+	"res://Scenes/particle_explosion.tscn"
+)
+
+func _ready() -> void:
+	var preload_explosion = EXPLOSION_SCENE.instantiate()
+
+	add_child(preload_explosion)
+
+	preload_explosion.visible = false
+
+	await get_tree().process_frame
+
+	preload_explosion.queue_free()
 
 func _physics_process(delta):
 	apply_gravity(delta)
@@ -224,7 +238,7 @@ func start_attack(left_attack):
 
 	if left_attack:
 
-		var explosion = preload("res://Scenes/particle_explosion.tscn").instantiate()
+		var explosion = EXPLOSION_SCENE.instantiate()
 
 		get_tree().current_scene.add_child(explosion)
 
