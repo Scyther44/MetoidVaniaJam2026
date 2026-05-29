@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bl7w5sjho2ue7" path="res://Scripts/main_menu.gd" id="1_1ehe0"]
 [ext_resource type="Texture2D" uid="uid://45ivinor4awm" path="res://concept/ConceptArt1.png" id="1_48xlc"]
 [ext_resource type="FontFile" uid="uid://dac1ectubqowc" path="res://Assets/Fonts/Agbalumo-Regular.ttf" id="2_1ehe0"]
+[ext_resource type="AudioStream" uid="uid://n7xu0ati4tmg" path="res://Music/Witchy Main Menu.mp3" id="4_ce3w2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ehe0"]
 content_margin_left = 4.0
@@ -156,6 +157,11 @@ BACKFIRED
 Witch's Field Trip"
 label_settings = SubResource("LabelSettings_ce3w2")
 horizontal_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=849025680]
+stream = ExtResource("4_ce3w2")
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="NewGameButton" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="LoadGameButton" to="." method="_on_load_game_button_pressed"]

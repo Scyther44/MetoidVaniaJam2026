@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dyotpar3l50sq" path="res://Scenes/checkpoint.tscn" id="7_vbegm"]
 [ext_resource type="PackedScene" uid="uid://582f4j8e66h2" path="res://Scenes/ladder.tscn" id="8_ehkex"]
 [ext_resource type="PackedScene" uid="uid://hk3owihw5gfi" path="res://Scenes/tree.tscn" id="8_xersf"]
+[ext_resource type="AudioStream" uid="uid://cuhka32cuc8qx" path="res://Music/Witchy Ps1 Level.mp3" id="10_00tp4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vbegm"]
 sky_top_color = Color(0.03163817, 0, 0.89537793, 1)
@@ -1201,3 +1202,8 @@ transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 9, 7, 0)
 
 [node name="Ladder6" parent="Ladders" unique_id=97662326 instance=ExtResource("8_ehkex")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 7, 0)
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=79418357]
+stream = ExtResource("10_00tp4")
+autoplay = true
+bus = &"Music"

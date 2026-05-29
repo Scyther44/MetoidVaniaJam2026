@@ -51,10 +51,13 @@ The core mechanic revolves around recoil-based magic attacks that double as move
 # Team
 
 ## Programming
-- Scyther44
+- Simon Yacoub - Scy4.itch.io
 
 ## Art
 - NoelleThorup
+
+## Music
+- @elessarbarea
 
 ---
 
