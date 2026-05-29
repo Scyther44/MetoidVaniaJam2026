@@ -6,6 +6,7 @@ enum State {
 	JUMP,
 	FALL,
 	ATTACK,
+	DOWN_ATTACK,
 	STUMBLE,
 	CLIMB
 }
@@ -18,19 +19,21 @@ const FRICTION = 15.0
 
 const GROUND_RECOIL = 4.0
 const AIR_RECOIL = 5.0
+const UPWARD_RECOIL = 6.0
 
 var max_health = 3
 var health = max_health
 var current_state = State.IDLE
 var is_facing_left = false
 var current_ladder = null
-
+var can_down_attack = true
 
 @onready var visuals = $visuals
 @onready var animation_player = $AnimationPlayer
 
 @onready var left_hitbox = $LHitBoxArea3D
 @onready var right_hitbox = $RHitBoxArea3D
+@onready var down_hitbox = $DHitBoxArea3D
 
 const EXPLOSION_SCENE = preload(
 	"res://Scenes/particle_explosion.tscn"
@@ -72,6 +75,14 @@ func handle_input():
 	if Input.is_action_just_pressed("accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		change_state(State.JUMP)
+		
+	if(
+		Input.is_action_just_pressed("accept")
+		and !is_on_floor() 
+		and current_state != State.CLIMB 
+		and can_down_attack
+	):
+		start_down_attack()		
 
 	# Left attack
 	if Input.is_action_just_pressed("attack_left"):
@@ -176,7 +187,7 @@ func state_fall(delta):
 	handle_air_movement(delta)
 
 	if is_on_floor():
-
+		can_down_attack = true
 		if abs(velocity.x) > 0.1:
 			change_state(State.RUN)
 		else:
@@ -185,6 +196,9 @@ func state_fall(delta):
 
 func state_attack(_delta):
 	# keep momentum during attack
+	pass
+
+func state_down_attack(_delta):
 	pass
 	
 func state_stumble(delta):
@@ -225,6 +239,24 @@ func update_facing(direction):
 		is_facing_left = true
 		visuals.rotation.y = deg_to_rad(180)
 
+func start_down_attack():
+	if current_state == State.ATTACK:
+		return
+		
+	can_down_attack = false
+	play_anim("AnimPack4/down_attack", 4) #3s / 4 
+	change_state(State.ATTACK)
+	await get_tree().create_timer(0.375).timeout
+	var explosion = EXPLOSION_SCENE.instantiate()
+
+	get_tree().current_scene.add_child(explosion)
+
+	explosion.global_position = down_hitbox.global_position
+	down_hitbox.monitoring = true
+
+	velocity.y = UPWARD_RECOIL
+	
+	end_down_attack()
 
 func start_attack(left_attack):
 
@@ -233,7 +265,6 @@ func start_attack(left_attack):
 
 	change_state(State.ATTACK)
 
-	#TODO REMOVE THIS AND ADJUST ANIMTAION INSTEAD
 	play_anim("AnimPack1/attack", 4)
 
 	if left_attack:
@@ -274,7 +305,7 @@ func apply_recoil(direction):
 
 func end_attack():
 
-	await get_tree().create_timer(0.7).timeout
+	await get_tree().create_timer(0.35).timeout
 
 	left_hitbox.monitoring = false
 	right_hitbox.monitoring = false
@@ -287,6 +318,21 @@ func end_attack():
 			change_state(State.IDLE)
 
 	else:
+		change_state(State.FALL)
+		
+func end_down_attack():
+	await get_tree().create_timer(0.1).timeout
+	down_hitbox.monitoring = false
+
+	if is_on_floor():
+
+		if abs(velocity.x) > 0.1:
+			change_state(State.RUN)
+		else:
+			change_state(State.IDLE)
+
+	else:
+		#TODO change this to flail maybe?
 		change_state(State.FALL)
 
 

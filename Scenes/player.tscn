@@ -38,7 +38,7 @@ material_override = SubResource("StandardMaterial3D_mf4mk")
 mesh = SubResource("SphereMesh_mf4mk")
 
 [node name="PerspectiveCamera" type="Camera3D" parent="." unique_id=251604487]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 6)
 size = 43.99
 
 [node name="RHitBoxArea3D" type="Area3D" parent="." unique_id=701731873]
@@ -57,6 +57,14 @@ monitoring = false
 shape = SubResource("BoxShape3D_i3pqv")
 debug_color = Color(0.9863978, 0, 0.32880265, 0.41960785)
 
+[node name="DHitBoxArea3D" type="Area3D" parent="." unique_id=562440971]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DHitBoxArea3D" unique_id=2057470612]
+shape = SubResource("BoxShape3D_i3pqv")
+debug_color = Color(0.9863978, 0, 0.32880265, 0.41960785)
+
 [node name="visuals" type="Node3D" parent="." unique_id=607989661]
 
 [node name="M_WitchPlayer" parent="visuals" unique_id=705858199 instance=ExtResource("5_fkybt")]
@@ -67,29 +75,29 @@ visible = false
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 
 [node name="GeneralSkeleton" parent="visuals/M_WitchPlayerV1/Armature_001" parent_id_path=PackedInt32Array(318145538, 1720710880) index="0" unique_id=1557710022]
-bones/0/position = Vector3(-0.051560342, 0.7133176, 0.29055178)
-bones/0/rotation = Quaternion(0.026890846, 0.98200876, 0.15958089, 0.09731161)
-bones/1/rotation = Quaternion(0.03344787, 0.0029117868, -0.01168048, 0.999368)
-bones/2/rotation = Quaternion(0.06675658, 0.010296974, -0.0049553644, 0.9977039)
-bones/3/rotation = Quaternion(0.0667566, 0.010296964, -0.00495537, 0.9977039)
-bones/4/rotation = Quaternion(0.019245634, -0.009646911, 0.021953281, 0.9995272)
-bones/5/rotation = Quaternion(-0.2538543, -0.012494021, -0.034377914, 0.9665507)
-bones/7/rotation = Quaternion(0.45453143, 0.5405466, 0.49416697, -0.50696117)
-bones/8/rotation = Quaternion(0.36714494, 0.74877965, -0.4685543, 0.2915315)
-bones/9/rotation = Quaternion(0.3867539, -0.5294879, 0.47803488, 0.5844199)
-bones/10/rotation = Quaternion(0.02315732, 0.91331303, -0.15839538, 0.3744783)
-bones/11/rotation = Quaternion(0.47397912, -0.4975866, -0.6312839, -0.35948855)
-bones/12/rotation = Quaternion(-0.36072305, 0.8602582, -0.35236305, -0.07533354)
-bones/13/rotation = Quaternion(0.59036356, 0.42920306, -0.5387688, 0.42069438)
-bones/14/rotation = Quaternion(-0.088535614, -0.88329864, 0.2452425, 0.38961658)
-bones/15/rotation = Quaternion(0.14994594, 0.1799452, 0.97210664, 0.012028685)
-bones/16/rotation = Quaternion(0.0035349566, 0.96897316, -0.24713519, -0.0016763869)
-bones/17/rotation = Quaternion(-0.102050826, 0.7438883, -0.6544973, 0.08859498)
-bones/18/rotation = Quaternion(0.00023625804, 0.9999725, 0.007401255, -0.0005649609)
-bones/20/rotation = Quaternion(-0.255046, 0.4897308, 0.8245617, 0.12334208)
-bones/21/rotation = Quaternion(-0.05246718, 0.7160587, -0.69587153, 0.016434386)
-bones/22/rotation = Quaternion(0.23565835, 0.61805487, -0.7488049, 0.042006113)
-bones/23/rotation = Quaternion(0.0009549418, 0.99999595, 0.0013970792, -0.002285097)
+bones/0/position = Vector3(-0.017148232, 0.45454526, -0.07196632)
+bones/0/rotation = Quaternion(0.106186494, 0.05288271, 0.04873965, 0.99174213)
+bones/1/rotation = Quaternion(0.17329292, -0.003735178, -0.011092889, 0.9848009)
+bones/2/rotation = Quaternion(0.22482629, -0.018311443, -0.010839458, 0.9741665)
+bones/3/rotation = Quaternion(0.22501734, -0.018307727, -0.0108390665, 0.9741224)
+bones/4/rotation = Quaternion(-0.14991051, 0.012060404, -0.005055029, 0.9886132)
+bones/5/rotation = Quaternion(0.26183015, 0.012210788, -0.007445111, 0.965008)
+bones/7/rotation = Quaternion(0.4109987, 0.684174, 0.52103776, -0.30249897)
+bones/8/rotation = Quaternion(0.23107783, 0.93034106, -0.24557072, 0.1440956)
+bones/9/rotation = Quaternion(0.058310088, -0.36793962, 0.099513344, 0.92266876)
+bones/10/rotation = Quaternion(-0.13848191, 0.5244955, 0.040336654, 0.83910686)
+bones/11/rotation = Quaternion(0.5821403, -0.67919374, -0.42561245, -0.13661134)
+bones/12/rotation = Quaternion(-0.17954, 0.87611485, -0.31028333, -0.32235456)
+bones/13/rotation = Quaternion(0.114708945, 0.61820877, 0.030184526, 0.7770127)
+bones/14/rotation = Quaternion(-0.08631749, -0.89875996, -0.070096605, 0.42410648)
+bones/15/rotation = Quaternion(-0.025944473, 0.7736087, 0.6330794, 0.008188045)
+bones/16/rotation = Quaternion(0.12367262, 0.69170594, -0.71086824, -0.030238159)
+bones/17/rotation = Quaternion(-0.0038762405, 0.68764246, -0.7257387, -0.020886855)
+bones/18/rotation = Quaternion(-0.008002121, 0.99986553, 0.005205351, 0.013333148)
+bones/20/rotation = Quaternion(0.038167465, 0.17548929, 0.98209167, 0.056944564)
+bones/21/rotation = Quaternion(0.009201138, 0.5847019, -0.81049484, 0.033723496)
+bones/22/rotation = Quaternion(0.13456854, 0.39953318, -0.9009925, -0.10235782)
+bones/23/rotation = Quaternion(-0.060281266, 0.8827632, 0.4462723, 0.13392645)
 
 [node name="OrthogonalCamera" type="Camera3D" parent="." unique_id=1899174219]
 transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881907, 0, -0.25881907, 0.9659258, 0, 4.5, 4)
@@ -118,6 +126,8 @@ debug_color = Color(0, 0.6, 0.23529412, 0.07058824)
 [connection signal="body_entered" from="RHitBoxArea3D" to="." method="_on_hit_box_area_3d_body_entered"]
 [connection signal="area_entered" from="LHitBoxArea3D" to="." method="_on_hit_box_area_3d_area_entered"]
 [connection signal="body_entered" from="LHitBoxArea3D" to="." method="_on_hit_box_area_3d_body_entered"]
+[connection signal="area_entered" from="DHitBoxArea3D" to="." method="_on_hit_box_area_3d_area_entered"]
+[connection signal="body_entered" from="DHitBoxArea3D" to="." method="_on_hit_box_area_3d_body_entered"]
 [connection signal="area_entered" from="ClimbDetectorArea" to="." method="_on_climb_detector_area_area_entered"]
 [connection signal="area_exited" from="ClimbDetectorArea" to="." method="_on_climb_detector_area_area_exited"]
 
