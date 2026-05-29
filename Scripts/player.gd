@@ -212,6 +212,58 @@ func state_stumble(delta):
 		else:
 			change_state(State.IDLE)
 
+func state_climb(_delta):
+	
+	if(current_ladder):
+		global_position.x = current_ladder.global_position.x
+	
+	can_down_attack = true
+	velocity = Vector3.ZERO
+
+	var climb_direction = 0
+
+	if Input.is_action_pressed("up"):
+		climb_direction = 1
+
+	elif Input.is_action_pressed("down"):
+		climb_direction = -1
+
+
+	velocity.y = climb_direction * SPEED
+
+
+	# Face ladder
+	visuals.rotation.y = deg_to_rad(-90)
+
+
+	# Animation
+	if climb_direction != 0:
+
+		play_anim("AnimPack3/Climb", climb_direction)
+
+	else:
+
+		animation_player.pause()
+
+
+	# Jump off ladder
+	if Input.is_action_just_pressed("ui_accept"):
+
+		velocity.y = JUMP_VELOCITY
+		#velocity.x = 4
+
+		change_state(State.JUMP)
+
+		return
+
+
+	# Exit ladder
+	if current_ladder == null:
+
+		change_state(State.FALL)
+
+		return
+
 
 func handle_air_movement(delta):
 
@@ -370,58 +422,6 @@ func take_damage(amount):
 func die():
 
 	SaveManager.load_checkpoint()
-	
-func state_climb(_delta):
-	
-	if(current_ladder):
-		global_position.x = current_ladder.global_position.x
-	
-	velocity = Vector3.ZERO
-
-	var climb_direction = 0
-
-	if Input.is_action_pressed("up"):
-		climb_direction = 1
-
-	elif Input.is_action_pressed("down"):
-		climb_direction = -1
-
-
-	velocity.y = climb_direction * SPEED
-
-
-	# Face ladder
-	visuals.rotation.y = deg_to_rad(-90)
-
-
-	# Animation
-	if climb_direction != 0:
-
-		play_anim("AnimPack3/Climb", climb_direction)
-
-	else:
-
-		animation_player.pause()
-
-
-	# Jump off ladder
-	if Input.is_action_just_pressed("ui_accept"):
-
-		velocity.y = JUMP_VELOCITY
-		#velocity.x = 4
-
-		change_state(State.JUMP)
-
-		return
-
-
-	# Exit ladder
-	if current_ladder == null:
-
-		change_state(State.FALL)
-
-		return
-
 
 func _on_climb_detector_area_area_entered(area: Area3D) -> void:
 	
