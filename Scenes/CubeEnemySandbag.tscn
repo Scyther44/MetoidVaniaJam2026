@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dt220mwnplpvy"]
 
 [ext_resource type="Script" uid="uid://di0drpp7fyhfn" path="res://Scripts/cube_enemy_sandbag.gd" id="1_7mhof"]
-[ext_resource type="PackedScene" uid="uid://c1jllq2jwkl8o" path="res://Assets/M_GhostEnemy.fbx" id="2_1u15f"]
+[ext_resource type="PackedScene" uid="uid://c40bquukb5bdp" path="res://Assets/M_GhostEnemy.fbx" id="2_1u15f"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_30v6e"]
 
@@ -38,7 +38,7 @@ mesh = SubResource("BoxMesh_7mhof")
 [node name="M_GhostEnemy" parent="visuals" unique_id=1085379057 instance=ExtResource("2_1u15f")]
 transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, 0, 0, 0)
 
-[node name="GhostEnemy" parent="visuals/M_GhostEnemy" index="0" unique_id=70468087]
+[node name="GhostEnemy" parent="visuals/M_GhostEnemy" index="0" unique_id=1323305227]
 material_override = SubResource("StandardMaterial3D_1u15f")
 
 [editable path="visuals/M_GhostEnemy"]

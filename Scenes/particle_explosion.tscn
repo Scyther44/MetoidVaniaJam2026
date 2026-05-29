@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dqefowjy2x6ki"]
 
 [ext_resource type="Script" uid="uid://dvvm4mm8o6odo" path="res://Scripts/particle_explosion.gd" id="1_aoilm"]
-[ext_resource type="Texture2D" uid="uid://bpxcnqn6meh6u" path="res://Assets/circle_01_a.png" id="1_mipbf"]
+[ext_resource type="Texture2D" uid="uid://p32o3d7tp7kr" path="res://Assets/circle_01_a.png" id="1_mipbf"]
 
 [sub_resource type="Gradient" id="Gradient_cyymp"]
 offsets = PackedFloat32Array(0.00486618, 1)
