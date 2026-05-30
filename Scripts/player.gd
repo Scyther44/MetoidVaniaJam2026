@@ -6,7 +6,6 @@ enum State {
 	JUMP,
 	FALL,
 	ATTACK,
-	DOWN_ATTACK,
 	STUMBLE,
 	CLIMB
 }
@@ -199,9 +198,6 @@ func state_fall(delta):
 func state_attack(_delta):
 	# keep momentum during attack
 	pass
-
-func state_down_attack(_delta):
-	pass
 	
 func state_stumble(delta):
 	play_anim("jumpanimpack/StumbleBack", 7)
@@ -249,7 +245,7 @@ func state_climb(_delta):
 
 
 	# Jump off ladder
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("accept"):
 
 		velocity.y = JUMP_VELOCITY
 		#velocity.x = 4
