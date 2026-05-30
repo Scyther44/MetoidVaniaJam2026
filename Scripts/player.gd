@@ -332,7 +332,7 @@ func start_attack(left_attack):
 
 	else:
 
-		var explosion = preload("res://Scenes/particle_explosion.tscn").instantiate()
+		var explosion = EXPLOSION_SCENE.instantiate()
 
 		get_tree().current_scene.add_child(explosion)
 
@@ -385,9 +385,10 @@ func end_down_attack():
 		#TODO change this to flail maybe?
 		change_state(State.FALL)
 
-
-
 func change_state(new_state):
+
+	if current_state == new_state:
+		return
 
 	current_state = new_state
 
