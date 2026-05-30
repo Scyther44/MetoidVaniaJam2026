@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://d3capndqr20it"]
+
+[ext_resource type="PackedScene" uid="uid://dyotpar3l50sq" path="res://Scenes/checkpoint.tscn" id="1_of5lx"]
+[ext_resource type="PackedScene" uid="uid://582f4j8e66h2" path="res://Scenes/ladder.tscn" id="2_8o7oj"]
+[ext_resource type="PackedScene" uid="uid://2hfjj034svw7" path="res://Scenes/player.tscn" id="3_vbpjr"]
+[ext_resource type="PackedScene" uid="uid://b57vqcptrtjyk" path="res://Scenes/pause_menu.tscn" id="4_8o7oj"]
+
+[node name="TestScene" type="Node3D" unique_id=275477289]
+
+[node name="Room" type="Node3D" parent="." unique_id=1927021752]
+
+[node name="Ladder" parent="Room" unique_id=1076454426 instance=ExtResource("2_8o7oj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.5, 0)
+
+[node name="Ladder2" parent="Room" unique_id=336204138 instance=ExtResource("2_8o7oj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3.5, 0)
+
+[node name="Ladder3" parent="Room" unique_id=1832500685 instance=ExtResource("2_8o7oj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 5.5, 0)
+
+[node name="Ladder4" parent="Room" unique_id=1608607733 instance=ExtResource("2_8o7oj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 7.5, 0)
+
+[node name="Checkpoint" parent="." unique_id=345723494 instance=ExtResource("1_of5lx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Player" parent="." unique_id=775848779 instance=ExtResource("3_vbpjr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+
+[node name="PauseMenu" parent="." unique_id=1771188108 instance=ExtResource("4_8o7oj")]
+visible = false

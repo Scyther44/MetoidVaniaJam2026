@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://dyotpar3l50sq"]
 
 [ext_resource type="Script" uid="uid://ctneslqyadxq3" path="res://Scripts/checkpoint.gd" id="1_lbcco"]
+[ext_resource type="PackedScene" uid="uid://br54smrl4owu5" path="res://Assets/M_CampfireV1.glb" id="2_2cwi7"]
+[ext_resource type="PackedScene" uid="uid://de7qtasqrfgf3" path="res://Scenes/particle_fire.tscn" id="3_e75gc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jkya8"]
 
@@ -18,7 +20,17 @@ script = ExtResource("1_lbcco")
 shape = SubResource("BoxShape3D_jkya8")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2058363196]
+visible = false
 material_override = SubResource("StandardMaterial3D_jkya8")
 mesh = SubResource("CylinderMesh_lbcco")
 
+[node name="M_CampfireV1" parent="." unique_id=1128658103 instance=ExtResource("2_2cwi7")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.5, 0)
+
+[node name="ParticleBonfire" parent="." unique_id=1908620553 instance=ExtResource("3_e75gc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+
+[editable path="M_CampfireV1"]
+[editable path="ParticleBonfire"]

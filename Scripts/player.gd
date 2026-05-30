@@ -57,6 +57,8 @@ func _physics_process(delta):
 
 	handle_state(delta)
 
+	velocity.z = 0
+	
 	move_and_slide()
 
 
