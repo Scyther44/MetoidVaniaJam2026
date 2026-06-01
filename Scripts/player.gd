@@ -12,7 +12,7 @@ enum State {
 
 
 const SPEED = 5.0
-const JUMP_VELOCITY = 5.0
+const JUMP_VELOCITY = 6.0
 const ACCELERATION = 10.0
 const FRICTION = 15.0
 
@@ -131,7 +131,7 @@ func handle_state(delta):
 func state_idle(delta):
 
 	play_anim("AnimPack1/idle")
-
+	visuals.rotation.y = deg_to_rad(225) if is_facing_left else deg_to_rad(-45)
 	var direction = Input.get_axis("left", "right")
 
 	velocity.x = move_toward(

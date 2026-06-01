@@ -13,13 +13,6 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mf4mk"]
 height = 1.5
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mf4mk"]
-albedo_color = Color(1, 0, 1, 1)
-
-[sub_resource type="SphereMesh" id="SphereMesh_mf4mk"]
-radius = 1.0
-height = 2.0
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_i3pqv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8erm5"]
@@ -30,7 +23,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CameraPivot/PerspectiveCamera:position")
+tracks/0/path = NodePath("PerspectiveCamera:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -42,7 +35,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CameraPivot/PerspectiveCamera:rotation")
+tracks/1/path = NodePath("PerspectiveCamera:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -57,7 +50,7 @@ resource_name = "center"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CameraPivot/PerspectiveCamera:position")
+tracks/0/path = NodePath("PerspectiveCamera:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -69,7 +62,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CameraPivot/PerspectiveCamera:rotation")
+tracks/1/path = NodePath("PerspectiveCamera:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -85,7 +78,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CameraPivot/PerspectiveCamera:position")
+tracks/0/path = NodePath("PerspectiveCamera:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -97,7 +90,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CameraPivot/PerspectiveCamera:rotation")
+tracks/1/path = NodePath("PerspectiveCamera:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -113,7 +106,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CameraPivot/PerspectiveCamera:position")
+tracks/0/path = NodePath("PerspectiveCamera:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -125,7 +118,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CameraPivot/PerspectiveCamera:rotation")
+tracks/1/path = NodePath("PerspectiveCamera:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -150,15 +143,7 @@ script = ExtResource("1_i3pqv")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7624333, 0)
 shape = SubResource("CapsuleShape3D_mf4mk")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1977463030]
-visible = false
-material_override = SubResource("StandardMaterial3D_mf4mk")
-mesh = SubResource("SphereMesh_mf4mk")
-
-[node name="CameraPivot" type="Node3D" parent="." unique_id=1804875599]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-
-[node name="PerspectiveCamera" type="Camera3D" parent="CameraPivot" unique_id=251604487]
+[node name="PerspectiveCamera" type="Camera3D" parent="." unique_id=251604487]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 6)
 size = 43.99
 
