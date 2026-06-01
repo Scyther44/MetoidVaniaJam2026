@@ -7,7 +7,8 @@ enum State {
 	FALL,
 	ATTACK,
 	STUMBLE,
-	CLIMB
+	CLIMB,
+	Kneel #Look down
 }
 
 
@@ -76,7 +77,8 @@ func handle_input():
 	if Input.is_action_just_pressed("accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		change_state(State.JUMP)
-		
+	
+	# Down Attack
 	if(
 		Input.is_action_just_pressed("accept")
 		and !is_on_floor() 
@@ -100,6 +102,10 @@ func handle_input():
 		and current_state != State.CLIMB
 	):
 		change_state(State.CLIMB)
+		
+	#Kneel (Look Down)
+	if(is_on_floor() and Input.is_action_pressed("down")):
+		change_state(State.Kneel)
 
 
 func handle_state(delta):
@@ -126,6 +132,9 @@ func handle_state(delta):
 			
 		State.CLIMB:
 			state_climb(delta)
+			
+		State.Kneel:
+			state_kneel(delta)
 
 
 func state_idle(delta):
@@ -262,6 +271,17 @@ func state_climb(_delta):
 
 		return
 
+func state_kneel(delta):
+	velocity.x = move_toward(
+		velocity.x,
+		0,
+		FRICTION * delta
+	)
+	play_anim("AnimPack1/idle")
+	visuals.rotation.y = deg_to_rad(-90)
+	if(!Input.is_action_pressed("down")):
+		change_state(State.IDLE)
+	
 
 func handle_air_movement(delta):
 
