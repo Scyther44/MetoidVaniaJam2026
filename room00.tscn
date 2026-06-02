@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cc438hbhl8quw" path="res://Assets/S_BackgroundMountain.1.png" id="6_ws78m"]
 [ext_resource type="Script" uid="uid://7diqges23slf" path="res://background_sprite_parallax.gd" id="7_hw4wv"]
 [ext_resource type="Texture2D" uid="uid://cwyh354h6jha6" path="res://Assets/S_BackgroundTreesUNFINISHED.png" id="8_0h7yb"]
+[ext_resource type="Texture2D" uid="uid://dxnknyikpg83f" path="res://Assets/icon.svg" id="9_cpfmb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8o7oj"]
 sky_top_color = Color(0.03163817, 0, 0.89537793, 1)
@@ -113,6 +114,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, 0)
 [node name="2x1x2levelblock124" parent="Room" unique_id=890715997 instance=ExtResource("5_8o7oj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2, 0)
 
+[node name="2x1x2levelblock152" parent="Room" unique_id=905547113 instance=ExtResource("5_8o7oj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 3, 0)
+
+[node name="2x1x2levelblock153" parent="Room" unique_id=1347905227 instance=ExtResource("5_8o7oj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 4, 0)
+
 [node name="2x1x2levelblock125" parent="Room" unique_id=154714806 instance=ExtResource("5_8o7oj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2, 0)
 
@@ -162,10 +169,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2, 0)
 
 [node name="2x1x2levelblock121" parent="Room" unique_id=2054061659 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 2, -2)
 
 [node name="2x1x2levelblock122" parent="Room" unique_id=2143824171 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, -2)
 
 [node name="2x1x2levelblock27" parent="Room" unique_id=272614521 instance=ExtResource("5_8o7oj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 3, 0)
@@ -606,6 +613,10 @@ alpha_cut = 1
 texture = ExtResource("8_0h7yb")
 script = ExtResource("7_hw4wv")
 camera = NodePath("../../Player/PerspectiveCamera")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1723848057]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, -3, 0)
+texture = ExtResource("9_cpfmb")
 
 [editable path="Player"]
 [editable path="Player/visuals/M_WitchPlayerV1"]

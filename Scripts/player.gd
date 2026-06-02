@@ -214,11 +214,10 @@ func state_fall(delta):
 
 
 func state_attack(_delta):
-	# keep momentum during attack
-	pass
-	
 	if is_on_floor():
 		can_down_attack = true
+	# keep momentum during attack
+	pass
 	
 func state_stumble(delta):
 	play_anim("jumpanimpack/StumbleBack", 7)
