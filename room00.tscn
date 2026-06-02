@@ -46,42 +46,6 @@ visible = false
 
 [node name="Room" type="Node3D" parent="." unique_id=1927021752]
 
-[node name="Ladder" parent="Room" unique_id=1076454426 instance=ExtResource("2_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87, 1.5, 0)
-
-[node name="Ladder2" parent="Room" unique_id=336204138 instance=ExtResource("2_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87, 3.5, 0)
-
-[node name="Ladder3" parent="Room" unique_id=1832500685 instance=ExtResource("2_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87, 5.5, 0)
-
-[node name="Ladder6" parent="Room" unique_id=1932961536 instance=ExtResource("2_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87, 5.5, 0)
-
-[node name="Ladder7" parent="Room" unique_id=603421275 instance=ExtResource("2_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87, 7.5, 0)
-
-[node name="Ladder8" parent="Room" unique_id=676791200 instance=ExtResource("2_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87, 9.5, 0)
-
-[node name="Ladder9" parent="Room" unique_id=447911537 instance=ExtResource("2_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87, 11.5, 0)
-
-[node name="Ladder10" parent="Room" unique_id=1155189517 instance=ExtResource("2_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87, 13.5, 0)
-
-[node name="Ladder11" parent="Room" unique_id=2045641458 instance=ExtResource("2_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87, 15.5, 0)
-
-[node name="Ladder12" parent="Room" unique_id=784739472 instance=ExtResource("2_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87, 17.5, 0)
-
-[node name="Ladder13" parent="Room" unique_id=923306147 instance=ExtResource("2_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87, 19.5, 0)
-
-[node name="Ladder14" parent="Room" unique_id=1922997023 instance=ExtResource("2_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87, 21.5, 0)
-
 [node name="Ladder15" parent="Room" unique_id=904179694 instance=ExtResource("2_8o7oj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 8.5, 0)
 
@@ -116,9 +80,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2, 0)
 
 [node name="2x1x2levelblock152" parent="Room" unique_id=905547113 instance=ExtResource("5_8o7oj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 3, 0)
-
-[node name="2x1x2levelblock153" parent="Room" unique_id=1347905227 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 4, 0)
 
 [node name="2x1x2levelblock125" parent="Room" unique_id=154714806 instance=ExtResource("5_8o7oj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2, 0)
@@ -366,186 +327,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62, 0, 0)
 [node name="2x1x2levelblock60" parent="Room" unique_id=642850471 instance=ExtResource("5_8o7oj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, 0)
 
-[node name="2x1x2levelblock61" parent="Room" unique_id=815895495 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 0)
-
-[node name="2x1x2levelblock62" parent="Room" unique_id=1655161245 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76, 0, 0)
-
-[node name="2x1x2levelblock63" parent="Room" unique_id=10755704 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 0, 0)
-
-[node name="2x1x2levelblock64" parent="Room" unique_id=809573054 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, 0)
-
-[node name="2x1x2levelblock65" parent="Room" unique_id=2078918889 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74, 0, 0)
-
-[node name="2x1x2levelblock66" parent="Room" unique_id=1650595130 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, 0)
-
-[node name="2x1x2levelblock67" parent="Room" unique_id=1023154814 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, 0, 0)
-
-[node name="2x1x2levelblock68" parent="Room" unique_id=1908296419 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 0, 0)
-
-[node name="2x1x2levelblock69" parent="Room" unique_id=2040883915 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82, 0, 0)
-
-[node name="2x1x2levelblock70" parent="Room" unique_id=20509715 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92, 0, 0)
-
-[node name="2x1x2levelblock71" parent="Room" unique_id=1071274590 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94, 0, 0)
-
-[node name="2x1x2levelblock72" parent="Room" unique_id=225450627 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88, 0, 0)
-
-[node name="2x1x2levelblock73" parent="Room" unique_id=1962449135 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 0, 0)
-
-[node name="2x1x2levelblock74" parent="Room" unique_id=2136453142 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 0, 0)
-
-[node name="2x1x2levelblock75" parent="Room" unique_id=1329398956 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102, 0, 0)
-
-[node name="2x1x2levelblock76" parent="Room" unique_id=1917868851 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 0, 0)
-
-[node name="2x1x2levelblock77" parent="Room" unique_id=1907865334 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 98, 0, 0)
-
-[node name="2x1x2levelblock78" parent="Room" unique_id=1287227412 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 104, 0, 0)
-
-[node name="2x1x2levelblock79" parent="Room" unique_id=1962274503 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110, 0, 0)
-
-[node name="2x1x2levelblock80" parent="Room" unique_id=311088600 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112, 0, 0)
-
-[node name="2x1x2levelblock81" parent="Room" unique_id=374512564 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106, 0, 0)
-
-[node name="2x1x2levelblock82" parent="Room" unique_id=953012300 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, 0)
-
-[node name="2x1x2levelblock83" parent="Room" unique_id=1661775323 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 118, 0, 0)
-
-[node name="2x1x2levelblock84" parent="Room" unique_id=1058328984 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120, 0, 0)
-
-[node name="2x1x2levelblock85" parent="Room" unique_id=1623222906 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 114, 0, 0)
-
-[node name="2x1x2levelblock86" parent="Room" unique_id=563661429 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 116, 0, 0)
-
-[node name="2x1x2levelblock87" parent="Room" unique_id=1741080059 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126, 0, 0)
-
-[node name="2x1x2levelblock88" parent="Room" unique_id=141846971 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128, 0, 0)
-
-[node name="2x1x2levelblock89" parent="Room" unique_id=316646812 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 122, 0, 0)
-
-[node name="2x1x2levelblock90" parent="Room" unique_id=1661205881 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124, 0, 0)
-
-[node name="2x1x2levelblock91" parent="Room" unique_id=1019125971 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 134, 0, 0)
-
-[node name="2x1x2levelblock92" parent="Room" unique_id=549988292 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 136, 0, 0)
-
-[node name="2x1x2levelblock93" parent="Room" unique_id=66329139 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130, 0, 0)
-
-[node name="2x1x2levelblock94" parent="Room" unique_id=947464951 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 132, 0, 0)
-
-[node name="2x1x2levelblock95" parent="Room" unique_id=857740815 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 138, 0, 0)
-
-[node name="2x1x2levelblock96" parent="Room" unique_id=2126485564 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 144, 0, 0)
-
-[node name="2x1x2levelblock97" parent="Room" unique_id=2090139250 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 146, 0, 0)
-
-[node name="2x1x2levelblock98" parent="Room" unique_id=1250422627 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140, 0, 0)
-
-[node name="2x1x2levelblock99" parent="Room" unique_id=1734586700 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 142, 0, 0)
-
-[node name="2x1x2levelblock100" parent="Room" unique_id=1186240016 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 152, 0, 0)
-
-[node name="2x1x2levelblock101" parent="Room" unique_id=226582807 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 154, 0, 0)
-
-[node name="2x1x2levelblock102" parent="Room" unique_id=1074517563 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 148, 0, 0)
-
-[node name="2x1x2levelblock103" parent="Room" unique_id=1613504223 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150, 0, 0)
-
-[node name="2x1x2levelblock104" parent="Room" unique_id=1007577519 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 160, 0, 0)
-
-[node name="2x1x2levelblock105" parent="Room" unique_id=596436003 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 162, 0, 0)
-
-[node name="2x1x2levelblock106" parent="Room" unique_id=284089211 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 156, 0, 0)
-
-[node name="2x1x2levelblock107" parent="Room" unique_id=1289302738 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 158, 0, 0)
-
-[node name="2x1x2levelblock108" parent="Room" unique_id=1649862393 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 168, 0, 0)
-
-[node name="2x1x2levelblock109" parent="Room" unique_id=2082212810 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 170, 0, 0)
-
-[node name="2x1x2levelblock110" parent="Room" unique_id=1474764191 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 164, 0, 0)
-
-[node name="2x1x2levelblock111" parent="Room" unique_id=2146082956 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 166, 0, 0)
-
-[node name="2x1x2levelblock112" parent="Room" unique_id=262488227 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 172, 0, 0)
-
-[node name="2x1x2levelblock113" parent="Room" unique_id=1254807866 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 178, 0, 0)
-
-[node name="2x1x2levelblock114" parent="Room" unique_id=2103264870 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180, 0, 0)
-
-[node name="2x1x2levelblock115" parent="Room" unique_id=431054172 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 174, 0, 0)
-
-[node name="2x1x2levelblock116" parent="Room" unique_id=1797602762 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 176, 0, 0)
-
-[node name="2x1x2levelblock117" parent="Room" unique_id=160733872 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 186, 0, 0)
-
-[node name="2x1x2levelblock118" parent="Room" unique_id=1547912384 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 188, 0, 0)
-
-[node name="2x1x2levelblock119" parent="Room" unique_id=1249519391 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 182, 0, 0)
-
-[node name="2x1x2levelblock120" parent="Room" unique_id=2004494343 instance=ExtResource("5_8o7oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 184, 0, 0)
-
 [node name="2x1x2levelblock15" parent="Room" unique_id=762024981 instance=ExtResource("5_8o7oj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -1, 0)
 
@@ -591,7 +372,7 @@ script = ExtResource("7_hw4wv")
 camera = NodePath("../../Player/PerspectiveCamera")
 
 [node name="tee" type="Sprite3D" parent="Room" unique_id=1584613768 node_paths=PackedStringArray("camera")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 107, -500)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1609, 107, -500)
 pixel_size = 1.0
 alpha_cut = 1
 texture = ExtResource("8_0h7yb")
@@ -599,7 +380,7 @@ script = ExtResource("7_hw4wv")
 camera = NodePath("../../Player/PerspectiveCamera")
 
 [node name="tee2" type="Sprite3D" parent="Room" unique_id=54176437 node_paths=PackedStringArray("camera")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2061, 111, -500)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 449, 111, -500)
 pixel_size = 1.0
 alpha_cut = 1
 texture = ExtResource("8_0h7yb")
@@ -607,7 +388,7 @@ script = ExtResource("7_hw4wv")
 camera = NodePath("../../Player/PerspectiveCamera")
 
 [node name="tee3" type="Sprite3D" parent="Room" unique_id=1912857807 node_paths=PackedStringArray("camera")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 1427, 111, -705)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -185, 111, -705)
 pixel_size = 1.0
 alpha_cut = 1
 texture = ExtResource("8_0h7yb")
@@ -617,6 +398,12 @@ camera = NodePath("../../Player/PerspectiveCamera")
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1723848057]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, -3, 0)
 texture = ExtResource("9_cpfmb")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=428254307]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -6.8, 2.8, 1.0999999)
+pixel_size = 0.01
+text = "^^^^"
+font_size = 200
 
 [editable path="Player"]
 [editable path="Player/visuals/M_WitchPlayerV1"]
