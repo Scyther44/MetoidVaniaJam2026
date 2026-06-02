@@ -21,16 +21,21 @@ const GROUND_RECOIL = 4.0
 const AIR_RECOIL = 5.0
 const UPWARD_RECOIL = 6.0
 
+const CAMERA_NORMAL = Vector3(0, 2, 6)
+const CAMERA_LOOK_DOWN = Vector3(0, -1.5, 6)
+
 var max_health = 3
 var health = max_health
 var current_state = State.IDLE
 var is_facing_left = false
 var current_ladder = null
 var can_down_attack = true
+var camera_tween : Tween
 
 @onready var visuals = $visuals
 @onready var animation_player = $AnimationPlayer
 
+@onready var camera = $PerspectiveCamera
 @onready var left_hitbox = $LHitBoxArea3D
 @onready var right_hitbox = $RHitBoxArea3D
 @onready var down_hitbox = $DHitBoxArea3D
@@ -104,7 +109,11 @@ func handle_input():
 		change_state(State.CLIMB)
 		
 	#Kneel (Look Down)
-	if(is_on_floor() and Input.is_action_pressed("down")):
+	if (
+	is_on_floor()
+	and Input.is_action_pressed("down")
+	and current_state == State.IDLE
+	):
 		change_state(State.Kneel)
 
 
@@ -139,7 +148,7 @@ func handle_state(delta):
 
 func state_idle(delta):
 
-	play_anim("AnimPack1/idle")
+	play_anim("Animpack5/happy_idle2")
 	visuals.rotation.y = deg_to_rad(225) if is_facing_left else deg_to_rad(-45)
 	var direction = Input.get_axis("left", "right")
 
@@ -158,7 +167,7 @@ func state_idle(delta):
 
 func state_run(delta):
 
-	play_anim("AnimPack1/run")
+	play_anim("Animpack5/run2")
 
 	var direction = Input.get_axis("left", "right")
 
@@ -207,6 +216,9 @@ func state_fall(delta):
 func state_attack(_delta):
 	# keep momentum during attack
 	pass
+	
+	if is_on_floor():
+		can_down_attack = true
 	
 func state_stumble(delta):
 	play_anim("jumpanimpack/StumbleBack", 7)
@@ -277,10 +289,16 @@ func state_kneel(delta):
 		0,
 		FRICTION * delta
 	)
-	play_anim("AnimPack1/idle")
+	play_anim("kneeling/kneeling")
 	visuals.rotation.y = deg_to_rad(-90)
-	if(!Input.is_action_pressed("down")):
+	
+	if !Input.is_action_pressed("down"):
 		change_state(State.IDLE)
+		return
+
+	if !is_on_floor():
+		change_state(State.FALL)
+		return
 	
 
 func handle_air_movement(delta):
@@ -410,7 +428,15 @@ func change_state(new_state):
 	if current_state == new_state:
 		return
 
+	# Exit kneel
+	if current_state == State.Kneel:
+		move_camera(CAMERA_NORMAL)
+
 	current_state = new_state
+
+	# Enter kneel
+	if current_state == State.Kneel:
+		move_camera(CAMERA_LOOK_DOWN)
 
 
 func play_anim(anim_name, speed = 1.0):
@@ -418,6 +444,19 @@ func play_anim(anim_name, speed = 1.0):
 	if animation_player.current_animation != anim_name:
 		animation_player.play(anim_name, -1, speed)
 
+func move_camera(pos: Vector3):
+
+	if camera_tween:
+		camera_tween.kill()
+
+	camera_tween = create_tween()
+
+	camera_tween.tween_property(
+		camera,
+		"position",
+		pos,
+		0.25
+	)
 
 func _on_hit_box_area_3d_body_entered(body):
 
