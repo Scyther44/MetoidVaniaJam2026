@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dxnknyikpg83f" path="res://Assets/icon.svg" id="2_8uh7m"]
 [ext_resource type="PackedScene" uid="uid://dt220mwnplpvy" path="res://Scenes/CubeEnemySandbag.tscn" id="3_6uqi0"]
 [ext_resource type="PackedScene" uid="uid://bmk1tayxw3iun" path="res://Scenes/levelbuilding/2x1x2levelblock.tscn" id="4_b0q6j"]
+[ext_resource type="PackedScene" uid="uid://c1hnw7c0njbjt" path="res://Scenes/levelbuilding/2x_1x_2_ramp.tscn" id="4_mhym6"]
 [ext_resource type="PackedScene" uid="uid://bbdxng4ostxq7" path="res://Scenes/GhostChaseEnemy.tscn" id="4_ppyta"]
 [ext_resource type="PackedScene" uid="uid://dimq4twyqegsa" path="res://Scenes/GhostChaseEnemySmall.tscn" id="5_ykrsh"]
 [ext_resource type="PackedScene" uid="uid://b57vqcptrtjyk" path="res://Scenes/pause_menu.tscn" id="6_g14j6"]
@@ -484,14 +485,8 @@ mesh = SubResource("PrismMesh_g14j6")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, 0)
 shape = SubResource("ConcavePolygonShape3D_vbegm")
 
-[node name="StaticBody3D63" type="StaticBody3D" parent="Room" unique_id=628274506]
+[node name="2x1x2Ramp" parent="Room" unique_id=215737151 instance=ExtResource("4_mhym6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 1, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/StaticBody3D63" unique_id=1512088487]
-mesh = SubResource("PrismMesh_ykrsh")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/StaticBody3D63" unique_id=2126254471]
-shape = SubResource("ConcavePolygonShape3D_ykrsh")
 
 [node name="StaticBody3D68" type="StaticBody3D" parent="Room" unique_id=1195141384]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 2, 0)
