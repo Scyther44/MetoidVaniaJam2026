@@ -32,6 +32,7 @@ var current_ladder = null
 var can_down_attack = true
 var camera_tween : Tween
 var is_dead = false
+var is_afk = false
 
 @onready var visuals = $visuals
 @onready var animation_player = $AnimationPlayer
@@ -40,6 +41,7 @@ var is_dead = false
 @onready var left_hitbox = $LHitBoxArea3D
 @onready var right_hitbox = $RHitBoxArea3D
 @onready var down_hitbox = $DHitBoxArea3D
+@onready var idle_timer = $IdleTimer
 
 const EXPLOSION_SCENE = preload(
 	"res://Scenes/particle_explosion.tscn"
@@ -148,8 +150,13 @@ func handle_state(delta):
 
 
 func state_idle(delta):
-
-	play_anim("Animpack5/happy_idle2")
+	
+	if is_afk:
+		#print("Player is afk")
+		play_anim("Animpack5/sad_idle")
+	else:
+		play_anim("Animpack5/happy_idle2")
+	
 	visuals.rotation.y = deg_to_rad(225) if is_facing_left else deg_to_rad(-45)
 	var direction = Input.get_axis("left", "right")
 
@@ -428,6 +435,15 @@ func change_state(new_state):
 	if current_state == new_state:
 		return
 
+	current_state = new_state
+
+	if current_state == State.IDLE:
+		#print("starting idle time")
+		idle_timer.start()
+	else:
+		idle_timer.stop()
+		is_afk = false
+
 	# Exit kneel
 	if current_state == State.Kneel:
 		move_camera(CAMERA_NORMAL)
@@ -492,3 +508,8 @@ func _on_climb_detector_area_area_exited(area: Area3D) -> void:
 	
 	if area == current_ladder:
 		current_ladder = null
+
+
+func _on_idle_timer_timeout() -> void:
+	if current_state == State.IDLE:
+		is_afk = true
