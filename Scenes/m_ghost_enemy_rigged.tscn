@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://kk08ebym88fd"]
+
+[ext_resource type="PackedScene" uid="uid://cfdfnikv0c6mx" path="res://asset/characters/M_GhostEnemyRigged.glb" id="1_q5ykv"]
+[ext_resource type="Texture2D" uid="uid://b5clrfibnd717" path="res://Assets/T_GhostBaseColor.png" id="2_4gc8t"]
+[ext_resource type="Texture2D" uid="uid://dmbajnd08djiq" path="res://Assets/T_GhostEmissive.png" id="3_utb1d"]
+[ext_resource type="Texture2D" uid="uid://bay0pog66arvm" path="res://Assets/T_GhostRoughness.png" id="4_r3yqi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xk5qq"]
+cull_mode = 2
+albedo_texture = ExtResource("2_4gc8t")
+roughness = 0.5
+roughness_texture = ExtResource("4_r3yqi")
+emission_enabled = true
+emission_texture = ExtResource("3_utb1d")
+
+[node name="M_GhostEnemyRigged" unique_id=1742923672 instance=ExtResource("1_q5ykv")]
+
+[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(280206064) index="0" unique_id=1348167099]
+bones/3/position = Vector3(-0.2985167, 0.7018984, -0.35504347)
+bones/3/rotation = Quaternion(-0.7029302, 0.034836687, 0.011681444, 0.7103092)
+bones/4/position = Vector3(0.2985167, 0.7018984, -0.35504347)
+bones/4/rotation = Quaternion(-0.7029302, -0.034836687, -0.011681444, 0.7103092)
+
+[node name="GhostEnemy" parent="Armature/Skeleton3D" index="0" unique_id=2055824522]
+surface_material_override/0 = SubResource("StandardMaterial3D_xk5qq")

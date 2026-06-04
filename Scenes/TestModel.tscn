@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dmfhebk7l3dg3"]
 
 [ext_resource type="AnimationLibrary" uid="uid://bhbri7qpewuax" path="res://AnimationLibraries/glbs/AnimPack1.res" id="2_r3fl7"]
-[ext_resource type="PackedScene" uid="uid://ccfvp7bwub63k" path="res://asset/characters/M_WitchPlayerV1.glb" id="2_y1w67"]
+[ext_resource type="PackedScene" uid="uid://difx83ulwold6" path="res://asset/characters/M_WitchPlayerV1.glb" id="2_y1w67"]
 
 [node name="Node3D" type="Node3D" unique_id=448505703]
 

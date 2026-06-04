@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cecc8p51wi57p"]
 
 [ext_resource type="Script" uid="uid://bhg77s0je2d5i" path="res://Scripts/player_hud.gd" id="1_iori6"]
-[ext_resource type="FontFile" uid="uid://dnc68q4frrr3t" path="res://Assets/Fonts/Agbalumo-Regular.ttf" id="1_pk5j4"]
+[ext_resource type="FontFile" uid="uid://dac1ectubqowc" path="res://Assets/Fonts/Agbalumo-Regular.ttf" id="1_pk5j4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_iori6"]
 font = ExtResource("1_pk5j4")

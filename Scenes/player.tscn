@@ -3,33 +3,140 @@
 [ext_resource type="Script" uid="uid://b76lvtawi056b" path="res://Scripts/player.gd" id="1_i3pqv"]
 [ext_resource type="PackedScene" uid="uid://b3xskro5mg6ve" path="res://Scenes/m_witch_player_v_1.tscn" id="3_3smsa"]
 [ext_resource type="AnimationLibrary" uid="uid://bhbri7qpewuax" path="res://AnimationLibraries/glbs/AnimPack1.res" id="3_i3pqv"]
-[ext_resource type="AnimationLibrary" uid="uid://dtc4fs0i6rlo4" path="res://AnimationLibraries/glbs/AnimPack2.glb" id="3_vgqql"]
-[ext_resource type="PackedScene" uid="uid://bjik1ss8kuq3" path="res://asset/characters/M_WitchPlayer.glb" id="5_fkybt"]
-[ext_resource type="AnimationLibrary" uid="uid://bjc5dl56opdhp" path="res://AnimationLibraries/glbs/jumpanimpack.glb" id="5_x3wgy"]
-[ext_resource type="AnimationLibrary" uid="uid://cva6d18g4x8pn" path="res://AnimationLibraries/glbs/AnimPack3.glb" id="6_8erm5"]
+[ext_resource type="AnimationLibrary" uid="uid://ca754sel8f103" path="res://AnimationLibraries/glbs/AnimPack2.glb" id="3_vgqql"]
+[ext_resource type="PackedScene" uid="uid://dwhqimnkd06xc" path="res://asset/characters/M_WitchPlayer.glb" id="5_fkybt"]
+[ext_resource type="AnimationLibrary" uid="uid://2fyjgveup2sd" path="res://AnimationLibraries/glbs/jumpanimpack.glb" id="5_x3wgy"]
+[ext_resource type="AnimationLibrary" uid="uid://qucla2nw88ow" path="res://AnimationLibraries/glbs/AnimPack3.glb" id="6_8erm5"]
 [ext_resource type="PackedScene" uid="uid://cecc8p51wi57p" path="res://Scenes/player_hud.tscn" id="6_x3wgy"]
+[ext_resource type="AnimationLibrary" uid="uid://cpvkfwjdmalhq" path="res://AnimationLibraries/glbs/AnimPack4.glb" id="7_f1ek2"]
+[ext_resource type="AnimationLibrary" uid="uid://cd2gvugv351hy" path="res://AnimationLibraries/glbs/Animpack5.glb" id="8_tx1dd"]
+[ext_resource type="AnimationLibrary" uid="uid://blnjkf30qepwu" path="res://AnimationLibraries/glbs/kneeling.glb" id="10_gymyn"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mf4mk"]
 height = 1.5
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mf4mk"]
-albedo_color = Color(1, 0, 1, 1)
-
-[sub_resource type="SphereMesh" id="SphereMesh_mf4mk"]
-radius = 1.0
-height = 2.0
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_i3pqv"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3smsa"]
-load_path = "res://.godot/imported/M_WitchPlayerV1_RGB.png-fe7500aa350a8503d33eca0fb14bbdb5.s3tc.ctex"
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8erm5"]
-albedo_texture = SubResource("CompressedTexture2D_3smsa")
-metallic_specular = 0.4
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8erm5"]
 height = 1.6
+
+[sub_resource type="Animation" id="Animation_f1ek2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PerspectiveCamera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 2, 6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PerspectiveCamera:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_tx1dd"]
+resource_name = "center"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PerspectiveCamera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 2, 6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PerspectiveCamera:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gymyn"]
+resource_name = "lookleft"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PerspectiveCamera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 2, 6), Vector3(2, 2, 6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PerspectiveCamera:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.26179942, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_pu2lt"]
+resource_name = "lookright"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PerspectiveCamera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 2, 6), Vector3(-2, 2, 6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PerspectiveCamera:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.26179942, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ukyrk"]
+_data = {
+&"RESET": SubResource("Animation_f1ek2"),
+&"center": SubResource("Animation_tx1dd"),
+&"lookleft": SubResource("Animation_gymyn"),
+&"lookright": SubResource("Animation_pu2lt")
+}
 
 [node name="Player" type="CharacterBody3D" unique_id=775848779 groups=["player"]]
 script = ExtResource("1_i3pqv")
@@ -38,13 +145,8 @@ script = ExtResource("1_i3pqv")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7624333, 0)
 shape = SubResource("CapsuleShape3D_mf4mk")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1977463030]
-visible = false
-material_override = SubResource("StandardMaterial3D_mf4mk")
-mesh = SubResource("SphereMesh_mf4mk")
-
 [node name="PerspectiveCamera" type="Camera3D" parent="." unique_id=251604487]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 6)
 size = 43.99
 
 [node name="RHitBoxArea3D" type="Area3D" parent="." unique_id=701731873]
@@ -63,6 +165,14 @@ monitoring = false
 shape = SubResource("BoxShape3D_i3pqv")
 debug_color = Color(0.9863978, 0, 0.32880265, 0.41960785)
 
+[node name="DHitBoxArea3D" type="Area3D" parent="." unique_id=562440971]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DHitBoxArea3D" unique_id=2057470612]
+shape = SubResource("BoxShape3D_i3pqv")
+debug_color = Color(0.9863978, 0, 0.32880265, 0.41960785)
+
 [node name="visuals" type="Node3D" parent="." unique_id=607989661]
 
 [node name="M_WitchPlayer" parent="visuals" unique_id=705858199 instance=ExtResource("5_fkybt")]
@@ -72,36 +182,34 @@ visible = false
 [node name="M_WitchPlayerV1" parent="visuals" unique_id=318145538 instance=ExtResource("3_3smsa")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 
-[node name="GeneralSkeleton" parent="visuals/M_WitchPlayerV1/Armature_001" parent_id_path=PackedInt32Array(318145538, 925019670) index="0" unique_id=912650001]
-bones/0/position = Vector3(-0.051560342, 0.7133176, 0.29055178)
-bones/0/rotation = Quaternion(0.01774923, 0.9902731, 0.13537727, 0.026782377)
-bones/1/rotation = Quaternion(0.037352234, 0.008586712, -0.0014228811, 0.99926436)
-bones/2/rotation = Quaternion(0.07453599, 0.018508045, 0.009816579, 0.9969983)
-bones/3/rotation = Quaternion(0.0745361, 0.018508058, 0.009816568, 0.99699825)
-bones/4/rotation = Quaternion(-0.013762605, -0.030006988, 0.015925998, 0.9993281)
-bones/5/rotation = Quaternion(-0.2816864, -0.11944438, -0.07242475, 0.9492842)
-bones/7/rotation = Quaternion(0.45993325, 0.5348726, 0.46375626, -0.5360064)
-bones/8/rotation = Quaternion(0.5445225, 0.7471149, -0.19388862, 0.32821006)
-bones/9/rotation = Quaternion(0.37075895, -0.57630736, 0.35214865, 0.63749427)
-bones/10/rotation = Quaternion(-0.06250652, 0.77927923, -0.10333812, 0.61492926)
-bones/11/rotation = Quaternion(0.46737057, -0.5029734, -0.6322344, -0.358974)
-bones/12/rotation = Quaternion(-0.29939935, 0.8562664, -0.3558865, -0.2247506)
-bones/13/rotation = Quaternion(0.49588093, 0.5213674, -0.49028954, 0.49182755)
-bones/14/rotation = Quaternion(-0.044068765, -0.94722986, 0.26385462, 0.17661916)
-bones/15/rotation = Quaternion(0.29534712, 0.28899655, 0.90997046, 0.034711845)
-bones/16/rotation = Quaternion(0.014031241, 0.9164109, -0.39996886, 0.0043784254)
-bones/17/rotation = Quaternion(-0.070556395, 0.6433018, -0.75824934, -0.0790099)
-bones/18/rotation = Quaternion(0.00024125536, 0.99992406, 0.012307286, -0.0005771846)
-bones/20/rotation = Quaternion(-0.21564011, 0.42400566, 0.86996067, 0.12994996)
-bones/21/rotation = Quaternion(-0.024797874, 0.6397852, -0.76806456, -0.011702901)
-bones/22/rotation = Quaternion(0.12360029, 0.6548841, -0.7454033, -0.014956819)
-bones/23/rotation = Quaternion(0.00095164153, 0.9999959, 0.001495302, -0.002284825)
-
-[node name="Witch" parent="visuals/M_WitchPlayerV1/Armature_001/GeneralSkeleton" index="0" unique_id=1135318609]
-surface_material_override/0 = SubResource("StandardMaterial3D_8erm5")
+[node name="GeneralSkeleton" parent="visuals/M_WitchPlayerV1/Armature_001" parent_id_path=PackedInt32Array(318145538, 1720710880) index="0" unique_id=1557710022]
+bones/0/position = Vector3(-0.010054838, 0.7068745, 0.0058596414)
+bones/0/rotation = Quaternion(-0.0057082307, -0.48722002, 0.03865057, 0.8724049)
+bones/1/rotation = Quaternion(0.097459786, 0.0033056422, -0.025724592, 0.9949015)
+bones/2/rotation = Quaternion(0.07343989, 0.0038282298, -0.048632964, 0.99610585)
+bones/3/rotation = Quaternion(0.07363502, 0.0038389266, -0.048628226, 0.9960916)
+bones/4/rotation = Quaternion(-0.15913995, 0.23115183, 0.060408294, 0.9579114)
+bones/5/rotation = Quaternion(-0.008672662, 0.22024964, -0.027876578, 0.97500664)
+bones/7/rotation = Quaternion(0.48553067, 0.55799466, 0.5369906, -0.4056391)
+bones/8/rotation = Quaternion(-0.01496668, 0.9216746, -0.3227315, 0.21479337)
+bones/9/rotation = Quaternion(0.26029682, -0.6572304, 0.2599594, 0.6578107)
+bones/10/rotation = Quaternion(-0.035983592, 0.81973433, 0.14279082, 0.5534904)
+bones/11/rotation = Quaternion(0.4816239, -0.5584383, -0.5297377, -0.41900253)
+bones/12/rotation = Quaternion(0.11958521, 0.85741675, -0.31520733, -0.38881886)
+bones/13/rotation = Quaternion(0.6232294, 0.43605417, -0.5315869, 0.3726357)
+bones/14/rotation = Quaternion(0.00578513, -0.6382149, -0.13711846, 0.7575268)
+bones/15/rotation = Quaternion(0.14847627, 0.26689184, 0.938354, -0.16191176)
+bones/16/rotation = Quaternion(0.101564564, 0.9240617, -0.36744696, -0.027883)
+bones/17/rotation = Quaternion(-0.06459983, 0.6395889, -0.7657103, 0.020996254)
+bones/18/rotation = Quaternion(-0.010828428, 0.9999112, 0.002775073, -0.0072606527)
+bones/20/rotation = Quaternion(-0.13450581, 0.25101078, 0.94138235, 0.18083481)
+bones/21/rotation = Quaternion(0.052182436, 0.9155158, -0.39653292, 0.043238852)
+bones/22/rotation = Quaternion(0.1534841, 0.5738164, -0.80090654, -0.07567117)
+bones/23/rotation = Quaternion(0.008728662, 0.9999318, 0.0027114453, 0.007280127)
 
 [node name="OrthogonalCamera" type="Camera3D" parent="." unique_id=1899174219]
 transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881907, 0, -0.25881907, 0.9659258, 0, 4.5, 4)
+visible = false
 projection = 1
 size = 10.0
 
@@ -110,7 +218,10 @@ root_node = NodePath("../visuals/M_WitchPlayerV1")
 libraries/AnimPack1 = ExtResource("3_i3pqv")
 libraries/AnimPack2 = ExtResource("3_vgqql")
 libraries/AnimPack3 = ExtResource("6_8erm5")
+libraries/AnimPack4 = ExtResource("7_f1ek2")
+libraries/Animpack5 = ExtResource("8_tx1dd")
 libraries/jumpanimpack = ExtResource("5_x3wgy")
+libraries/kneeling = ExtResource("10_gymyn")
 
 [node name="PlayerHud" parent="." unique_id=536243102 node_paths=PackedStringArray("player") instance=ExtResource("6_x3wgy")]
 player = NodePath("..")
@@ -122,11 +233,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7624333, 0)
 shape = SubResource("CapsuleShape3D_8erm5")
 debug_color = Color(0, 0.6, 0.23529412, 0.07058824)
 
+[node name="CameraAnimationPlayer" type="AnimationPlayer" parent="." unique_id=1036388875]
+libraries/ = SubResource("AnimationLibrary_ukyrk")
+
+[node name="IdleTimer" type="Timer" parent="." unique_id=1388247310]
+wait_time = 30.0
+one_shot = true
+
 [connection signal="area_entered" from="RHitBoxArea3D" to="." method="_on_hit_box_area_3d_area_entered"]
 [connection signal="body_entered" from="RHitBoxArea3D" to="." method="_on_hit_box_area_3d_body_entered"]
 [connection signal="area_entered" from="LHitBoxArea3D" to="." method="_on_hit_box_area_3d_area_entered"]
 [connection signal="body_entered" from="LHitBoxArea3D" to="." method="_on_hit_box_area_3d_body_entered"]
+[connection signal="area_entered" from="DHitBoxArea3D" to="." method="_on_hit_box_area_3d_area_entered"]
+[connection signal="body_entered" from="DHitBoxArea3D" to="." method="_on_hit_box_area_3d_body_entered"]
 [connection signal="area_entered" from="ClimbDetectorArea" to="." method="_on_climb_detector_area_area_entered"]
 [connection signal="area_exited" from="ClimbDetectorArea" to="." method="_on_climb_detector_area_area_exited"]
+[connection signal="timeout" from="IdleTimer" to="." method="_on_idle_timer_timeout"]
 
 [editable path="visuals/M_WitchPlayerV1"]
