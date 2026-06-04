@@ -4,7 +4,14 @@ const SAVE_PATH = "user://savegame.json"
 
 var checkpoint_scene = ""
 var checkpoint_position = Vector3.ZERO
-var player_health = 5
+var player_health = 1
+var player_max_health = 1
+
+var has_side_blast = false
+var has_down_blast = false
+
+var collected_pickups = []
+
 
 
 func save_checkpoint(scene_path, position, health):
@@ -18,7 +25,11 @@ func save_checkpoint(scene_path, position, health):
 		"x": checkpoint_position.x,
 		"y": checkpoint_position.y,
 		"z": checkpoint_position.z,
-		"health": player_health
+		"health": player_health,
+		"max_health": player_max_health,
+		"side_blast": has_side_blast,
+		"down_blast": has_down_blast,
+		"pickups": collected_pickups
 	}
 
 	print("Saving at path: " + SAVE_PATH)
@@ -48,6 +59,10 @@ func load_checkpoint():
 		return
 
 	checkpoint_scene = data["scene"]
+	player_max_health = data["max_health"]
+	has_side_blast = data["side_blast"]
+	has_down_blast = data["down_blast"]
+	collected_pickups = data["pickups"]
 
 	checkpoint_position = Vector3(
 		data["x"],
@@ -80,7 +95,17 @@ func _deferred_load_scene():
 
 func delete_save():
 	if FileAccess.file_exists(SAVE_PATH):
-
 		DirAccess.remove_absolute(SAVE_PATH)
 
-		print("Save deleted")
+	checkpoint_scene = ""
+	checkpoint_position = Vector3.ZERO
+
+	player_health = 1
+	player_max_health = 1
+
+	has_side_blast = false
+	has_down_blast = false
+
+	collected_pickups.clear()
+
+	print("Save deleted")

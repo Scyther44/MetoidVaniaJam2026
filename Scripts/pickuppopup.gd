@@ -18,7 +18,7 @@ func show_pickup(
 
 func _unhandled_input(event):
 
-	if event.is_action_pressed("ui_accept"):
+	if event.is_action_pressed("ui_accept") or event.is_action_pressed("ui_cancel"):
 
 		get_tree().paused = false
 		queue_free()

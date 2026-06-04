@@ -59,6 +59,12 @@ func _ready() -> void:
 	await get_tree().process_frame
 
 	preload_explosion.queue_free()
+	
+	health = SaveManager.player_health
+	max_health = SaveManager.player_max_health
+
+	is_side_attack_unlocked = SaveManager.has_side_blast
+	is_down_attack_unlocked = SaveManager.has_down_blast
 
 func _physics_process(delta):
 	apply_gravity(delta)

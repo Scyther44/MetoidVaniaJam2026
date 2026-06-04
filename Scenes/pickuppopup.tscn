@@ -13,7 +13,7 @@ font_size = 24
 
 [sub_resource type="LabelSettings" id="LabelSettings_1gfw5"]
 font = ExtResource("1_3kqi4")
-font_size = 24
+font_size = 30
 
 [node name="PickupPopup" type="CanvasLayer" unique_id=149677033]
 process_mode = 2
@@ -68,7 +68,7 @@ offset_left = -281.0
 offset_top = -70.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "Continue ->"
+text = "Press Jump To Continue"
 label_settings = SubResource("LabelSettings_1gfw5")
 horizontal_alignment = 1
 
