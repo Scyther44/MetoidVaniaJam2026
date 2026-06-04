@@ -23,6 +23,7 @@ background_mode = 2
 sky = SubResource("Sky_00tp4")
 ambient_light_color = Color(0, 0.124055676, 0.99998647, 1)
 glow_enabled = true
+fog_enabled = true
 fog_mode = 1
 fog_light_color = Color(0.3213423, 0.053586006, 0.60373664, 1)
 fog_light_energy = 0.25

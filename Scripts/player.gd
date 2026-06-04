@@ -435,8 +435,6 @@ func change_state(new_state):
 	if current_state == new_state:
 		return
 
-	current_state = new_state
-
 	if current_state == State.IDLE:
 		#print("starting idle time")
 		idle_timer.start()
