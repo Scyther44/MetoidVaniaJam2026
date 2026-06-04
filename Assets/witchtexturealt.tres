@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c6l15wun6sywn"]
+
+[ext_resource type="Texture2D" uid="uid://ljbqtkfm1wri" path="res://Assets/T_WitchAlt.png" id="1_154f2"]
+
+[resource]
+albedo_texture = ExtResource("1_154f2")
+metallic_specular = 0.0
+texture_filter = 0
