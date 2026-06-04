@@ -56,6 +56,7 @@ grow_vertical = 2
 text = "Flavor Text Here"
 label_settings = SubResource("LabelSettings_6t7ra")
 horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="Continue" type="Label" parent="Panel" unique_id=1433212045]
 layout_mode = 1
