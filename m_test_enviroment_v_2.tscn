@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dwdjr2jyq5y2r"]
+
+[ext_resource type="PackedScene" uid="uid://b3oqaggj7d76a" path="res://Assets/M_TestEnviromentV2.glb" id="1_22vgg"]
+
+[node name="M_TestEnviromentV2" unique_id=824857799 instance=ExtResource("1_22vgg")]
+
+[node name="Enviroment_low" parent="." index="8" unique_id=506568493]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.61873, 0, 0.47253227)

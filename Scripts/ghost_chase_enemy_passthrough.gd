@@ -8,10 +8,9 @@ var player = null
 
 
 @onready var detection_area = $PlayerDetectionArea
-@onready var animation_player = $visuals/M_GhostEnemyRigged/AnimationPlayer
+@onready var animation_player = $visuals/M_GhostEnemyRigged2/AnimationPlayer
 @onready var visuals = $visuals
-@onready var mesh = $visuals/M_GhostEnemyRigged
-
+@onready var mesh = $visuals/M_GhostEnemyRigged2/Armature/Skeleton3D/GhostEnemy
 
 func _ready():
 

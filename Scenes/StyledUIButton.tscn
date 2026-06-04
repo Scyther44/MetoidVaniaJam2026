@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cnem2s7md2dw5"]
 
-[ext_resource type="FontFile" uid="uid://dnc68q4frrr3t" path="res://Assets/Fonts/Agbalumo-Regular.ttf" id="1_aolvu"]
+[ext_resource type="FontFile" uid="uid://dac1ectubqowc" path="res://Assets/Fonts/Agbalumo-Regular.ttf" id="1_aolvu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ehe0"]
 content_margin_left = 4.0

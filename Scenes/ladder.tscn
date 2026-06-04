@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://582f4j8e66h2"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ly8pi"]
+top_radius = 0.1
+bottom_radius = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_75hc7"]
+albedo_color = Color(1, 0.42745098, 0, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_fnw1j"]
+radius = 0.1
+
+[node name="Ladder" type="Area3D" unique_id=1076454426 groups=["climbable"]]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=666977154]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.099999994)
+mesh = SubResource("CylinderMesh_ly8pi")
+surface_material_override/0 = SubResource("StandardMaterial3D_75hc7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=709473525]
+shape = SubResource("CylinderShape3D_fnw1j")

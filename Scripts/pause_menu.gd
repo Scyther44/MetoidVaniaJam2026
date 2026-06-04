@@ -15,7 +15,8 @@ func _input(event):
 
 
 func pause():
-
+	$Resume.grab_focus.call_deferred()
+	
 	visible = true
 	get_tree().paused = true
 

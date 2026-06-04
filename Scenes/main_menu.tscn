@@ -1,50 +1,55 @@
 [gd_scene format=3 uid="uid://da0lwtluhme5w"]
 
 [ext_resource type="Script" uid="uid://bl7w5sjho2ue7" path="res://Scripts/main_menu.gd" id="1_1ehe0"]
-[ext_resource type="Texture2D" uid="uid://bf4e1htefbpj1" path="res://concept/ConceptArt1.png" id="1_48xlc"]
-[ext_resource type="FontFile" uid="uid://dnc68q4frrr3t" path="res://Assets/Fonts/Agbalumo-Regular.ttf" id="2_1ehe0"]
+[ext_resource type="FontFile" uid="uid://dac1ectubqowc" path="res://Assets/Fonts/Agbalumo-Regular.ttf" id="2_1ehe0"]
+[ext_resource type="AudioStream" uid="uid://n7xu0ati4tmg" path="res://Music/Witchy Main Menu.mp3" id="4_ce3w2"]
+[ext_resource type="Texture2D" uid="uid://b6li3i5vnf6lf" path="res://Assets/UI/S_TitleScreen.png" id="4_n45e2"]
+[ext_resource type="Texture2D" uid="uid://b0yfkv30wiw4o" path="res://Assets/UI/S_StartButton.png" id="4_opfnp"]
+[ext_resource type="Texture2D" uid="uid://d10ghxyk6m7r0" path="res://Assets/UI/S_StartButtonSelected.png" id="5_opfnp"]
+[ext_resource type="Texture2D" uid="uid://dr7578yfc7ojc" path="res://Assets/UI/S_LoadButton.png" id="6_cp0ys"]
+[ext_resource type="Texture2D" uid="uid://bbcs2e4lav47p" path="res://Assets/UI/S_LoadButtonSelected.png" id="7_yhxw7"]
+[ext_resource type="Texture2D" uid="uid://cttt37p0xiy6q" path="res://Assets/UI/S_OptionsButton.png" id="8_trj04"]
+[ext_resource type="Texture2D" uid="uid://dgu13ri2k15j1" path="res://Assets/UI/S_OptionsButtonSelected.png" id="9_16hvj"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ehe0"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0, 0, 0, 0.6)
-corner_radius_top_right = 300
-corner_radius_bottom_left = 300
-corner_detail = 5
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cp0ys"]
+texture = ExtResource("4_opfnp")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ce3w2"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0, 0, 0, 0.6)
-corner_radius_top_right = 300
-corner_radius_bottom_left = 300
-corner_detail = 5
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yhxw7"]
+texture = ExtResource("5_opfnp")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n45e2"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.41215247, 0.41215247, 0.41215247, 0.6)
-corner_radius_top_right = 300
-corner_radius_bottom_left = 300
-corner_detail = 5
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_opfnp"]
+texture = ExtResource("5_opfnp")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_opfnp"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.1, 0.1, 0.1, 0.3)
-corner_radius_top_left = 3
-corner_radius_top_right = 300
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 300
-corner_detail = 5
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_trj04"]
+texture = ExtResource("5_opfnp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_16hvj"]
+texture = ExtResource("6_cp0ys")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5egv6"]
+texture = ExtResource("7_yhxw7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t1dhk"]
+texture = ExtResource("7_yhxw7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vr1f0"]
+texture = ExtResource("6_cp0ys")
+modulate_color = Color(1, 1, 1, 0.49803922)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vtepg"]
+texture = ExtResource("7_yhxw7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8dnnj"]
+texture = ExtResource("8_trj04")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m3bi6"]
+texture = ExtResource("9_16hvj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wyh8j"]
+texture = ExtResource("9_16hvj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ujyyl"]
+texture = ExtResource("9_16hvj")
 
 [sub_resource type="LabelSettings" id="LabelSettings_ce3w2"]
 font = ExtResource("2_1ehe0")
@@ -59,83 +64,107 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 2
 script = ExtResource("1_1ehe0")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1928753674]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1214223499]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.3768744, 0.19815534, 0.416718, 1)
+texture = ExtResource("4_n45e2")
+expand_mode = 2
 
-[node name="ConceptArt1" type="Sprite2D" parent="." unique_id=455375794]
-position = Vector2(1682, 728)
-texture = ExtResource("1_48xlc")
-
-[node name="NewGameButton" type="Button" parent="." unique_id=1669515135]
+[node name="NewGameButton" type="Button" parent="." unique_id=64120243]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 173.0
-offset_top = -475.0
-offset_right = 439.0
-offset_bottom = -356.0
+offset_left = 53.0
+offset_top = -444.0
+offset_right = 2026.0
+offset_bottom = -49.0
 grow_vertical = 0
+scale = Vector2(0.25, 0.25)
+focus_neighbor_left = NodePath("../OptionsButton")
+focus_neighbor_top = NodePath("../OptionsButton")
+focus_neighbor_right = NodePath("../LoadGameButton")
+focus_neighbor_bottom = NodePath("../LoadGameButton")
+focus_next = NodePath("../LoadGameButton")
+focus_previous = NodePath("../OptionsButton")
 theme_override_fonts/font = ExtResource("2_1ehe0")
 theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_1ehe0")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_ce3w2")
-theme_override_styles/hover = SubResource("StyleBoxFlat_n45e2")
-text = "New Game"
+theme_override_styles/normal = SubResource("StyleBoxTexture_cp0ys")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yhxw7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_opfnp")
+theme_override_styles/focus = SubResource("StyleBoxTexture_trj04")
 
 [node name="LoadGameButton" type="Button" parent="." unique_id=1574073510]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 173.0
-offset_top = -340.0
-offset_right = 439.0
-offset_bottom = -221.0
+offset_left = 53.0
+offset_top = -327.0
+offset_right = 2026.0
+offset_bottom = 68.0
 grow_vertical = 0
+scale = Vector2(0.25, 0.25)
+focus_neighbor_left = NodePath("../NewGameButton")
+focus_neighbor_top = NodePath("../NewGameButton")
+focus_neighbor_right = NodePath("../OptionsButton")
+focus_neighbor_bottom = NodePath("../OptionsButton")
+focus_next = NodePath("../OptionsButton")
+focus_previous = NodePath("../NewGameButton")
+focus_mode = 0
 theme_override_fonts/font = ExtResource("2_1ehe0")
 theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_1ehe0")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_ce3w2")
-theme_override_styles/hover = SubResource("StyleBoxFlat_n45e2")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_opfnp")
+theme_override_styles/normal = SubResource("StyleBoxTexture_16hvj")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5egv6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_t1dhk")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_vr1f0")
+theme_override_styles/focus = SubResource("StyleBoxTexture_vtepg")
 disabled = true
-text = "Load Game"
 
 [node name="OptionsButton" type="Button" parent="." unique_id=939672740]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 173.0
-offset_top = -208.0
-offset_right = 439.0
-offset_bottom = -89.0
+offset_left = 53.0
+offset_top = -214.0
+offset_right = 2026.0
+offset_bottom = 181.0
 grow_vertical = 0
+scale = Vector2(0.25, 0.25)
+focus_neighbor_left = NodePath("../LoadGameButton")
+focus_neighbor_top = NodePath("../LoadGameButton")
+focus_neighbor_right = NodePath("../NewGameButton")
+focus_neighbor_bottom = NodePath("../NewGameButton")
+focus_next = NodePath("../NewGameButton")
+focus_previous = NodePath("../LoadGameButton")
 theme_override_fonts/font = ExtResource("2_1ehe0")
 theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_1ehe0")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_ce3w2")
-theme_override_styles/hover = SubResource("StyleBoxFlat_n45e2")
-text = "Options"
+theme_override_styles/normal = SubResource("StyleBoxTexture_8dnnj")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_m3bi6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_wyh8j")
+theme_override_styles/focus = SubResource("StyleBoxTexture_ujyyl")
 
 [node name="Label" type="Label" parent="." unique_id=1133811338]
 layout_mode = 0
+offset_top = 33.0
 offset_right = 602.0
 offset_bottom = 200.0
-text = "WIP TITLES:
-BACKFIRED
-Witch's Field Trip"
+text = "Fireba-Boom"
 label_settings = SubResource("LabelSettings_ce3w2")
 horizontal_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=849025680]
+stream = ExtResource("4_ce3w2")
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="NewGameButton" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="LoadGameButton" to="." method="_on_load_game_button_pressed"]
