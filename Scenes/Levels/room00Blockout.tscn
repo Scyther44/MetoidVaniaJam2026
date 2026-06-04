@@ -6,6 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://c1hnw7c0njbjt" path="res://Scenes/levelbuilding/2x_1x_2_ramp.tscn" id="4_us87k"]
 [ext_resource type="PackedScene" uid="uid://dbtaeib0hfs7l" path="res://Scenes/levelbuilding/1x1x2levelblock.tscn" id="5_1ixpn"]
 [ext_resource type="Texture2D" uid="uid://dxnknyikpg83f" path="res://Assets/icon.svg" id="6_0rmc2"]
+[ext_resource type="PackedScene" uid="uid://dwdjr2jyq5y2r" path="res://m_test_enviroment_v_2.tscn" id="7_7dc00"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7dc00"]
+size = Vector3(114, 1, 3)
 
 [node name="Room" type="Node3D" unique_id=1846010636]
 
@@ -253,9 +257,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53, 0, 0)
 
 [node name="2x1x2levelblock221" parent="." unique_id=1455603260 instance=ExtResource("2_7iqx5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55, 0, 0)
-
-[node name="2x1x2levelblock222" parent="." unique_id=1897689435 instance=ExtResource("2_7iqx5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57, 0, 0)
 
 [node name="2x1x2levelblock62" parent="." unique_id=1456575785 instance=ExtResource("2_7iqx5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41, 2, 0)
@@ -847,6 +848,15 @@ font_size = 200
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.2, -9.2, 1.0999999)
 text = "enemy"
 font_size = 200
+
+[node name="M_TestEnviromentV2" parent="." unique_id=824857799 instance=ExtResource("7_7dc00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="M_TestEnviromentV2" unique_id=1682873675]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="M_TestEnviromentV2/StaticBody3D" unique_id=834158463]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, -0.5, 0)
+shape = SubResource("BoxShape3D_7dc00")
 
 [editable path="Checkpoint"]
 [editable path="Checkpoint/M_CampfireV1"]

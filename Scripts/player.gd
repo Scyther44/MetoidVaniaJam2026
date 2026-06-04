@@ -31,6 +31,7 @@ var is_facing_left = false
 var current_ladder = null
 var can_down_attack = true
 var camera_tween : Tween
+var is_dead = false
 
 @onready var visuals = $visuals
 @onready var animation_player = $AnimationPlayer
@@ -473,11 +474,11 @@ func take_damage(amount):
 
 	print("Health:", health)
 
-	if health <= 0:
+	if health <= 0 and !is_dead:
+		is_dead = true
 		die()
 		
 func die():
-
 	SaveManager.load_checkpoint()
 
 func _on_climb_detector_area_area_entered(area: Area3D) -> void:

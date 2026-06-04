@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dufd5717nxgf7" path="res://Assets/S_BackgroundTrees.1.png" id="4_3pmg2"]
 [ext_resource type="Texture2D" uid="uid://b8478rhfj85or" path="res://Assets/S_BackgroundTreesAlt1.png" id="5_1kpqf"]
 [ext_resource type="PackedScene" uid="uid://weqppal7abxu" path="res://Scenes/Levels/room00Blockout.tscn" id="6_ur3n5"]
+[ext_resource type="PackedScene" uid="uid://b57vqcptrtjyk" path="res://Scenes/pause_menu.tscn" id="7_vegga"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8o7oj"]
 sky_top_color = Color(0.03163817, 0, 0.89537793, 1)
@@ -22,7 +23,6 @@ background_mode = 2
 sky = SubResource("Sky_00tp4")
 ambient_light_color = Color(0, 0.124055676, 0.99998647, 1)
 glow_enabled = true
-fog_enabled = true
 fog_mode = 1
 fog_light_color = Color(0.3213423, 0.053586006, 0.60373664, 1)
 fog_light_energy = 0.25
@@ -103,7 +103,10 @@ transform = Transform3D(0.24999997, 0.25881907, -0.9330127, -0.066987306, 0.9659
 light_color = Color(0, 0.89443463, 0.8944345, 1)
 light_energy = 0.25
 
-[node name="Room" parent="." unique_id=1846010636 instance=ExtResource("6_ur3n5")]
+[node name="Room" parent="." unique_id=595571079 instance=ExtResource("6_ur3n5")]
+
+[node name="PauseMenu" parent="." unique_id=1771188108 instance=ExtResource("7_vegga")]
+visible = false
 
 [editable path="Player"]
 [editable path="Player/visuals/M_WitchPlayerV1"]
