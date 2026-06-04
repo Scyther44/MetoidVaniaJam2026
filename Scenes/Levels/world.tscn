@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://b8478rhfj85or" path="res://Assets/S_BackgroundTreesAlt1.png" id="5_1kpqf"]
 [ext_resource type="PackedScene" uid="uid://weqppal7abxu" path="res://Scenes/Levels/room00Blockout.tscn" id="6_ur3n5"]
 [ext_resource type="PackedScene" uid="uid://b57vqcptrtjyk" path="res://Scenes/pause_menu.tscn" id="7_vegga"]
+[ext_resource type="PackedScene" uid="uid://32gt1jch1upu" path="res://Scenes/pickup.tscn" id="8_e366w"]
+[ext_resource type="Texture2D" uid="uid://ftj7s85nbhr0" path="res://Assets/S_HotrodOverallsIcon.png" id="9_1kpqf"]
+[ext_resource type="PackedScene" uid="uid://b3retjpsrvlms" path="res://Scenes/pickuppopup.tscn" id="9_3pmg2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8o7oj"]
 sky_top_color = Color(0.03163817, 0, 0.89537793, 1)
@@ -107,6 +110,16 @@ light_energy = 0.25
 [node name="Room" parent="." unique_id=595571079 instance=ExtResource("6_ur3n5")]
 
 [node name="PauseMenu" parent="." unique_id=1771188108 instance=ExtResource("7_vegga")]
+visible = false
+
+[node name="DownBlastPickup" parent="." unique_id=199145864 instance=ExtResource("8_e366w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2.3, 0)
+pickup_type = 2
+pickup_text = "Hotrod Overalls. Pretty sweet am I right?"
+pickup_title = "Hotrod Overalls"
+pickup_icon = ExtResource("9_1kpqf")
+
+[node name="PickupPopup" parent="." unique_id=149677033 instance=ExtResource("9_3pmg2")]
 visible = false
 
 [editable path="Player"]

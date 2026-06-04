@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b3xskro5mg6ve" path="res://Scenes/m_witch_player_v_1.tscn" id="3_3smsa"]
 [ext_resource type="AnimationLibrary" uid="uid://bhbri7qpewuax" path="res://AnimationLibraries/glbs/AnimPack1.res" id="3_i3pqv"]
 [ext_resource type="AnimationLibrary" uid="uid://ca754sel8f103" path="res://AnimationLibraries/glbs/AnimPack2.glb" id="3_vgqql"]
+[ext_resource type="Material" uid="uid://clt0q6e4o0hlp" path="res://Assets/witchtextureV2.tres" id="4_pu2lt"]
 [ext_resource type="PackedScene" uid="uid://dwhqimnkd06xc" path="res://asset/characters/M_WitchPlayer.glb" id="5_fkybt"]
 [ext_resource type="AnimationLibrary" uid="uid://2fyjgveup2sd" path="res://AnimationLibraries/glbs/jumpanimpack.glb" id="5_x3wgy"]
 [ext_resource type="AnimationLibrary" uid="uid://qucla2nw88ow" path="res://AnimationLibraries/glbs/AnimPack3.glb" id="6_8erm5"]
@@ -206,6 +207,9 @@ bones/20/rotation = Quaternion(-0.13450581, 0.25101078, 0.94138235, 0.18083481)
 bones/21/rotation = Quaternion(0.052182436, 0.9155158, -0.39653292, 0.043238852)
 bones/22/rotation = Quaternion(0.1534841, 0.5738164, -0.80090654, -0.07567117)
 bones/23/rotation = Quaternion(0.008728662, 0.9999318, 0.0027114453, 0.007280127)
+
+[node name="Witch" parent="visuals/M_WitchPlayerV1/Armature_001/GeneralSkeleton" index="0" unique_id=1432374423]
+surface_material_override/0 = ExtResource("4_pu2lt")
 
 [node name="OrthogonalCamera" type="Camera3D" parent="." unique_id=1899174219]
 transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881907, 0, -0.25881907, 0.9659258, 0, 4.5, 4)

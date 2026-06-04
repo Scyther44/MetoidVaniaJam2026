@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://32gt1jch1upu"]
+
+[ext_resource type="Script" uid="uid://hjl2ickclyf0" path="res://Scripts/pickup.gd" id="1_cya6u"]
+[ext_resource type="Texture2D" uid="uid://ftj7s85nbhr0" path="res://Assets/S_HotrodOverallsIcon.png" id="1_v7u4w"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_cya6u"]
+
+[node name="Pickup" type="Area3D" unique_id=199145864]
+script = ExtResource("1_cya6u")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1605462388]
+shape = SubResource("SphereShape3D_cya6u")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=11702431]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+texture = ExtResource("1_v7u4w")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

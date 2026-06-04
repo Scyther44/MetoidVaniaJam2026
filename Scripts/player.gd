@@ -30,6 +30,8 @@ var current_state = State.IDLE
 var is_facing_left = false
 var current_ladder = null
 var can_down_attack = true
+var is_down_attack_unlocked = false
+var is_side_attack_unlocked = true
 var camera_tween : Tween
 var is_dead = false
 var is_afk = false
@@ -90,17 +92,18 @@ func handle_input():
 	if(
 		Input.is_action_just_pressed("accept")
 		and !is_on_floor() 
+		and is_down_attack_unlocked
 		and current_state != State.CLIMB 
 		and can_down_attack
 	):
 		start_down_attack()		
 
 	# Left attack
-	if Input.is_action_just_pressed("attack_left"):
+	if Input.is_action_just_pressed("attack_left") and is_side_attack_unlocked:
 		start_attack(true)
 
 	# Right attack
-	if Input.is_action_just_pressed("attack_right"):
+	if Input.is_action_just_pressed("attack_right") and is_side_attack_unlocked:
 		start_attack(false)
 	
 	# Climb
@@ -511,3 +514,9 @@ func _on_climb_detector_area_area_exited(area: Area3D) -> void:
 func _on_idle_timer_timeout() -> void:
 	if current_state == State.IDLE:
 		is_afk = true
+		
+func unlock_down_blast():
+	is_down_attack_unlocked = true
+	
+func unlock_side_blast():
+	is_side_attack_unlocked = true
