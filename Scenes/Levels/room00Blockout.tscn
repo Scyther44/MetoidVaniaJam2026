@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://582f4j8e66h2" path="res://Scenes/ladder.tscn" id="1_p41kc"]
 [ext_resource type="PackedScene" uid="uid://bmk1tayxw3iun" path="res://Scenes/levelbuilding/2x1x2levelblock.tscn" id="2_7iqx5"]
-[ext_resource type="PackedScene" uid="uid://dyotpar3l50sq" path="res://Scenes/checkpoint.tscn" id="3_y60j2"]
 [ext_resource type="PackedScene" uid="uid://c1hnw7c0njbjt" path="res://Scenes/levelbuilding/2x_1x_2_ramp.tscn" id="4_us87k"]
 [ext_resource type="PackedScene" uid="uid://dbtaeib0hfs7l" path="res://Scenes/levelbuilding/1x1x2levelblock.tscn" id="5_1ixpn"]
 
@@ -403,9 +402,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15, 0)
 [node name="2x1x2levelblock192" parent="." unique_id=1847195820 instance=ExtResource("2_7iqx5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -16, 0)
 
-[node name="2x1x2levelblock215" parent="." unique_id=1711716368 instance=ExtResource("2_7iqx5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -16, 0)
-
 [node name="2x1x2levelblock193" parent="." unique_id=1417925103 instance=ExtResource("2_7iqx5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -17, 0)
 
@@ -724,11 +720,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -1, 0)
 [node name="2x1x2levelblock87" parent="." unique_id=964450251 instance=ExtResource("2_7iqx5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -2, 0)
 
-[node name="Checkpoint" parent="." unique_id=345723494 instance=ExtResource("3_y60j2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-
 [node name="2x1x2Ramp5" parent="." unique_id=215737151 instance=ExtResource("4_us87k")]
 transform = Transform3D(1, 0, -1.7881393e-07, 0, 1, 0, 1.7881393e-07, 0, 1, 6, -8, 0)
+
+[node name="2x1x2Ramp11" parent="." unique_id=2031951558 instance=ExtResource("4_us87k")]
+transform = Transform3D(-1, 0, 9.139116e-08, 0, 1, 0, -9.139116e-08, 0, -1, -2, -16, 0)
+
+[node name="2x1x2Ramp12" parent="." unique_id=349557003 instance=ExtResource("4_us87k")]
+transform = Transform3D(1, 0, -1.7881393e-07, 0, 1, 0, 1.7881393e-07, 0, 1, -4, -14, 0)
 
 [node name="2x1x2Ramp4" parent="." unique_id=718923309 instance=ExtResource("4_us87k")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 28, -2, 0)
@@ -807,7 +806,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5, 2, 0)
 
 [node name="1x1LevelBlock18" parent="." unique_id=1796878184 instance=ExtResource("5_1ixpn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5, 0, 0)
-
-[editable path="Checkpoint"]
-[editable path="Checkpoint/M_CampfireV1"]
-[editable path="Checkpoint/ParticleBonfire"]
