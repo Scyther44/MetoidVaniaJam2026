@@ -15,6 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://c0w0c3jcweemx" path="res://Scenes/Levels/room(-1,0)Blockout.tscn" id="13_c3f2w"]
 [ext_resource type="PackedScene" uid="uid://2pvxeayd4bjh" path="res://Scenes/Levels/room(-1,-1)Blockout.tscn" id="14_dbaar"]
 [ext_resource type="PackedScene" uid="uid://bo1qdikbrkd1j" path="res://Scenes/Levels/room(0,-1)Blockout.tscn" id="15_yf22k"]
+[ext_resource type="PackedScene" uid="uid://dyotpar3l50sq" path="res://Scenes/checkpoint.tscn" id="16_2ciji"]
+[ext_resource type="AudioStream" uid="uid://cuhka32cuc8qx" path="res://Music/Witchy Ps1 Level.mp3" id="17_fuv3b"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8o7oj"]
 sky_top_color = Color(0.03163817, 0, 0.89537793, 1)
@@ -57,7 +59,6 @@ visible = false
 visible = false
 
 [node name="Background" type="Node3D" parent="." unique_id=277019958]
-visible = false
 
 [node name="BackgroundSprite" type="Sprite3D" parent="Background" unique_id=297516947]
 transform = Transform3D(1, -6.857721e-05, 4.264246e-05, 6.857862e-05, 1, -3.3076118e-05, -4.264019e-05, 3.3079043e-05, 1, 0, -100, -750)
@@ -85,6 +86,14 @@ parallax_factor_y = 5.0
 
 [node name="Tree1" type="Sprite3D" parent="Background" unique_id=1912857807]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 331, 111, -512)
+pixel_size = 1.0
+alpha_cut = 1
+texture = ExtResource("4_3pmg2")
+script = ExtResource("3_e366w")
+parallax_factor_y = 5.0
+
+[node name="Tree4" type="Sprite3D" parent="Background" unique_id=1374300141]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 70, -212, -217)
 pixel_size = 1.0
 alpha_cut = 1
 texture = ExtResource("4_3pmg2")
@@ -119,18 +128,36 @@ transform = Transform3D(0.24999997, 0.25881907, -0.9330127, -0.066987306, 0.9659
 light_color = Color(0, 0.89443463, 0.8944345, 1)
 light_energy = 0.25
 
-[node name="Room" parent="." unique_id=595571079 instance=ExtResource("6_ur3n5")]
+[node name="Checkpoints" type="Node3D" parent="." unique_id=935121362]
 
-[node name="Room2" parent="." unique_id=1846010636 instance=ExtResource("13_c3f2w")]
+[node name="Checkpoint" parent="Checkpoints" unique_id=345723494 instance=ExtResource("16_2ciji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Checkpoint2" parent="Checkpoints" unique_id=632318851 instance=ExtResource("16_2ciji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -152, -1, 0)
+
+[node name="Checkpoint3" parent="Checkpoints" unique_id=603136519 instance=ExtResource("16_2ciji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -206, -21, 0)
+
+[node name="Checkpoint4" parent="Checkpoints" unique_id=1677788105 instance=ExtResource("16_2ciji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65, -21, 0)
+
+[node name="Rooms" type="Node3D" parent="." unique_id=1151139882]
+
+[node name="Room" parent="Rooms" unique_id=595571079 instance=ExtResource("6_ur3n5")]
+
+[node name="Room2" parent="Rooms" unique_id=1846010636 instance=ExtResource("13_c3f2w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -131, 0, 0)
 
-[node name="Room3" parent="." unique_id=204135765 instance=ExtResource("14_dbaar")]
+[node name="Room3" parent="Rooms" unique_id=204135765 instance=ExtResource("14_dbaar")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -131, -19, 0)
 
-[node name="Room4" parent="." unique_id=470841938 instance=ExtResource("15_yf22k")]
+[node name="Room4" parent="Rooms" unique_id=470841938 instance=ExtResource("15_yf22k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -20, 0)
 
-[node name="DownBlastPickup" parent="." unique_id=199145864 instance=ExtResource("8_e366w")]
+[node name="Pickups" type="Node3D" parent="." unique_id=536456443]
+
+[node name="DownBlastPickup" parent="Pickups" unique_id=199145864 instance=ExtResource("8_e366w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -229, 3.3000002, 0)
 pickup_type = 2
 pickup_text = "Hotrod Overalls. Pretty sweet am I right?"
@@ -138,7 +165,7 @@ pickup_title = "Hotrod Overalls"
 pickup_icon = ExtResource("9_1kpqf")
 pickup_id = "down_blast"
 
-[node name="SideBlastPickup2" parent="." unique_id=1639860883 instance=ExtResource("8_e366w")]
+[node name="SideBlastPickup" parent="Pickups" unique_id=1639860883 instance=ExtResource("8_e366w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -215, -19.7, 0)
 pickup_type = 3
 pickup_text = "Unlocks side blast attack."
@@ -146,7 +173,7 @@ pickup_title = "Magic Catalyst"
 pickup_icon = ExtResource("10_5i7js")
 pickup_id = "side_blast"
 
-[node name="HealthPickup3" parent="." unique_id=1994411149 instance=ExtResource("8_e366w")]
+[node name="HealthPickup" parent="Pickups" unique_id=1994411149 instance=ExtResource("8_e366w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1.3, 0)
 pickup_type = 1
 pickup_text = "Increases your health by 1.
@@ -155,10 +182,15 @@ pickup_title = "Health POTION"
 pickup_icon = ExtResource("10_ur3n5")
 pickup_id = "heath_pickup1"
 
-[node name="Sprite3D" parent="HealthPickup3" index="1" unique_id=11702431]
+[node name="Sprite3D" parent="Pickups/HealthPickup" index="1" unique_id=11702431]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 texture = ExtResource("10_ur3n5")
 
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=642194100]
+stream = ExtResource("17_fuv3b")
+autoplay = true
+bus = &"Music"
+
 [editable path="Player"]
 [editable path="Player/visuals/M_WitchPlayerV1"]
-[editable path="HealthPickup3"]
+[editable path="Pickups/HealthPickup"]

@@ -271,19 +271,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.6, 12, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.6, 11, 0)
 
 [node name="Ladder" parent="." unique_id=1076454426 instance=ExtResource("1_008ja")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 13, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 13, 0.19999999)
 
 [node name="Ladder2" parent="." unique_id=895300483 instance=ExtResource("1_008ja")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 11, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 11, 0.19999999)
 
 [node name="Ladder3" parent="." unique_id=1913557817 instance=ExtResource("1_008ja")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 9, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 9, 0.19999999)
 
 [node name="Ladder4" parent="." unique_id=1225389084 instance=ExtResource("1_008ja")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 7, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 7, 0.19999999)
 
 [node name="Ladder5" parent="." unique_id=574582425 instance=ExtResource("1_008ja")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 5, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 5, 0.19999999)
 
 [node name="2x1x2Ramp2" parent="." unique_id=1527165638 instance=ExtResource("4_hy4so")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2, 0)
