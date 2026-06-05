@@ -27,6 +27,7 @@ buses/default_bus_layout="uid://ostn6ea307ci"
 [autoload]
 
 SaveManager="*uid://cfc4xsid8s6tp"
+Settings="*uid://bb0xswk0cga4u"
 
 [display]
 

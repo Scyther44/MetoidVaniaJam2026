@@ -5,6 +5,9 @@ extends Control
 @onready var options_button = $OptionsButton
 
 const NEW_GAME_SCENE = preload("res://Scenes/Levels/world.tscn")
+const OPTIONS_MENU = preload(
+	"res://Scenes/options_menu.tscn"
+)
 var using_controller := true
 
 func _ready() -> void:
@@ -78,7 +81,9 @@ func _on_load_game_button_pressed() -> void:
 	SaveManager.load_checkpoint()
 
 func _on_options_button_pressed() -> void:
-	pass
+	var options = OPTIONS_MENU.instantiate()
+	options.return_focus = get_viewport().gui_get_focus_owner()
+	add_child(options)
 	
 func _input(event):
 	if event is InputEventMouseMotion:

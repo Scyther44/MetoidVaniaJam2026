@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://6uskc57k6av4"]
+
+[ext_resource type="Script" uid="uid://dgokmu457ip7a" path="res://Scripts/options_menu.gd" id="1_plplt"]
+[ext_resource type="AudioStream" uid="uid://bhwbaqoehn3wq" path="res://Sound/Fire 5.mp3" id="2_uj0ok"]
+
+[node name="OptionsMenu" type="Control" unique_id=2136692607]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 290.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_plplt")
+
+[node name="Panel" type="Panel" parent="." unique_id=429865451]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.147
+anchor_top = 0.19900002
+anchor_right = 0.611
+anchor_bottom = 0.808
+offset_left = 0.47000122
+offset_top = -0.28001404
+offset_right = 0.10998535
+offset_bottom = 0.23999023
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MusicSlider" type="HSlider" parent="Panel" unique_id=156726109]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -170.5
+offset_top = 104.0
+offset_right = 170.5
+offset_bottom = 120.0
+grow_horizontal = 2
+focus_neighbor_left = NodePath("../BackButton")
+focus_neighbor_top = NodePath("../BackButton")
+focus_neighbor_right = NodePath("../SFXSlider")
+focus_neighbor_bottom = NodePath("../SFXSlider")
+focus_next = NodePath("../SFXSlider")
+focus_previous = NodePath("../BackButton")
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="Music" type="Label" parent="Panel/MusicSlider" unique_id=1598733473]
+layout_mode = 0
+offset_top = -22.0
+offset_right = 316.0
+offset_bottom = 1.0
+text = "Music:"
+
+[node name="SFXSlider" type="HSlider" parent="Panel" unique_id=1381334841]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -170.5
+offset_top = 199.0
+offset_right = 170.5
+offset_bottom = 215.0
+grow_horizontal = 2
+focus_neighbor_left = NodePath("../MusicSlider")
+focus_neighbor_top = NodePath("../MusicSlider")
+focus_neighbor_right = NodePath("../BackButton")
+focus_neighbor_bottom = NodePath("../BackButton")
+focus_next = NodePath("../BackButton")
+focus_previous = NodePath("../MusicSlider")
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="Label" type="Label" parent="Panel/SFXSlider" unique_id=1827266626]
+layout_mode = 0
+offset_top = -24.0
+offset_right = 196.0
+offset_bottom = -1.0
+text = "SFX:"
+
+[node name="SFXSound" type="AudioStreamPlayer" parent="Panel/SFXSlider" unique_id=2074963884]
+stream = ExtResource("2_uj0ok")
+bus = &"SFX"
+
+[node name="BackButton" type="Button" parent="Panel" unique_id=1954400603]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -225.0
+offset_top = -140.0
+offset_right = 225.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_neighbor_left = NodePath("../SFXSlider")
+focus_neighbor_top = NodePath("../SFXSlider")
+focus_neighbor_right = NodePath("../MusicSlider")
+focus_neighbor_bottom = NodePath("../MusicSlider")
+focus_next = NodePath("../MusicSlider")
+focus_previous = NodePath("../SFXSlider")
+text = "BACK"
+
+[connection signal="value_changed" from="Panel/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="Panel/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="Panel/BackButton" to="." method="_on_back_button_pressed"]
