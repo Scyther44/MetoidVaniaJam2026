@@ -241,6 +241,7 @@ debug_color = Color(0, 0.6, 0.23529412, 0.07058824)
 libraries/ = SubResource("AnimationLibrary_ukyrk")
 
 [node name="IdleTimer" type="Timer" parent="." unique_id=1388247310]
+wait_time = 30.0
 one_shot = true
 
 [connection signal="area_entered" from="RHitBoxArea3D" to="." method="_on_hit_box_area_3d_area_entered"]

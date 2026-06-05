@@ -5,9 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dyotpar3l50sq" path="res://Scenes/checkpoint.tscn" id="3_43g6g"]
 [ext_resource type="PackedScene" uid="uid://c1hnw7c0njbjt" path="res://Scenes/levelbuilding/2x_1x_2_ramp.tscn" id="4_hy4so"]
 [ext_resource type="PackedScene" uid="uid://dbtaeib0hfs7l" path="res://Scenes/levelbuilding/1x1x2levelblock.tscn" id="5_7qxm5"]
-[ext_resource type="PackedScene" uid="uid://2hfjj034svw7" path="res://Scenes/player.tscn" id="7_r7mky"]
 [ext_resource type="PackedScene" uid="uid://dimq4twyqegsa" path="res://Scenes/GhostChaseEnemySmall.tscn" id="8_43g6g"]
-[ext_resource type="Texture2D" uid="uid://ftj7s85nbhr0" path="res://Assets/S_HotrodOverallsIcon.png" id="8_hy4so"]
 
 [node name="Room" type="Node3D" unique_id=1846010636]
 
@@ -662,30 +660,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.500004, 1, 0)
 [node name="1x1LevelBlock32" parent="." unique_id=1475789918 instance=ExtResource("5_7qxm5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.500004, 1, 0)
 
-[node name="Label3D" type="Label3D" parent="." unique_id=2000033156]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74.8, -1.1999998, 1.0999999)
-pixel_size = 0.01
-text = "Exit room Below Here"
-font_size = 200
-
-[node name="Label3D3" type="Label3D" parent="." unique_id=51326062]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.2, 8.8, 1.0999999)
-pixel_size = 0.01
-text = "Exit room right Here"
-font_size = 200
-
-[node name="Label3D4" type="Label3D" parent="." unique_id=1296297241]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72.8, 8.8, 1.0999999)
-pixel_size = 0.01
-text = "Broken Bridge?"
-font_size = 200
-
-[node name="Label3D6" type="Label3D" parent="." unique_id=705511792]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.800003, 8.8, 1.0999999)
-pixel_size = 0.01
-text = "Broken Bridge"
-font_size = 200
-
 [node name="Label3D5" type="Label3D" parent="." unique_id=1077299101]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.2, -3.1999998, 1.0999999)
 text = "enemy"
@@ -754,15 +728,8 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 56, 
 [node name="2x1x2Ramp22" parent="." unique_id=12616908 instance=ExtResource("4_hy4so")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 54, -4, 0)
 
-[node name="Player" parent="." unique_id=775848779 instance=ExtResource("7_r7mky")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71, 11, 0)
-
 [node name="GhostChaseEnemySmall" parent="." unique_id=881452545 instance=ExtResource("8_43g6g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, -3, 1)
 
 [node name="GhostChaseEnemySmall2" parent="." unique_id=1219710810 instance=ExtResource("8_43g6g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, -3, 1)
-
-[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1119971423]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -95, 6, 0)
-texture = ExtResource("8_hy4so")

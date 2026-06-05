@@ -444,6 +444,12 @@ func change_state(new_state):
 	if current_state == new_state:
 		return
 
+	# Exit kneel
+	if current_state == State.Kneel:
+		move_camera(CAMERA_NORMAL)
+
+	current_state = new_state
+	
 	if current_state == State.IDLE:
 		print("starting idle time")
 		idle_timer.start()
@@ -451,12 +457,6 @@ func change_state(new_state):
 		print("Stopping timer")
 		idle_timer.stop()
 		is_afk = false
-
-	# Exit kneel
-	if current_state == State.Kneel:
-		move_camera(CAMERA_NORMAL)
-
-	current_state = new_state
 
 	# Enter kneel
 	if current_state == State.Kneel:
