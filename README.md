@@ -11,18 +11,24 @@ The core mechanic revolves around recoil-based magic attacks that double as move
 ---
 
 # TODO
-- Create basic player hud
-- Implement game over screen or scenario (maybe just respawn player)
-- Build levels Fine tune camera and lighting
+- Implement fade to black on player death + death animation
+- Build levels 
+- Fine tune camera and lighting
 - Implement room changing feature (to switch between rooms)
 - Implement dialog/tutorial
 - Implement pick up item system
 - Implement boss fight
-- Add Music
 - Add sound
-- Implement Game Options (sound, display)
 
 # Done: 
+- Implement pick up item system / power ups
+- Clean up input map and add controller support 
+- Import new ghost mesh into game
+- Add ladders for vertical climbing
+- Implement Game Options (sound, display)
+- Add a second movement ability (downblast that propels upward)
+- Add Music (setup audio bus)
+- Create basic player hud
 - Implement player health system and enemy damage
 - Setup a save feature (Also load game button)
 - Improve explosions particle effect
@@ -40,8 +46,6 @@ The core mechanic revolves around recoil-based magic attacks that double as move
 - Implement second enemy (grounded)
 - Add second level Implement second boss fight
 - Add polish to level design (improve environment and visuals)
-- Add ladders for vertical climbing
-- Add a second movement ability (downblast that propels upward?)
 - Add secret areas (breakable/passthrough walls)
 - Add locked doors that require keys
 - Add lore related pickup items
