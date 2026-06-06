@@ -168,7 +168,7 @@ pickup_icon = ExtResource("9_1kpqf")
 pickup_id = "down_blast"
 
 [node name="SideBlastPickup" parent="Pickups" unique_id=1639860883 instance=ExtResource("8_e366w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -215, -19.7, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 3.2999992, 0)
 pickup_type = 3
 pickup_text = "Unlocks side blast attack."
 pickup_title = "Magic Catalyst"

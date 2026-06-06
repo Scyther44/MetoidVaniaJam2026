@@ -93,6 +93,7 @@ func handle_input():
 	if Input.is_action_just_pressed("accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		change_state(State.JUMP)
+		$Jump.play()
 	
 	# Down Attack
 	if(
@@ -185,7 +186,6 @@ func state_idle(delta):
 func state_run(delta):
 
 	play_anim("Animpack5/run2")
-
 	var direction = Input.get_axis("left", "right")
 
 	if direction == 0:
@@ -286,7 +286,6 @@ func state_climb(_delta):
 
 		velocity.y = JUMP_VELOCITY
 		#velocity.x = 4
-
 		change_state(State.JUMP)
 
 		return
@@ -368,7 +367,7 @@ func start_attack(left_attack):
 		return
 
 	change_state(State.ATTACK)
-
+	#$Attack1.play(0.14)
 	play_anim("AnimPack1/attack", 4)
 
 	if left_attack:
@@ -495,7 +494,7 @@ func _on_hit_box_area_3d_area_entered(body):
 func take_damage(amount):
 
 	health -= amount
-
+	
 	print("Health:", health)
 
 	if health <= 0 and !is_dead:
