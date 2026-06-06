@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d3capndqr20it"]
 
 [ext_resource type="PackedScene" uid="uid://2hfjj034svw7" path="res://Scenes/player.tscn" id="1_03d5g"]
+[ext_resource type="Script" uid="uid://b8ecnh2igpgc0" path="res://Scenes/Levels/darkness_with_time.gd" id="1_8e5no"]
 [ext_resource type="Texture2D" uid="uid://cc438hbhl8quw" path="res://Assets/S_BackgroundMountain.1.png" id="2_vegga"]
 [ext_resource type="Script" uid="uid://7diqges23slf" path="res://Scripts/background_sprite_parallax.gd" id="3_e366w"]
 [ext_resource type="Texture2D" uid="uid://dufd5717nxgf7" path="res://Assets/S_BackgroundTrees.1.png" id="4_3pmg2"]
@@ -48,6 +49,7 @@ fog_depth_end = 5.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=968529315]
 environment = SubResource("Environment_ws78m")
+script = ExtResource("1_8e5no")
 
 [node name="Player" parent="." unique_id=775848779 instance=ExtResource("1_03d5g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.403576, 0)
