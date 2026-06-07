@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://6uskc57k6av4"]
 
 [ext_resource type="Script" uid="uid://dgokmu457ip7a" path="res://Scripts/options_menu.gd" id="1_plplt"]
-[ext_resource type="AudioStream" uid="uid://bhwbaqoehn3wq" path="res://Sound/Fire 5.mp3" id="2_uj0ok"]
+[ext_resource type="AudioStream" uid="uid://ixb1n4cplsdd" path="res://Sound/Fire 5.mp3" id="2_uj0ok"]
 
 [node name="OptionsMenu" type="Control" unique_id=2136692607]
 layout_mode = 3
