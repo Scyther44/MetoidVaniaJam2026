@@ -3,14 +3,14 @@
 [ext_resource type="Script" uid="uid://b76lvtawi056b" path="res://Scripts/player.gd" id="1_i3pqv"]
 [ext_resource type="PackedScene" uid="uid://b3xskro5mg6ve" path="res://Scenes/m_witch_player_v_1.tscn" id="3_3smsa"]
 [ext_resource type="AnimationLibrary" uid="uid://bhbri7qpewuax" path="res://AnimationLibraries/glbs/AnimPack1.res" id="3_i3pqv"]
-[ext_resource type="AnimationLibrary" uid="uid://ca754sel8f103" path="res://AnimationLibraries/glbs/AnimPack2.glb" id="3_vgqql"]
+[ext_resource type="AnimationLibrary" uid="uid://dtc4fs0i6rlo4" path="res://AnimationLibraries/glbs/AnimPack2.glb" id="3_vgqql"]
 [ext_resource type="Material" uid="uid://clt0q6e4o0hlp" path="res://Assets/witchtextureV2.tres" id="4_pu2lt"]
-[ext_resource type="PackedScene" uid="uid://dwhqimnkd06xc" path="res://asset/characters/M_WitchPlayer.glb" id="5_fkybt"]
+[ext_resource type="PackedScene" uid="uid://bjik1ss8kuq3" path="res://asset/characters/M_WitchPlayer.glb" id="5_fkybt"]
 [ext_resource type="AnimationLibrary" uid="uid://2fyjgveup2sd" path="res://AnimationLibraries/glbs/jumpanimpack.glb" id="5_x3wgy"]
 [ext_resource type="AnimationLibrary" uid="uid://qucla2nw88ow" path="res://AnimationLibraries/glbs/AnimPack3.glb" id="6_8erm5"]
 [ext_resource type="PackedScene" uid="uid://cecc8p51wi57p" path="res://Scenes/player_hud.tscn" id="6_x3wgy"]
 [ext_resource type="AnimationLibrary" uid="uid://cpvkfwjdmalhq" path="res://AnimationLibraries/glbs/AnimPack4.glb" id="7_f1ek2"]
-[ext_resource type="AnimationLibrary" uid="uid://blnjkf30qepwu" path="res://AnimationLibraries/glbs/kneeling.glb" id="10_gymyn"]
+[ext_resource type="AnimationLibrary" uid="uid://cop6uduqljcjl" path="res://AnimationLibraries/glbs/kneeling.glb" id="10_gymyn"]
 [ext_resource type="AudioStream" uid="uid://32trto0gaaaa" path="res://Sound/Step 2.mp3" id="13_7dp3o"]
 [ext_resource type="AudioStream" uid="uid://c1tdijwr28yor" path="res://Sound/Step 1.mp3" id="13_ukyrk"]
 [ext_resource type="AudioStream" uid="uid://dot6w6j5yw5us" path="res://Sound/Fireball Vocal 1.mp3" id="14_7dp3o"]
@@ -2105,7 +2105,7 @@ visible = false
 [node name="M_WitchPlayerV1" parent="visuals" unique_id=318145538 instance=ExtResource("3_3smsa")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 
-[node name="GeneralSkeleton" parent="visuals/M_WitchPlayerV1/Armature_001" parent_id_path=PackedInt32Array(318145538, 1720710880) index="0" unique_id=1557710022]
+[node name="GeneralSkeleton" parent="visuals/M_WitchPlayerV1/Armature_001" parent_id_path=PackedInt32Array(318145538, 1819702842) index="0" unique_id=1131820565]
 bones/0/position = Vector3(-0.01005549, 0.70687497, 0.0058584963)
 bones/0/rotation = Quaternion(-0.005721445, -0.4872671, 0.038637, 0.87237906)
 bones/1/rotation = Quaternion(0.09746013, 0.0033256984, -0.025723666, 0.9949014)
@@ -2130,7 +2130,7 @@ bones/21/rotation = Quaternion(0.052186206, 0.91551757, -0.39652887, 0.04323161)
 bones/22/rotation = Quaternion(0.15350087, 0.5738563, -0.80087507, -0.07566836)
 bones/23/rotation = Quaternion(0.008723528, 0.99993175, 0.0027526028, 0.0072809807)
 
-[node name="Witch" parent="visuals/M_WitchPlayerV1/Armature_001/GeneralSkeleton" index="0" unique_id=1432374423]
+[node name="Witch" parent="visuals/M_WitchPlayerV1/Armature_001/GeneralSkeleton" index="0" unique_id=1310513175]
 surface_material_override/0 = ExtResource("4_pu2lt")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1055735053]
