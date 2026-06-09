@@ -17,6 +17,7 @@ const JUMP_VELOCITY = 6.0
 const ACCELERATION = 10.0
 const FRICTION = 15.0
 
+const INVULN_DURATION := 1.0
 const GROUND_RECOIL = 4.0
 const AIR_RECOIL = 5.0
 const UPWARD_RECOIL = 6.0
@@ -35,6 +36,7 @@ var is_side_attack_unlocked = true
 var camera_tween : Tween
 var is_dead = false
 var is_afk = false
+var invulnerable := false
 
 @onready var visuals = $visuals
 @onready var animation_player = $AnimationPlayer
@@ -498,14 +500,44 @@ func _on_hit_box_area_3d_area_entered(body):
 		
 func take_damage(amount):
 
-	health -= amount
-	
-	print("Health:", health)
+	if invulnerable or is_dead:
+		return
 
-	if health <= 0 and !is_dead:
+	health -= amount
+
+	velocity.y = 2
+
+	if is_facing_left:
+		velocity.x = 4
+	else:
+		velocity.x = -4
+
+	if health <= 0:
 		is_dead = true
 		die()
+		return
+
+	start_invulnerability()
 		
+func start_invulnerability():
+
+	invulnerable = true
+
+	var mesh = $visuals/M_WitchPlayerV1/Armature_001/GeneralSkeleton/Witch
+	var mat = mesh.get_surface_override_material(0)
+
+	for i in range(5):
+
+		mat.albedo_color = Color.RED
+
+		await get_tree().create_timer(0.1).timeout
+
+		mat.albedo_color = Color.WHITE
+
+		await get_tree().create_timer(0.1).timeout
+
+	invulnerable = false
+
 func die():
 	SaveManager.load_checkpoint()
 

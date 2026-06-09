@@ -15,7 +15,7 @@ warnings/check_invalid_track_paths=false
 [application]
 
 config/name="Metroid2.5"
-run/main_scene="uid://d3nvasy1ne06e"
+run/main_scene="uid://da0lwtluhme5w"
 config/features=PackedStringArray("4.6", "Mobile")
 run/max_fps=60
 config/icon="res://Assets/icon.svg"

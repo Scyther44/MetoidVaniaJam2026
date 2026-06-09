@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://brj235favivq3"]
+
+[ext_resource type="Script" uid="uid://dn80a0yb0bdgf" path="res://Scripts/thorns.gd" id="1_syquo"]
+[ext_resource type="Texture2D" uid="uid://b1ma2bhpsiwf6" path="res://Assets/thorns.png" id="1_tw5dt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_syquo"]
+size = Vector3(2, 1, 2)
+
+[node name="Thorns" type="Area3D" unique_id=1993457805]
+script = ExtResource("1_syquo")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=2085208005]
+transform = Transform3D(-1.3113417e-08, -0.3, 0, 0.3, -1.3113417e-08, 0, 0, 0, 0.3, 0, -0.49999997, 1.1)
+texture = ExtResource("1_tw5dt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=327833959]
+shape = SubResource("BoxShape3D_syquo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
