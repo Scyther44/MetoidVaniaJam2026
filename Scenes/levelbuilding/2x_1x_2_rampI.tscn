@@ -1,7 +1,6 @@
-[gd_scene format=3 uid="uid://c1hnw7c0njbjt"]
+[gd_scene format=3 uid="uid://oik06p2x7kur"]
 
-[ext_resource type="PackedScene" uid="uid://dudilea1tb021" path="res://Scenes/m_dirt_ramp_replace.tscn" id="1_5yycu"]
-[ext_resource type="PackedScene" uid="uid://beuf71i3n2aoo" path="res://Scenes/m_dirt_ramp_grass.tscn" id="2_nh3tw"]
+[ext_resource type="PackedScene" uid="uid://teqsuxmlxcx3" path="res://Scenes/m_dirt_ramp.tscn" id="1_4u45n"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_ykrsh"]
 left_to_right = 0.0
@@ -19,8 +18,5 @@ mesh = SubResource("PrismMesh_ykrsh")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1400922543]
 shape = SubResource("ConcavePolygonShape3D_ykrsh")
 
-[node name="M_DirtRampReplace" parent="." unique_id=1620314575 instance=ExtResource("1_5yycu")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
-
-[node name="M_DirtRampGrass" parent="." unique_id=1582075038 instance=ExtResource("2_nh3tw")]
+[node name="M_DirtRamp" parent="." unique_id=65447423 instance=ExtResource("1_4u45n")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)

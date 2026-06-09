@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dudilea1tb021"]
+
+[ext_resource type="PackedScene" uid="uid://ch052rhummf04" path="res://Assets/BuildingBlocks/M_DirtRampReplace.glb" id="1_vwsco"]
+[ext_resource type="Texture2D" uid="uid://d3kkj6c0tbcle" path="res://Assets/BuildingBlocks/T_DirtTile.png" id="2_ebnkv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t1wh2"]
+albedo_texture = ExtResource("2_ebnkv")
+
+[node name="M_DirtRampReplace" unique_id=1620314575 instance=ExtResource("1_vwsco")]
+
+[node name="Ramp" parent="." index="0" unique_id=1256384942]
+surface_material_override/0 = SubResource("StandardMaterial3D_t1wh2")

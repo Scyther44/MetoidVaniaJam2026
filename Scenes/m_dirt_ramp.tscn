@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://teqsuxmlxcx3"]
+
+[ext_resource type="PackedScene" uid="uid://c0v0ni2kfqb0p" path="res://Assets/BuildingBlocks/M_DirtRamp.glb" id="1_6s1u0"]
+[ext_resource type="Texture2D" uid="uid://d3kkj6c0tbcle" path="res://Assets/BuildingBlocks/T_DirtTile.png" id="2_2meup"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u7cno"]
+cull_mode = 2
+albedo_texture = ExtResource("2_2meup")
+
+[node name="M_DirtRamp" unique_id=65447423 instance=ExtResource("1_6s1u0")]
+
+[node name="Ramp" parent="." index="0" unique_id=1221429517]
+surface_material_override/0 = SubResource("StandardMaterial3D_u7cno")

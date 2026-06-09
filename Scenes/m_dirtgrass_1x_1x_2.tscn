@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dgbgnbdjaq1pu"]
+
+[ext_resource type="PackedScene" uid="uid://c0ve6d4cfe1g8" path="res://Assets/BuildingBlocks/M_Dirt1x1x2.glb" id="1_ornky"]
+[ext_resource type="Texture2D" uid="uid://d3kkj6c0tbcle" path="res://Assets/BuildingBlocks/T_DirtTile.png" id="2_20rpk"]
+[ext_resource type="PackedScene" uid="uid://c7f3n3mmbk1em" path="res://Scenes/m_dirt_grass_1x_1x_2.tscn" id="3_20rpk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1xe08"]
+albedo_texture = ExtResource("2_20rpk")
+
+[node name="M_Dirt1x1x2" unique_id=1869463644 instance=ExtResource("1_ornky")]
+
+[node name="MiddlePiece" parent="." index="0" unique_id=1681978077]
+surface_material_override/0 = SubResource("StandardMaterial3D_1xe08")
+
+[node name="M_DirtGrass1x1x2" parent="." index="1" unique_id=588874437 instance=ExtResource("3_20rpk")]

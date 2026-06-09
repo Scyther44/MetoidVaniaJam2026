@@ -367,7 +367,9 @@ func start_attack(left_attack):
 		return
 
 	change_state(State.ATTACK)
-	#$Attack1.play(0.14)
+	print(randi() % 50)
+	if(randi() % 10 == 0): # 1 in 10 chance to play voice line
+		$Attack1.play(0.14)
 	play_anim("AnimPack1/attack", 4)
 
 	if left_attack:
@@ -482,9 +484,12 @@ func move_camera(pos: Vector3):
 	)
 
 func _on_hit_box_area_3d_body_entered(body):
-
 	if body.is_in_group("enemy"):
 		body.take_damage()
+	if body.is_in_group("breakable"):
+		body.break_block()
+	print(body.name)
+	print(body.get_groups())
 
 func _on_hit_box_area_3d_area_entered(body):
 	

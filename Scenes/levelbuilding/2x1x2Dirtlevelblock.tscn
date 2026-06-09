@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c5igmu58oueq6"]
+
+[ext_resource type="PackedScene" uid="uid://nwhji8julmmm" path="res://Scenes/m_dirt_2x_1x_2.tscn" id="1_rkkpe"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ykrsh"]
+size = Vector3(2, 1, 2)
+
+[node name="2x1x2levelblock" type="Node3D" unique_id=178466085]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1332971864]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1343586928]
+shape = SubResource("BoxShape3D_ykrsh")
+
+[node name="M_Dirt2x1x2" parent="." unique_id=74054642 instance=ExtResource("1_rkkpe")]

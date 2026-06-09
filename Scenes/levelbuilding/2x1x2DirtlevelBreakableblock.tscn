@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b1mile8p2hqxy"]
+
+[ext_resource type="PackedScene" uid="uid://nwhji8julmmm" path="res://Scenes/m_dirt_2x_1x_2.tscn" id="1_00b6p"]
+[ext_resource type="Script" uid="uid://v14rqnh73ytk" path="res://Scripts/breakableblock.gd" id="1_nggy1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ykrsh"]
+size = Vector3(2, 1, 2)
+
+[node name="2x1x2levelbreakblock" type="StaticBody3D" unique_id=1332971864 groups=["breakable"]]
+script = ExtResource("1_nggy1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1343586928]
+shape = SubResource("BoxShape3D_ykrsh")
+
+[node name="M_Dirt2x1x2" parent="." unique_id=74054642 instance=ExtResource("1_00b6p")]

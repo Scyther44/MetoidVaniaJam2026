@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c7f3n3mmbk1em"]
+
+[ext_resource type="PackedScene" uid="uid://diu7rq6ekkdyo" path="res://Assets/BuildingBlocks/M_DirtGrass1x1x2.glb" id="1_myrtp"]
+[ext_resource type="Texture2D" uid="uid://dnyfg7j82s5ie" path="res://Assets/BuildingBlocks/T_Grass.png" id="2_no4e3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2cfgk"]
+transparency = 1
+cull_mode = 2
+albedo_texture = ExtResource("2_no4e3")
+
+[node name="M_DirtGrass1x1x2" unique_id=145898915 instance=ExtResource("1_myrtp")]
+
+[node name="SoloGrass" parent="." index="0" unique_id=1870278164]
+surface_material_override/0 = SubResource("StandardMaterial3D_2cfgk")
