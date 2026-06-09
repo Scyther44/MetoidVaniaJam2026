@@ -572,11 +572,38 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, -2, 0)
 [node name="BreakMe2" parent="Rooms/WorldBlockout" unique_id=1332971864 instance=ExtResource("15_pg3ac")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, -3, 0)
 
+[node name="BreakMe7" parent="Rooms/WorldBlockout" unique_id=438046839 instance=ExtResource("15_pg3ac")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -3, 0)
+
+[node name="BreakMe8" parent="Rooms/WorldBlockout" unique_id=1615340862 instance=ExtResource("15_pg3ac")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -4, 0)
+
+[node name="BreakMe9" parent="Rooms/WorldBlockout" unique_id=1312353640 instance=ExtResource("15_pg3ac")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -2, 0)
+
+[node name="BreakMe10" parent="Rooms/WorldBlockout" unique_id=1320202133 instance=ExtResource("15_pg3ac")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -2, 0)
+
+[node name="BreakMe11" parent="Rooms/WorldBlockout" unique_id=452071335 instance=ExtResource("15_pg3ac")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -3, 0)
+
+[node name="BreakMe12" parent="Rooms/WorldBlockout" unique_id=1404942899 instance=ExtResource("15_pg3ac")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -4, 0)
+
 [node name="BreakMe3" parent="Rooms/WorldBlockout" unique_id=594684739 instance=ExtResource("15_pg3ac")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, -4, 0)
 
 [node name="BreakMe4" parent="Rooms/WorldBlockout" unique_id=689223209 instance=ExtResource("15_pg3ac")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -4, 0)
+
+[node name="BreakMe13" parent="Rooms/WorldBlockout" unique_id=1926197453 instance=ExtResource("15_pg3ac")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -4, 0)
+
+[node name="BreakMe14" parent="Rooms/WorldBlockout" unique_id=1139254714 instance=ExtResource("15_pg3ac")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -3, 0)
+
+[node name="BreakMe15" parent="Rooms/WorldBlockout" unique_id=1166899891 instance=ExtResource("15_pg3ac")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -2, 0)
 
 [node name="BreakMe5" parent="Rooms/WorldBlockout" unique_id=187138771 instance=ExtResource("15_pg3ac")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -3, 0)
@@ -907,7 +934,7 @@ pickup_icon = ExtResource("10_5i7js")
 pickup_id = "side_blast"
 
 [node name="HealthPickup" parent="Pickups" unique_id=1994411149 instance=ExtResource("8_e366w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 2.3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9, -2.7, 0)
 pickup_type = 1
 pickup_text = "Increases your health by 1.
 Learning to make one is the first lesson a witch learns. The second is to always keep one handy!"
@@ -916,7 +943,7 @@ pickup_icon = ExtResource("10_ur3n5")
 pickup_id = "heath_pickup1"
 
 [node name="Sprite3D" parent="Pickups/HealthPickup" index="1" unique_id=11702431]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -1.1920929e-07, 0, 0)
 texture = ExtResource("10_ur3n5")
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=642194100]

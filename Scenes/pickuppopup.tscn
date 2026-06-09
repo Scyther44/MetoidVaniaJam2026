@@ -16,7 +16,6 @@ font = ExtResource("1_3kqi4")
 font_size = 30
 
 [node name="PickupPopup" type="CanvasLayer" unique_id=149677033]
-process_mode = 2
 script = ExtResource("1_5ioeh")
 
 [node name="Panel" type="Panel" parent="." unique_id=1977556041]

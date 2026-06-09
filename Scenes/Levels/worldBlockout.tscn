@@ -15,10 +15,10 @@
 
 [node name="Room00" parent="." unique_id=1846010636 instance=ExtResource("7_io6j4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+visible = false
 
 [node name="Room0,-1" parent="." unique_id=1021770562 instance=ExtResource("2_w2jvc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -131, 0, -5)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -130, 1, -5)
 
 [node name="Room-1,-1" parent="." unique_id=317705126 instance=ExtResource("3_6hsqt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -131, -19, -5)
