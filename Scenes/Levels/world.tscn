@@ -971,7 +971,10 @@ transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -1.1920929e-07, 0, 0)
 texture = ExtResource("10_ur3n5")
 
 [node name="Thorns" parent="Pickups" unique_id=1993457805 instance=ExtResource("20_uhib0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 1.8, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 1.8, 0)
+
+[node name="Thorns2" parent="Pickups" unique_id=1419262366 instance=ExtResource("20_uhib0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 2.8, 0)
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=642194100]
 stream = ExtResource("17_fuv3b")
