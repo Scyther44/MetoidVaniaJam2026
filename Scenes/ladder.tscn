@@ -8,6 +8,7 @@ bottom_radius = 0.1
 albedo_color = Color(1, 0.42745098, 0, 1)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_fnw1j"]
+height = 2.2
 radius = 0.1
 
 [node name="Ladder" type="Area3D" unique_id=1076454426 groups=["climbable"]]

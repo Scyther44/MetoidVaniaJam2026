@@ -8,7 +8,8 @@ enum State {
 	ATTACK,
 	STUMBLE,
 	CLIMB,
-	Kneel #Look down
+	KNEEL, #Look down
+	DEAD
 }
 
 
@@ -29,6 +30,7 @@ var max_health = 3
 var health = max_health
 var current_state = State.IDLE
 var is_facing_left = false
+var ladders := []
 var current_ladder = null
 var can_down_attack = true
 var is_down_attack_unlocked = false
@@ -90,6 +92,8 @@ func apply_gravity(delta):
 
 
 func handle_input():
+	if current_state == State.DEAD:
+		return
 
 	# Jump
 	if Input.is_action_just_pressed("accept") and is_on_floor():
@@ -129,7 +133,7 @@ func handle_input():
 	and Input.is_action_pressed("down")
 	and current_state == State.IDLE
 	):
-		change_state(State.Kneel)
+		change_state(State.KNEEL)
 
 
 func handle_state(delta):
@@ -157,8 +161,11 @@ func handle_state(delta):
 		State.CLIMB:
 			state_climb(delta)
 			
-		State.Kneel:
+		State.KNEEL:
 			state_kneel(delta)
+			
+		State.DEAD:
+			state_dead(delta)
 
 
 func state_idle(delta):
@@ -317,6 +324,11 @@ func state_kneel(delta):
 		change_state(State.FALL)
 		return
 	
+func state_dead(_delta):
+
+	velocity = Vector3.ZERO
+
+	play_anim("Animpack5/sad_idle")
 
 func handle_air_movement(delta):
 
@@ -448,7 +460,7 @@ func change_state(new_state):
 		return
 
 	# Exit kneel
-	if current_state == State.Kneel:
+	if current_state == State.KNEEL:
 		move_camera(CAMERA_NORMAL)
 
 	current_state = new_state
@@ -462,7 +474,7 @@ func change_state(new_state):
 		is_afk = false
 
 	# Enter kneel
-	if current_state == State.Kneel:
+	if current_state == State.KNEEL:
 		move_camera(CAMERA_LOOK_DOWN)
 
 
@@ -539,19 +551,25 @@ func start_invulnerability():
 	invulnerable = false
 
 func die():
+	change_state(State.DEAD)
+	velocity = Vector3.ZERO
+	await $PlayerHud.fade_to_black(3)
 	SaveManager.load_checkpoint()
 
 func _on_climb_detector_area_area_entered(area: Area3D) -> void:
 	
 	if area.is_in_group("climbable"):
 		current_ladder = area
+		ladders.append(area)
 		
-
-
 func _on_climb_detector_area_area_exited(area: Area3D) -> void:
 	
-	if area == current_ladder:
-		current_ladder = null
+	if area.is_in_group("climbable"):
+		ladders.erase(area)
+		if ladders.size() > 0:
+			current_ladder = ladders[0]
+		else:
+			current_ladder = null
 
 
 func _on_idle_timer_timeout() -> void:

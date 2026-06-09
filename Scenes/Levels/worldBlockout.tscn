@@ -45,10 +45,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 1, 0)
 
 [node name="2x1x2levelblock19" parent="Room00New" unique_id=966639962 instance=ExtResource("5_rg6li")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 1, -6)
 
 [node name="2x1x2levelblock20" parent="Room00New" unique_id=1144673965 instance=ExtResource("5_rg6li")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 1, -5)
 
 [node name="2x1x2levelblock76" parent="Room00New" unique_id=41384900 instance=ExtResource("5_rg6li")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 2, 0)
@@ -367,6 +367,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 0, 0)
 
 [node name="2x1x2levelblock117" parent="Room00New" unique_id=995704371 instance=ExtResource("6_miklt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 0)
+
+[node name="2x1x2levelblock240" parent="Room00New" unique_id=256841555 instance=ExtResource("6_miklt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 1, 0)
+
+[node name="2x1x2levelblock241" parent="Room00New" unique_id=756064920 instance=ExtResource("6_miklt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 1, 0)
 
 [node name="2x1x2levelblock122" parent="Room00New" unique_id=1799205673 instance=ExtResource("6_miklt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, 0)
