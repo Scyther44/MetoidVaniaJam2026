@@ -502,7 +502,31 @@ script = ExtResource("3_e366w")
 parallax_factor_y = 5.0
 
 [node name="Tree2" type="Sprite3D" parent="Background" unique_id=278584530]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -1096, 111, -374)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -665, -28, -513)
+pixel_size = 1.0
+alpha_cut = 1
+texture = ExtResource("5_1kpqf")
+script = ExtResource("3_e366w")
+parallax_factor_y = 5.0
+
+[node name="Tree7" type="Sprite3D" parent="Background" unique_id=765618933]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1397, -83, -676)
+pixel_size = 1.0
+alpha_cut = 1
+texture = ExtResource("5_1kpqf")
+script = ExtResource("3_e366w")
+parallax_factor_y = 5.0
+
+[node name="Tree5" type="Sprite3D" parent="Background" unique_id=182938906]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -1112, 53, -706)
+pixel_size = 1.0
+alpha_cut = 1
+texture = ExtResource("5_1kpqf")
+script = ExtResource("3_e366w")
+parallax_factor_y = 5.0
+
+[node name="Tree6" type="Sprite3D" parent="Background" unique_id=194540923]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -1112, -158, -289)
 pixel_size = 1.0
 alpha_cut = 1
 texture = ExtResource("5_1kpqf")

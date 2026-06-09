@@ -3436,6 +3436,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 8, 0)
 [node name="Ladder16" parent="Room-1,-1New" unique_id=565138493 instance=ExtResource("10_fgtg3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 6, 0)
 
+[node name="Ladder18" parent="Room-1,-1New" unique_id=2130884218 instance=ExtResource("10_fgtg3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 107, 13, 0)
+
+[node name="Ladder19" parent="Room-1,-1New" unique_id=50274777 instance=ExtResource("10_fgtg3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 107, 11, 0)
+
+[node name="Ladder20" parent="Room-1,-1New" unique_id=200814883 instance=ExtResource("10_fgtg3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 107, 9, 0)
+
+[node name="Ladder21" parent="Room-1,-1New" unique_id=968779710 instance=ExtResource("10_fgtg3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 107, 7, 0)
+
+[node name="Ladder22" parent="Room-1,-1New" unique_id=929019186 instance=ExtResource("10_fgtg3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 107, 5, 0)
+
 [node name="Ladder17" parent="Room-1,-1New" unique_id=742512439 instance=ExtResource("10_fgtg3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 7, 0)
 
