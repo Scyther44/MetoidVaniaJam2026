@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bhg77s0je2d5i" path="res://Scripts/player_hud.gd" id="1_iori6"]
 [ext_resource type="FontFile" uid="uid://dac1ectubqowc" path="res://Assets/Fonts/Agbalumo-Regular.ttf" id="1_pk5j4"]
+[ext_resource type="Texture2D" uid="uid://oamb2msj68mk" path="res://Assets/UI/Health icon.png" id="3_pkmr8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_iori6"]
 font = ExtResource("1_pk5j4")
@@ -17,8 +18,44 @@ grow_vertical = 2
 script = ExtResource("1_iori6")
 
 [node name="Label" type="Label" parent="." unique_id=674436706]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -364.0
+offset_bottom = 55.0
+grow_horizontal = 0
 text = "Health = [PlaceHolder]"
 label_settings = SubResource("LabelSettings_iori6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=836467251]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 25.0
+offset_right = 188.0
+offset_bottom = 75.0
+
+[node name="Heart1" type="TextureRect" parent="HBoxContainer" unique_id=861582277]
+layout_mode = 2
+texture = ExtResource("3_pkmr8")
+expand_mode = 2
+
+[node name="Heart2" type="TextureRect" parent="HBoxContainer" unique_id=1335688502]
+layout_mode = 2
+texture = ExtResource("3_pkmr8")
+expand_mode = 2
+
+[node name="Heart3" type="TextureRect" parent="HBoxContainer" unique_id=967959706]
+layout_mode = 2
+texture = ExtResource("3_pkmr8")
+expand_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=492145137]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)

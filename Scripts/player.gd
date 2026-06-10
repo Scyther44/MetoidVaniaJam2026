@@ -8,7 +8,8 @@ enum State {
 	ATTACK,
 	STUMBLE,
 	CLIMB,
-	Kneel #Look down
+	KNEEL, #Look down
+	DEAD
 }
 
 
@@ -17,6 +18,7 @@ const JUMP_VELOCITY = 6.0
 const ACCELERATION = 10.0
 const FRICTION = 15.0
 
+const INVULN_DURATION := 1.0
 const GROUND_RECOIL = 4.0
 const AIR_RECOIL = 5.0
 const UPWARD_RECOIL = 6.0
@@ -28,6 +30,7 @@ var max_health = 3
 var health = max_health
 var current_state = State.IDLE
 var is_facing_left = false
+var ladders := []
 var current_ladder = null
 var can_down_attack = true
 var is_down_attack_unlocked = false
@@ -35,6 +38,7 @@ var is_side_attack_unlocked = true
 var camera_tween : Tween
 var is_dead = false
 var is_afk = false
+var invulnerable := false
 
 @onready var visuals = $visuals
 @onready var animation_player = $AnimationPlayer
@@ -44,9 +48,16 @@ var is_afk = false
 @onready var right_hitbox = $RHitBoxArea3D
 @onready var down_hitbox = $DHitBoxArea3D
 @onready var idle_timer = $IdleTimer
+@onready var mesh = $visuals/M_WitchPlayerV1/Armature_001/GeneralSkeleton/Witch
+var mat = StandardMaterial3D
+
 
 const EXPLOSION_SCENE = preload(
 	"res://Scenes/particle_explosion.tscn"
+)
+
+const WITCH_ALT_SKIN_RESOURE = preload(
+	"res://Assets/witchtexturealt.tres"
 )
 
 func _ready() -> void:
@@ -65,6 +76,8 @@ func _ready() -> void:
 
 	is_side_attack_unlocked = SaveManager.has_side_blast
 	is_down_attack_unlocked = SaveManager.has_down_blast
+	
+	mat = mesh.get_surface_override_material(0)
 
 func _physics_process(delta):
 	apply_gravity(delta)
@@ -88,6 +101,8 @@ func apply_gravity(delta):
 
 
 func handle_input():
+	if current_state == State.DEAD:
+		return
 
 	# Jump
 	if Input.is_action_just_pressed("accept") and is_on_floor():
@@ -127,7 +142,7 @@ func handle_input():
 	and Input.is_action_pressed("down")
 	and current_state == State.IDLE
 	):
-		change_state(State.Kneel)
+		change_state(State.KNEEL)
 
 
 func handle_state(delta):
@@ -155,8 +170,11 @@ func handle_state(delta):
 		State.CLIMB:
 			state_climb(delta)
 			
-		State.Kneel:
+		State.KNEEL:
 			state_kneel(delta)
+			
+		State.DEAD:
+			state_dead(delta)
 
 
 func state_idle(delta):
@@ -315,6 +333,11 @@ func state_kneel(delta):
 		change_state(State.FALL)
 		return
 	
+func state_dead(_delta):
+
+	velocity = Vector3.ZERO
+
+	play_anim("Animpack5/sad_idle")
 
 func handle_air_movement(delta):
 
@@ -446,7 +469,7 @@ func change_state(new_state):
 		return
 
 	# Exit kneel
-	if current_state == State.Kneel:
+	if current_state == State.KNEEL:
 		move_camera(CAMERA_NORMAL)
 
 	current_state = new_state
@@ -460,7 +483,7 @@ func change_state(new_state):
 		is_afk = false
 
 	# Enter kneel
-	if current_state == State.Kneel:
+	if current_state == State.KNEEL:
 		move_camera(CAMERA_LOOK_DOWN)
 
 
@@ -498,28 +521,61 @@ func _on_hit_box_area_3d_area_entered(body):
 		
 func take_damage(amount):
 
-	health -= amount
-	
-	print("Health:", health)
+	if invulnerable or is_dead:
+		return
 
-	if health <= 0 and !is_dead:
+	health -= amount
+
+	velocity.y = 2
+
+	if is_facing_left:
+		velocity.x = 4
+	else:
+		velocity.x = -4
+
+	if health <= 0:
 		is_dead = true
 		die()
+		return
+
+	start_invulnerability()
 		
+func start_invulnerability():
+
+	invulnerable = true
+
+	for i in range(5):
+
+		mat.albedo_color = Color.RED
+
+		await get_tree().create_timer(0.1).timeout
+
+		mat.albedo_color = Color.WHITE
+
+		await get_tree().create_timer(0.1).timeout
+
+	invulnerable = false
+
 func die():
+	change_state(State.DEAD)
+	velocity = Vector3.ZERO
+	await $PlayerHud.fade_to_black(3)
 	SaveManager.load_checkpoint()
 
 func _on_climb_detector_area_area_entered(area: Area3D) -> void:
 	
 	if area.is_in_group("climbable"):
 		current_ladder = area
+		ladders.append(area)
 		
-
-
 func _on_climb_detector_area_area_exited(area: Area3D) -> void:
 	
-	if area == current_ladder:
-		current_ladder = null
+	if area.is_in_group("climbable"):
+		ladders.erase(area)
+		if ladders.size() > 0:
+			current_ladder = ladders[0]
+		else:
+			current_ladder = null
 
 
 func _on_idle_timer_timeout() -> void:
@@ -529,6 +585,8 @@ func _on_idle_timer_timeout() -> void:
 		
 func unlock_down_blast():
 	is_down_attack_unlocked = true
-	
+	mesh.set_surface_override_material(0,
+	WITCH_ALT_SKIN_RESOURE)
+			
 func unlock_side_blast():
 	is_side_attack_unlocked = true

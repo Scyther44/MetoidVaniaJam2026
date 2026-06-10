@@ -170,10 +170,10 @@ shape = SubResource("SphereShape3D_x7i3e")
 [node name="M_GhostEnemyRigged2" parent="visuals" unique_id=1742923672 instance=ExtResource("2_oo87m")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 
-[node name="Armature" parent="visuals/M_GhostEnemyRigged2" index="0" unique_id=280206064]
+[node name="Armature" parent="visuals/M_GhostEnemyRigged2" index="0" unique_id=1958099752]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
-[node name="AnimationPlayer" parent="visuals/M_GhostEnemyRigged2" index="1" unique_id=71589769]
+[node name="AnimationPlayer" parent="visuals/M_GhostEnemyRigged2" index="1" unique_id=848850655]
 libraries/ = SubResource("AnimationLibrary_oo87m")
 
 [node name="PlayerHitboxArea3D" type="Area3D" parent="visuals/M_GhostEnemyRigged2" unique_id=56362408]

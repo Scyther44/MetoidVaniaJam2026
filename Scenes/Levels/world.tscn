@@ -6,22 +6,18 @@
 [ext_resource type="Script" uid="uid://7diqges23slf" path="res://Scripts/background_sprite_parallax.gd" id="3_e366w"]
 [ext_resource type="Texture2D" uid="uid://dufd5717nxgf7" path="res://Assets/S_BackgroundTrees.1.png" id="4_3pmg2"]
 [ext_resource type="Texture2D" uid="uid://b8478rhfj85or" path="res://Assets/S_BackgroundTreesAlt1.png" id="5_1kpqf"]
-[ext_resource type="PackedScene" uid="uid://weqppal7abxu" path="res://Scenes/Levels/room00Blockout.tscn" id="6_ur3n5"]
 [ext_resource type="PackedScene" uid="uid://b57vqcptrtjyk" path="res://Scenes/pause_menu.tscn" id="7_vegga"]
 [ext_resource type="PackedScene" uid="uid://32gt1jch1upu" path="res://Scenes/pickup.tscn" id="8_e366w"]
-[ext_resource type="Texture2D" uid="uid://ftj7s85nbhr0" path="res://Assets/S_HotrodOverallsIcon.png" id="9_1kpqf"]
 [ext_resource type="PackedScene" uid="uid://b3retjpsrvlms" path="res://Scenes/pickuppopup.tscn" id="9_3pmg2"]
-[ext_resource type="Texture2D" uid="uid://dxnknyikpg83f" path="res://Assets/icon.svg" id="10_5i7js"]
-[ext_resource type="Texture2D" uid="uid://ljbqtkfm1wri" path="res://Assets/T_WitchAlt.png" id="10_ur3n5"]
-[ext_resource type="PackedScene" uid="uid://c0w0c3jcweemx" path="res://Scenes/Levels/room(-1,0)Blockout.tscn" id="13_c3f2w"]
+[ext_resource type="PackedScene" uid="uid://dimq4twyqegsa" path="res://Scenes/GhostChaseEnemySmall.tscn" id="12_aum8j"]
 [ext_resource type="PackedScene" uid="uid://582f4j8e66h2" path="res://Scenes/ladder.tscn" id="14_46y6x"]
-[ext_resource type="PackedScene" uid="uid://2pvxeayd4bjh" path="res://Scenes/Levels/room(-1,-1)Blockout.tscn" id="14_dbaar"]
 [ext_resource type="PackedScene" uid="uid://cfbotu5ajml7c" path="res://Scenes/Levels/worldBlockout.tscn" id="14_xv7ot"]
 [ext_resource type="PackedScene" uid="uid://b1mile8p2hqxy" path="res://Scenes/levelbuilding/2x1x2DirtlevelBreakableblock.tscn" id="15_pg3ac"]
 [ext_resource type="Script" uid="uid://b6b2cu8lbwx0p" path="res://Scripts/trap_animation.gd" id="15_uhib0"]
-[ext_resource type="PackedScene" uid="uid://bo1qdikbrkd1j" path="res://Scenes/Levels/room(0,-1)Blockout.tscn" id="15_yf22k"]
 [ext_resource type="PackedScene" uid="uid://dyotpar3l50sq" path="res://Scenes/checkpoint.tscn" id="16_2ciji"]
+[ext_resource type="Texture2D" uid="uid://djsyefj7v4xb0" path="res://Assets/2Dsprites/S_HotrodOverallsIconV2.png" id="17_46y6x"]
 [ext_resource type="AudioStream" uid="uid://cuhka32cuc8qx" path="res://Music/Witchy Ps1 Level.mp3" id="17_fuv3b"]
+[ext_resource type="Texture2D" uid="uid://baq1logjuyjss" path="res://Assets/2Dsprites/S_HotrodOverallsShine.png" id="18_aum8j"]
 [ext_resource type="PackedScene" uid="uid://bmk1tayxw3iun" path="res://Scenes/levelbuilding/2x1x2levelblock.tscn" id="20_aum8j"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8o7oj"]
@@ -506,7 +502,31 @@ script = ExtResource("3_e366w")
 parallax_factor_y = 5.0
 
 [node name="Tree2" type="Sprite3D" parent="Background" unique_id=278584530]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -1096, 111, -374)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -665, -28, -513)
+pixel_size = 1.0
+alpha_cut = 1
+texture = ExtResource("5_1kpqf")
+script = ExtResource("3_e366w")
+parallax_factor_y = 5.0
+
+[node name="Tree7" type="Sprite3D" parent="Background" unique_id=765618933]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1397, -83, -676)
+pixel_size = 1.0
+alpha_cut = 1
+texture = ExtResource("5_1kpqf")
+script = ExtResource("3_e366w")
+parallax_factor_y = 5.0
+
+[node name="Tree5" type="Sprite3D" parent="Background" unique_id=182938906]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -1112, 53, -706)
+pixel_size = 1.0
+alpha_cut = 1
+texture = ExtResource("5_1kpqf")
+script = ExtResource("3_e366w")
+parallax_factor_y = 5.0
+
+[node name="Tree6" type="Sprite3D" parent="Background" unique_id=194540923]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -1112, -158, -289)
 pixel_size = 1.0
 alpha_cut = 1
 texture = ExtResource("5_1kpqf")
@@ -539,30 +559,15 @@ light_energy = 0.25
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Checkpoint2" parent="Checkpoints" unique_id=632318851 instance=ExtResource("16_2ciji")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -152, -1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -152, 0, 0)
 
 [node name="Checkpoint3" parent="Checkpoints" unique_id=603136519 instance=ExtResource("16_2ciji")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -206, -21, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -206, -20, 0)
 
 [node name="Checkpoint4" parent="Checkpoints" unique_id=1677788105 instance=ExtResource("16_2ciji")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65, -21, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65, -20, 0)
 
 [node name="Rooms" type="Node3D" parent="." unique_id=1151139882]
-
-[node name="Room" parent="Rooms" unique_id=1846010636 instance=ExtResource("6_ur3n5")]
-visible = false
-
-[node name="Room2" parent="Rooms" unique_id=2072967756 instance=ExtResource("13_c3f2w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -131, 0, 0)
-visible = false
-
-[node name="Room3" parent="Rooms" unique_id=1961118884 instance=ExtResource("14_dbaar")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -131, -19, 0)
-visible = false
-
-[node name="Room4" parent="Rooms" unique_id=963021682 instance=ExtResource("15_yf22k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -20, 0)
-visible = false
 
 [node name="WorldBlockout" parent="Rooms" unique_id=1867280795 instance=ExtResource("14_xv7ot")]
 
@@ -611,348 +616,361 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -3, 0)
 [node name="BreakMe6" parent="Rooms/WorldBlockout" unique_id=1726083476 instance=ExtResource("15_pg3ac")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -2, 0)
 
-[node name="Blocks" type="Node3D" parent="." unique_id=639114182]
+[node name="GhostChaseEnemySmall" parent="Rooms" unique_id=881452545 instance=ExtResource("12_aum8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 12, 0)
 
-[node name="Ladder" parent="Blocks" unique_id=1076454426 instance=ExtResource("14_46y6x")]
+[node name="BossRoom" type="Node3D" parent="." unique_id=639114182]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 67, 0)
+
+[node name="Ladder" parent="BossRoom" unique_id=1076454426 instance=ExtResource("14_46y6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, -3, 0)
 
-[node name="Ladder2" parent="Blocks" unique_id=2034884836 instance=ExtResource("14_46y6x")]
+[node name="Ladder2" parent="BossRoom" unique_id=2034884836 instance=ExtResource("14_46y6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, -1, 0)
 
-[node name="Ladder3" parent="Blocks" unique_id=727641048 instance=ExtResource("14_46y6x")]
+[node name="Ladder3" parent="BossRoom" unique_id=727641048 instance=ExtResource("14_46y6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 1, 0)
 
-[node name="Ladder4" parent="Blocks" unique_id=1112742190 instance=ExtResource("14_46y6x")]
+[node name="Ladder4" parent="BossRoom" unique_id=1112742190 instance=ExtResource("14_46y6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 2, 0)
 
-[node name="Ladder5" parent="Blocks" unique_id=812221466 instance=ExtResource("14_46y6x")]
+[node name="Ladder5" parent="BossRoom" unique_id=812221466 instance=ExtResource("14_46y6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 4, 0)
 
-[node name="Ladder6" parent="Blocks" unique_id=1803060761 instance=ExtResource("14_46y6x")]
+[node name="Ladder6" parent="BossRoom" unique_id=1803060761 instance=ExtResource("14_46y6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 6, 0)
 
-[node name="Ladder7" parent="Blocks" unique_id=1578386787 instance=ExtResource("14_46y6x")]
+[node name="Ladder7" parent="BossRoom" unique_id=1578386787 instance=ExtResource("14_46y6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 8, 0)
 
-[node name="Ladder8" parent="Blocks" unique_id=1406019614 instance=ExtResource("14_46y6x")]
+[node name="Ladder8" parent="BossRoom" unique_id=1406019614 instance=ExtResource("14_46y6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 9, 0)
 
-[node name="Ladder9" parent="Blocks" unique_id=270585432 instance=ExtResource("14_46y6x")]
+[node name="Ladder9" parent="BossRoom" unique_id=270585432 instance=ExtResource("14_46y6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 10, 0)
 
-[node name="Ladder10" parent="Blocks" unique_id=1109518615 instance=ExtResource("14_46y6x")]
+[node name="Ladder10" parent="BossRoom" unique_id=1109518615 instance=ExtResource("14_46y6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 12, 0)
 
-[node name="Ladder11" parent="Blocks" unique_id=1404010911 instance=ExtResource("14_46y6x")]
+[node name="Ladder11" parent="BossRoom" unique_id=1404010911 instance=ExtResource("14_46y6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 14, 0)
 
-[node name="Ladder12" parent="Blocks" unique_id=1636834433 instance=ExtResource("14_46y6x")]
+[node name="Ladder12" parent="BossRoom" unique_id=1636834433 instance=ExtResource("14_46y6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 15, 0)
 
-[node name="Ladder13" parent="Blocks" unique_id=518781828 instance=ExtResource("14_46y6x")]
+[node name="Ladder13" parent="BossRoom" unique_id=518781828 instance=ExtResource("14_46y6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 17, 0)
 
-[node name="Ladder14" parent="Blocks" unique_id=686298413 instance=ExtResource("14_46y6x")]
+[node name="Ladder14" parent="BossRoom" unique_id=686298413 instance=ExtResource("14_46y6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 19, 0)
 
-[node name="Ladder15" parent="Blocks" unique_id=262427283 instance=ExtResource("14_46y6x")]
+[node name="Ladder15" parent="BossRoom" unique_id=262427283 instance=ExtResource("14_46y6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 21, 0)
 
-[node name="Ladder16" parent="Blocks" unique_id=1516511912 instance=ExtResource("14_46y6x")]
+[node name="Ladder16" parent="BossRoom" unique_id=1516511912 instance=ExtResource("14_46y6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 22, 0)
 
-[node name="Ladder17" parent="Blocks" unique_id=2093573551 instance=ExtResource("14_46y6x")]
+[node name="Ladder17" parent="BossRoom" unique_id=2093573551 instance=ExtResource("14_46y6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 24, 0)
 
-[node name="Ladder18" parent="Blocks" unique_id=1281530660 instance=ExtResource("14_46y6x")]
+[node name="Ladder18" parent="BossRoom" unique_id=1281530660 instance=ExtResource("14_46y6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 26, 0)
 
-[node name="Ladder19" parent="Blocks" unique_id=1355197587 instance=ExtResource("14_46y6x")]
+[node name="Ladder19" parent="BossRoom" unique_id=1355197587 instance=ExtResource("14_46y6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 28, 0)
 
-[node name="Ladder20" parent="Blocks" unique_id=1303133272 instance=ExtResource("14_46y6x")]
+[node name="Ladder20" parent="BossRoom" unique_id=1303133272 instance=ExtResource("14_46y6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 29, 0)
 
-[node name="TrapAnimation" type="AnimationPlayer" parent="Blocks" unique_id=224163609]
+[node name="TrapAnimation" type="AnimationPlayer" parent="BossRoom" unique_id=224163609]
 libraries/ = SubResource("AnimationLibrary_uhib0")
 speed_scale = 2.0
 script = ExtResource("15_uhib0")
 
-[node name="2x1x2levelblock" parent="Blocks" unique_id=2106691022 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock" parent="BossRoom" unique_id=2106691022 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 30, 0)
 
-[node name="2x1x2levelblock2" parent="Blocks" unique_id=1566955262 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock2" parent="BossRoom" unique_id=1566955262 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62, 26, 0)
 
-[node name="2x1x2levelblock7" parent="Blocks" unique_id=1577587088 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock7" parent="BossRoom" unique_id=1577587088 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58, 26, 0)
 
-[node name="2x1x2levelblock8" parent="Blocks" unique_id=2034925189 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock8" parent="BossRoom" unique_id=2034925189 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56, 26, 0)
 
-[node name="2x1x2levelblock9" parent="Blocks" unique_id=1847924641 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock9" parent="BossRoom" unique_id=1847924641 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56, 27, 0)
 
-[node name="2x1x2levelblock10" parent="Blocks" unique_id=1607547703 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock10" parent="BossRoom" unique_id=1607547703 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56, 28, 0)
 
-[node name="2x1x2levelblock11" parent="Blocks" unique_id=1367726141 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock11" parent="BossRoom" unique_id=1367726141 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56, 29, 0)
 
-[node name="2x1x2levelblock12" parent="Blocks" unique_id=1805807239 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock12" parent="BossRoom" unique_id=1805807239 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56, 30, 0)
 
-[node name="2x1x2levelblock14" parent="Blocks" unique_id=618990850 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock14" parent="BossRoom" unique_id=618990850 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56, 31, 0)
 
-[node name="2x1x2levelblock15" parent="Blocks" unique_id=163774659 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock15" parent="BossRoom" unique_id=163774659 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56, 32, 0)
 
-[node name="2x1x2levelblock16" parent="Blocks" unique_id=2025866791 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock16" parent="BossRoom" unique_id=2025866791 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 33, 0)
 
-[node name="2x1x2levelblock17" parent="Blocks" unique_id=1916735091 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock17" parent="BossRoom" unique_id=1916735091 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 34, 0)
 
-[node name="2x1x2levelblock18" parent="Blocks" unique_id=70744753 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock18" parent="BossRoom" unique_id=70744753 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 35, 0)
 
-[node name="2x1x2levelblock19" parent="Blocks" unique_id=644653493 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock19" parent="BossRoom" unique_id=644653493 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 36, 0)
 
-[node name="2x1x2levelblock20" parent="Blocks" unique_id=1178743068 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock20" parent="BossRoom" unique_id=1178743068 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 37, 0)
 
-[node name="2x1x2levelblock21" parent="Blocks" unique_id=1761487068 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock21" parent="BossRoom" unique_id=1761487068 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 38, 0)
 
-[node name="2x1x2levelblock22" parent="Blocks" unique_id=360695168 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock22" parent="BossRoom" unique_id=360695168 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 39, 0)
 
-[node name="2x1x2levelblock23" parent="Blocks" unique_id=2089607407 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock23" parent="BossRoom" unique_id=2089607407 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 40, 0)
 
-[node name="2x1x2levelblock24" parent="Blocks" unique_id=1018875912 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock24" parent="BossRoom" unique_id=1018875912 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 41, 0)
 
-[node name="2x1x2levelblock25" parent="Blocks" unique_id=1095698460 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock25" parent="BossRoom" unique_id=1095698460 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 42, 0)
 
-[node name="2x1x2levelblock47" parent="Blocks" unique_id=2089354487 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock47" parent="BossRoom" unique_id=2089354487 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 40, 0)
 
-[node name="2x1x2levelblock48" parent="Blocks" unique_id=1910099900 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock48" parent="BossRoom" unique_id=1910099900 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 41, 0)
 
-[node name="2x1x2levelblock49" parent="Blocks" unique_id=1199005652 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock49" parent="BossRoom" unique_id=1199005652 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 42, 0)
 
-[node name="2x1x2levelblock50" parent="Blocks" unique_id=368880064 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock50" parent="BossRoom" unique_id=368880064 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 43, 0)
 
-[node name="2x1x2levelblock51" parent="Blocks" unique_id=1717847408 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock51" parent="BossRoom" unique_id=1717847408 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 44, 0)
 
-[node name="2x1x2levelblock52" parent="Blocks" unique_id=659517295 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock52" parent="BossRoom" unique_id=659517295 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 45, 0)
 
-[node name="2x1x2levelblock53" parent="Blocks" unique_id=1207050875 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock53" parent="BossRoom" unique_id=1207050875 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 46, 0)
 
-[node name="2x1x2levelblock54" parent="Blocks" unique_id=891567418 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock54" parent="BossRoom" unique_id=891567418 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68, 47, 0)
 
-[node name="2x1x2levelblock55" parent="Blocks" unique_id=585950886 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock55" parent="BossRoom" unique_id=585950886 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 47, 0)
 
-[node name="2x1x2levelblock56" parent="Blocks" unique_id=1920664995 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock56" parent="BossRoom" unique_id=1920664995 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 43, 0)
 
-[node name="2x1x2levelblock57" parent="Blocks" unique_id=1286150602 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock57" parent="BossRoom" unique_id=1286150602 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 44, 0)
 
-[node name="2x1x2levelblock58" parent="Blocks" unique_id=242376665 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock58" parent="BossRoom" unique_id=242376665 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 45, 0)
 
-[node name="2x1x2levelblock59" parent="Blocks" unique_id=644982012 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock59" parent="BossRoom" unique_id=644982012 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 46, 0)
 
-[node name="2x1x2levelblock60" parent="Blocks" unique_id=164725737 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock60" parent="BossRoom" unique_id=164725737 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 47, 0)
 
-[node name="2x1x2levelblock61" parent="Blocks" unique_id=789752130 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock61" parent="BossRoom" unique_id=789752130 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58, 47, 0)
 
-[node name="2x1x2levelblock73" parent="Blocks" unique_id=480301151 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock73" parent="BossRoom" unique_id=480301151 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56, 47, 0)
 
-[node name="2x1x2levelblock62" parent="Blocks" unique_id=1624531438 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock62" parent="BossRoom" unique_id=1624531438 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62, 47, 0)
 
-[node name="2x1x2levelblock63" parent="Blocks" unique_id=106810868 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock63" parent="BossRoom" unique_id=106810868 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 47, 0)
 
-[node name="2x1x2levelblock64" parent="Blocks" unique_id=79987128 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock64" parent="BossRoom" unique_id=79987128 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 47, 0)
 
-[node name="2x1x2levelblock65" parent="Blocks" unique_id=44629811 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock65" parent="BossRoom" unique_id=44629811 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 47, 0)
 
-[node name="2x1x2levelblock70" parent="Blocks" unique_id=1977159977 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock70" parent="BossRoom" unique_id=1977159977 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 47, 0)
 
-[node name="2x1x2levelblock66" parent="Blocks" unique_id=44796766 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock66" parent="BossRoom" unique_id=44796766 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76, 47, 0)
 
-[node name="2x1x2levelblock67" parent="Blocks" unique_id=400936001 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock67" parent="BossRoom" unique_id=400936001 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 47, 0)
 
-[node name="2x1x2levelblock68" parent="Blocks" unique_id=1097948815 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock68" parent="BossRoom" unique_id=1097948815 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 47, 0)
 
-[node name="2x1x2levelblock69" parent="Blocks" unique_id=814333704 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock69" parent="BossRoom" unique_id=814333704 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74, 47, 0)
 
-[node name="2x1x2levelblock26" parent="Blocks" unique_id=619948326 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock26" parent="BossRoom" unique_id=619948326 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 30, 0)
 
-[node name="2x1x2levelblock27" parent="Blocks" unique_id=1362538883 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock27" parent="BossRoom" unique_id=1362538883 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 31, 0)
 
-[node name="2x1x2levelblock28" parent="Blocks" unique_id=1944849190 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock28" parent="BossRoom" unique_id=1944849190 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 32, 0)
 
-[node name="2x1x2levelblock42" parent="Blocks" unique_id=711650863 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock42" parent="BossRoom" unique_id=711650863 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 32, 0)
 
-[node name="2x1x2levelblock43" parent="Blocks" unique_id=1800449333 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock43" parent="BossRoom" unique_id=1800449333 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 32, -2)
 
-[node name="2x1x2levelblock45" parent="Blocks" unique_id=924802477 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock45" parent="BossRoom" unique_id=924802477 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 32, -2)
 
-[node name="2x1x2levelblock46" parent="Blocks" unique_id=980587560 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock46" parent="BossRoom" unique_id=980587560 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62, 32, -2)
 
-[node name="2x1x2levelblock44" parent="Blocks" unique_id=256806477 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock44" parent="BossRoom" unique_id=256806477 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68, 32, -2)
 
-[node name="2x1x2levelblock71" parent="Blocks" unique_id=501250031 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock71" parent="BossRoom" unique_id=501250031 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 32, -2)
 
-[node name="2x1x2levelblock72" parent="Blocks" unique_id=1870932496 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock72" parent="BossRoom" unique_id=1870932496 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74, 32, -2)
 
-[node name="2x1x2levelblock29" parent="Blocks" unique_id=507740118 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock29" parent="BossRoom" unique_id=507740118 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 33, 0)
 
-[node name="2x1x2levelblock30" parent="Blocks" unique_id=1187161702 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock30" parent="BossRoom" unique_id=1187161702 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 34, 0)
 
-[node name="2x1x2levelblock31" parent="Blocks" unique_id=1226122913 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock31" parent="BossRoom" unique_id=1226122913 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 35, 0)
 
-[node name="2x1x2levelblock32" parent="Blocks" unique_id=1636256890 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock32" parent="BossRoom" unique_id=1636256890 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 36, 0)
 
-[node name="2x1x2levelblock33" parent="Blocks" unique_id=1412692537 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock33" parent="BossRoom" unique_id=1412692537 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 37, 0)
 
-[node name="2x1x2levelblock34" parent="Blocks" unique_id=142660030 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock34" parent="BossRoom" unique_id=142660030 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 38, 0)
 
-[node name="2x1x2levelblock35" parent="Blocks" unique_id=897254946 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock35" parent="BossRoom" unique_id=897254946 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 39, 0)
 
-[node name="2x1x2levelblock13" parent="Blocks" unique_id=63090583 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock13" parent="BossRoom" unique_id=63090583 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58, 30, 0)
 
-[node name="2x1x2levelblock36" parent="Blocks" unique_id=49248960 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock36" parent="BossRoom" unique_id=49248960 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 33, 0)
 
-[node name="2x1x2levelblock40" parent="Blocks" unique_id=1359908258 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock40" parent="BossRoom" unique_id=1359908258 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 33, -2)
 
-[node name="2x1x2levelblock41" parent="Blocks" unique_id=458010763 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock41" parent="BossRoom" unique_id=458010763 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76, 33, 0)
 
-[node name="2x1x2levelblock37" parent="Blocks" unique_id=245753268 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock37" parent="BossRoom" unique_id=245753268 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58, 33, 0)
 
-[node name="MoveMe1" parent="Blocks" unique_id=1508602539 instance=ExtResource("20_aum8j")]
+[node name="MoveMe1" parent="BossRoom" unique_id=1508602539 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 30, -2)
 
-[node name="MoveMe2" parent="Blocks" unique_id=1589262024 instance=ExtResource("20_aum8j")]
+[node name="MoveMe2" parent="BossRoom" unique_id=1589262024 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62, 30, -2)
 
-[node name="MoveMe3" parent="Blocks" unique_id=1531989152 instance=ExtResource("20_aum8j")]
+[node name="MoveMe3" parent="BossRoom" unique_id=1531989152 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68, 30, -2)
 
-[node name="MoveMe4" parent="Blocks" unique_id=556077963 instance=ExtResource("20_aum8j")]
+[node name="MoveMe4" parent="BossRoom" unique_id=556077963 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 30, -2)
 
-[node name="2x1x2levelblock3" parent="Blocks" unique_id=783643881 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock3" parent="BossRoom" unique_id=783643881 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 27, 0)
 
-[node name="2x1x2levelblock4" parent="Blocks" unique_id=1722212506 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock4" parent="BossRoom" unique_id=1722212506 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 28, 0)
 
-[node name="2x1x2levelblock5" parent="Blocks" unique_id=1553218899 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock5" parent="BossRoom" unique_id=1553218899 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68, 29, 0)
 
-[node name="2x1x2levelblock6" parent="Blocks" unique_id=613883025 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock6" parent="BossRoom" unique_id=613883025 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 30, 0)
 
-[node name="2x1x2levelblock38" parent="Blocks" unique_id=1982569735 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock38" parent="BossRoom" unique_id=1982569735 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 31, 0)
 
-[node name="2x1x2levelblock39" parent="Blocks" unique_id=1680424735 instance=ExtResource("20_aum8j")]
+[node name="2x1x2levelblock39" parent="BossRoom" unique_id=1680424735 instance=ExtResource("20_aum8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74, 32, 0)
 
-[node name="TrapArea3D" type="Area3D" parent="Blocks" unique_id=1565274517]
+[node name="TrapArea3D" type="Area3D" parent="BossRoom" unique_id=1565274517]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Blocks/TrapArea3D" unique_id=1345280675]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BossRoom/TrapArea3D" unique_id=1345280675]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76, 34.4, 0)
 shape = SubResource("SphereShape3D_aum8j")
 
 [node name="Pickups" type="Node3D" parent="." unique_id=536456443]
 
 [node name="DownBlastPickup" parent="Pickups" unique_id=199145864 instance=ExtResource("8_e366w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -229, 3.3000002, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -228, 4.6000004, 0.19999999)
 pickup_type = 2
-pickup_text = "Hotrod Overalls. Pretty sweet am I right?"
+pickup_text = "\"These used to be grandma's. She gave them to me when I got accepted into the witch's coven.\"
+Allows the player to down blast by pressing the jump button while in the air."
 pickup_title = "Hotrod Overalls"
-pickup_icon = ExtResource("9_1kpqf")
 pickup_id = "down_blast"
 
+[node name="Sprite3D" parent="Pickups/DownBlastPickup" index="1" unique_id=11702431]
+texture = ExtResource("17_46y6x")
+
+[node name="Sprite3D2" parent="Pickups/DownBlastPickup" index="2" unique_id=2088716768]
+texture = ExtResource("18_aum8j")
+
 [node name="SideBlastPickup" parent="Pickups" unique_id=1639860883 instance=ExtResource("8_e366w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2.2999992, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -214, -19.400002, 0)
 pickup_type = 3
 pickup_text = "Unlocks side blast attack."
 pickup_title = "Magic Catalyst"
-pickup_icon = ExtResource("10_5i7js")
 pickup_id = "side_blast"
 
-[node name="HealthPickup" parent="Pickups" unique_id=1994411149 instance=ExtResource("8_e366w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9, -2.7, 0)
+[node name="HealthPickup" parent="Pickups" unique_id=607660154 instance=ExtResource("8_e366w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9, -3.4, 0)
 pickup_type = 1
 pickup_text = "Increases your health by 1.
 Learning to make one is the first lesson a witch learns. The second is to always keep one handy!"
-pickup_title = "Health POTION"
-pickup_icon = ExtResource("10_ur3n5")
+pickup_title = "Potion of Heartiness"
 pickup_id = "heath_pickup1"
 
-[node name="Sprite3D" parent="Pickups/HealthPickup" index="1" unique_id=11702431]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -1.1920929e-07, 0, 0)
-texture = ExtResource("10_ur3n5")
+[node name="HealthPickup2" parent="Pickups" unique_id=2029754559 instance=ExtResource("8_e366w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9, 2.6, 0)
+pickup_type = 1
+pickup_text = "Increases your health by 1.
+Learning to make one is the first lesson a witch learns. The second is to always keep one handy!"
+pickup_title = "Potion of Heartiness"
+pickup_id = "heath_pickup2"
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=642194100]
 stream = ExtResource("17_fuv3b")
 autoplay = true
 bus = &"Music"
+parameters/looping = true
 
-[connection signal="body_entered" from="Blocks/TrapArea3D" to="Blocks/TrapAnimation" method="_on_trap_area_3d_body_entered"]
+[connection signal="body_entered" from="BossRoom/TrapArea3D" to="BossRoom/TrapAnimation" method="_on_trap_area_3d_body_entered"]
 
 [editable path="Player"]
 [editable path="Player/visuals/M_WitchPlayerV1"]
-[editable path="Pickups/HealthPickup"]
+[editable path="Pickups/DownBlastPickup"]
