@@ -1,6 +1,6 @@
 extends Area3D
 
-const SPEED = 1.5
+const SPEED = 3
 const ATTACK_RANGE = 1
 
 var health = 1

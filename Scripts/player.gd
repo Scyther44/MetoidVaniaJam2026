@@ -48,9 +48,16 @@ var invulnerable := false
 @onready var right_hitbox = $RHitBoxArea3D
 @onready var down_hitbox = $DHitBoxArea3D
 @onready var idle_timer = $IdleTimer
+@onready var mesh = $visuals/M_WitchPlayerV1/Armature_001/GeneralSkeleton/Witch
+var mat = StandardMaterial3D
+
 
 const EXPLOSION_SCENE = preload(
 	"res://Scenes/particle_explosion.tscn"
+)
+
+const WITCH_ALT_SKIN_RESOURE = preload(
+	"res://Assets/witchtexturealt.tres"
 )
 
 func _ready() -> void:
@@ -69,6 +76,8 @@ func _ready() -> void:
 
 	is_side_attack_unlocked = SaveManager.has_side_blast
 	is_down_attack_unlocked = SaveManager.has_down_blast
+	
+	mat = mesh.get_surface_override_material(0)
 
 func _physics_process(delta):
 	apply_gravity(delta)
@@ -535,9 +544,6 @@ func start_invulnerability():
 
 	invulnerable = true
 
-	var mesh = $visuals/M_WitchPlayerV1/Armature_001/GeneralSkeleton/Witch
-	var mat = mesh.get_surface_override_material(0)
-
 	for i in range(5):
 
 		mat.albedo_color = Color.RED
@@ -579,6 +585,8 @@ func _on_idle_timer_timeout() -> void:
 		
 func unlock_down_blast():
 	is_down_attack_unlocked = true
-	
+	mesh.set_surface_override_material(0,
+	WITCH_ALT_SKIN_RESOURE)
+			
 func unlock_side_blast():
 	is_side_attack_unlocked = true

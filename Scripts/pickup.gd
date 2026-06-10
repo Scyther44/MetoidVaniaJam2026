@@ -10,7 +10,6 @@ enum PickupType {
 @export var pickup_type : PickupType
 @export_multiline var pickup_text : String
 @export var pickup_title : String
-@export var pickup_icon : Texture2D
 @export var pickup_id : String
 
 const PICKUP_POPUP = preload(
@@ -62,8 +61,7 @@ func _on_body_entered(body: Node3D) -> void:
 
 	popup.show_pickup(
 		pickup_title,
-		pickup_text,
-		pickup_icon
+		pickup_text
 	)
 
 	hide()

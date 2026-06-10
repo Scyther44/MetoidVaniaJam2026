@@ -8,19 +8,17 @@
 [ext_resource type="Texture2D" uid="uid://b8478rhfj85or" path="res://Assets/S_BackgroundTreesAlt1.png" id="5_1kpqf"]
 [ext_resource type="PackedScene" uid="uid://b57vqcptrtjyk" path="res://Scenes/pause_menu.tscn" id="7_vegga"]
 [ext_resource type="PackedScene" uid="uid://32gt1jch1upu" path="res://Scenes/pickup.tscn" id="8_e366w"]
-[ext_resource type="Texture2D" uid="uid://ftj7s85nbhr0" path="res://Assets/S_HotrodOverallsIcon.png" id="9_1kpqf"]
 [ext_resource type="PackedScene" uid="uid://b3retjpsrvlms" path="res://Scenes/pickuppopup.tscn" id="9_3pmg2"]
-[ext_resource type="Texture2D" uid="uid://dxnknyikpg83f" path="res://Assets/icon.svg" id="10_5i7js"]
-[ext_resource type="Texture2D" uid="uid://ljbqtkfm1wri" path="res://Assets/T_WitchAlt.png" id="10_ur3n5"]
 [ext_resource type="PackedScene" uid="uid://dimq4twyqegsa" path="res://Scenes/GhostChaseEnemySmall.tscn" id="12_aum8j"]
 [ext_resource type="PackedScene" uid="uid://582f4j8e66h2" path="res://Scenes/ladder.tscn" id="14_46y6x"]
 [ext_resource type="PackedScene" uid="uid://cfbotu5ajml7c" path="res://Scenes/Levels/worldBlockout.tscn" id="14_xv7ot"]
 [ext_resource type="PackedScene" uid="uid://b1mile8p2hqxy" path="res://Scenes/levelbuilding/2x1x2DirtlevelBreakableblock.tscn" id="15_pg3ac"]
 [ext_resource type="Script" uid="uid://b6b2cu8lbwx0p" path="res://Scripts/trap_animation.gd" id="15_uhib0"]
 [ext_resource type="PackedScene" uid="uid://dyotpar3l50sq" path="res://Scenes/checkpoint.tscn" id="16_2ciji"]
+[ext_resource type="Texture2D" uid="uid://djsyefj7v4xb0" path="res://Assets/2Dsprites/S_HotrodOverallsIconV2.png" id="17_46y6x"]
 [ext_resource type="AudioStream" uid="uid://cuhka32cuc8qx" path="res://Music/Witchy Ps1 Level.mp3" id="17_fuv3b"]
+[ext_resource type="Texture2D" uid="uid://baq1logjuyjss" path="res://Assets/2Dsprites/S_HotrodOverallsShine.png" id="18_aum8j"]
 [ext_resource type="PackedScene" uid="uid://bmk1tayxw3iun" path="res://Scenes/levelbuilding/2x1x2levelblock.tscn" id="20_aum8j"]
-[ext_resource type="PackedScene" uid="uid://brj235favivq3" path="res://Scenes/thorns.tscn" id="20_uhib0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8o7oj"]
 sky_top_color = Color(0.03163817, 0, 0.89537793, 1)
@@ -929,52 +927,41 @@ shape = SubResource("SphereShape3D_aum8j")
 [node name="Pickups" type="Node3D" parent="." unique_id=536456443]
 
 [node name="DownBlastPickup" parent="Pickups" unique_id=199145864 instance=ExtResource("8_e366w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -229, 3.3000002, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -228, 4.6000004, 0.19999999)
 pickup_type = 2
-pickup_text = "Hotrod Overalls. Pretty sweet am I right?"
+pickup_text = "\"These used to be grandma's. She gave them to me when I got accepted into the witch's coven.\"
+Allows the player to down blast by pressing the jump button while in the air."
 pickup_title = "Hotrod Overalls"
-pickup_icon = ExtResource("9_1kpqf")
 pickup_id = "down_blast"
 
+[node name="Sprite3D" parent="Pickups/DownBlastPickup" index="1" unique_id=11702431]
+texture = ExtResource("17_46y6x")
+
+[node name="Sprite3D2" parent="Pickups/DownBlastPickup" index="2" unique_id=2088716768]
+texture = ExtResource("18_aum8j")
+
 [node name="SideBlastPickup" parent="Pickups" unique_id=1639860883 instance=ExtResource("8_e366w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -214, -18.7, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -214, -19.400002, 0)
 pickup_type = 3
 pickup_text = "Unlocks side blast attack."
 pickup_title = "Magic Catalyst"
-pickup_icon = ExtResource("10_5i7js")
 pickup_id = "side_blast"
 
-[node name="HealthPickup" parent="Pickups" unique_id=1994411149 instance=ExtResource("8_e366w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9, -2.7, 0)
+[node name="HealthPickup" parent="Pickups" unique_id=607660154 instance=ExtResource("8_e366w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9, -3.4, 0)
 pickup_type = 1
 pickup_text = "Increases your health by 1.
 Learning to make one is the first lesson a witch learns. The second is to always keep one handy!"
-pickup_title = "Health POTION"
-pickup_icon = ExtResource("10_ur3n5")
+pickup_title = "Potion of Heartiness"
 pickup_id = "heath_pickup1"
 
-[node name="Sprite3D" parent="Pickups/HealthPickup" index="1" unique_id=11702431]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -1.1920929e-07, 0, 0)
-texture = ExtResource("10_ur3n5")
-
-[node name="HealthPickup2" parent="Pickups" unique_id=123102422 instance=ExtResource("8_e366w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9, 3.3, 0)
+[node name="HealthPickup2" parent="Pickups" unique_id=2029754559 instance=ExtResource("8_e366w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9, 2.6, 0)
 pickup_type = 1
 pickup_text = "Increases your health by 1.
 Learning to make one is the first lesson a witch learns. The second is to always keep one handy!"
-pickup_title = "Health POTION"
-pickup_icon = ExtResource("10_ur3n5")
-pickup_id = "heath_pickup2"
-
-[node name="Sprite3D" parent="Pickups/HealthPickup2" index="1" unique_id=11702431]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -1.1920929e-07, 0, 0)
-texture = ExtResource("10_ur3n5")
-
-[node name="Thorns" parent="Pickups" unique_id=1993457805 instance=ExtResource("20_uhib0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 1.8, 0)
-
-[node name="Thorns2" parent="Pickups" unique_id=1419262366 instance=ExtResource("20_uhib0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 2.8, 0)
+pickup_title = "Potion of Heartiness"
+pickup_id = "heath_pickup1"
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=642194100]
 stream = ExtResource("17_fuv3b")
@@ -986,5 +973,4 @@ parameters/looping = true
 
 [editable path="Player"]
 [editable path="Player/visuals/M_WitchPlayerV1"]
-[editable path="Pickups/HealthPickup"]
-[editable path="Pickups/HealthPickup2"]
+[editable path="Pickups/DownBlastPickup"]
