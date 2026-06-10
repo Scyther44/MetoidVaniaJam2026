@@ -451,7 +451,7 @@ environment = SubResource("Environment_ws78m")
 script = ExtResource("1_8e5no")
 
 [node name="Player" parent="." unique_id=775848779 instance=ExtResource("1_03d5g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.403576, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 62.403576, 0)
 
 [node name="PauseMenu" parent="." unique_id=1771188108 instance=ExtResource("7_vegga")]
 visible = false
@@ -927,7 +927,7 @@ shape = SubResource("SphereShape3D_aum8j")
 [node name="Pickups" type="Node3D" parent="." unique_id=536456443]
 
 [node name="DownBlastPickup" parent="Pickups" unique_id=199145864 instance=ExtResource("8_e366w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -228, 4.6000004, 0.19999999)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 4.6000004, 0.19999999)
 pickup_type = 2
 pickup_text = "\"These used to be grandma's. She gave them to me when I got accepted into the witch's coven.\"
 Allows the player to down blast by pressing the jump button while in the air."

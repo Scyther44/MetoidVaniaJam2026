@@ -77,6 +77,12 @@ func _ready() -> void:
 	is_side_attack_unlocked = SaveManager.has_side_blast
 	is_down_attack_unlocked = SaveManager.has_down_blast
 	
+	if is_down_attack_unlocked:
+		mesh.set_surface_override_material(
+		0,
+		WITCH_ALT_SKIN_RESOURE
+	)
+	
 	mat = mesh.get_surface_override_material(0)
 
 func _physics_process(delta):
@@ -545,7 +551,7 @@ func start_invulnerability():
 	invulnerable = true
 
 	for i in range(5):
-
+		mat = mesh.get_surface_override_material(0)
 		mat.albedo_color = Color.RED
 
 		await get_tree().create_timer(0.1).timeout
