@@ -961,7 +961,7 @@ pickup_type = 1
 pickup_text = "Increases your health by 1.
 Learning to make one is the first lesson a witch learns. The second is to always keep one handy!"
 pickup_title = "Potion of Heartiness"
-pickup_id = "heath_pickup1"
+pickup_id = "heath_pickup2"
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=642194100]
 stream = ExtResource("17_fuv3b")
