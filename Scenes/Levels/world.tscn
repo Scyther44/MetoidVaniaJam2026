@@ -51,7 +51,7 @@ environment = SubResource("Environment_ws78m")
 script = ExtResource("1_8e5no")
 
 [node name="Player" parent="." unique_id=775848779 instance=ExtResource("1_03d5g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63, 55.40358, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4035797, 0)
 
 [node name="PauseMenu" parent="." unique_id=1771188108 instance=ExtResource("7_vegga")]
 visible = false
@@ -286,29 +286,8 @@ texture = ExtResource("17_46y6x")
 [node name="Sprite3D2" parent="Pickups/DownBlastPickup" index="2" unique_id=2088716768]
 texture = ExtResource("18_aum8j")
 
-[node name="DownBlastPickup2" parent="Pickups" unique_id=404831897 instance=ExtResource("8_e366w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 50.6, 0.19999999)
-pickup_type = 2
-pickup_text = "\"These used to be grandma's. She gave them to me when I got accepted into the witch's coven.\"
-Allows the player to down blast by pressing the jump button while in the air."
-pickup_title = "Hotrod Overalls"
-pickup_id = "down_blast"
-
-[node name="Sprite3D" parent="Pickups/DownBlastPickup2" index="1" unique_id=11702431]
-texture = ExtResource("17_46y6x")
-
-[node name="Sprite3D2" parent="Pickups/DownBlastPickup2" index="2" unique_id=2088716768]
-texture = ExtResource("18_aum8j")
-
 [node name="SideBlastPickup" parent="Pickups" unique_id=1639860883 instance=ExtResource("8_e366w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -214, -19.400002, 0)
-pickup_type = 3
-pickup_text = "Unlocks side blast attack."
-pickup_title = "Magic Catalyst"
-pickup_id = "side_blast"
-
-[node name="SideBlastPickup2" parent="Pickups" unique_id=2096800136 instance=ExtResource("8_e366w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 52.6, 0)
 pickup_type = 3
 pickup_text = "Unlocks side blast attack."
 pickup_title = "Magic Catalyst"
@@ -343,4 +322,3 @@ script = ExtResource("17_8e5no")
 [editable path="Player"]
 [editable path="Player/visuals/M_WitchPlayerV1"]
 [editable path="Pickups/DownBlastPickup"]
-[editable path="Pickups/DownBlastPickup2"]
