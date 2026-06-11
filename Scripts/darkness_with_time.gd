@@ -1,7 +1,6 @@
 extends WorldEnvironment
 
 @export var duration := 1200.0 # 20 minutes
-
 @export var max_fog_light_energy := 0.25
 @export var max_fog_density := 0.5
 @export var max_sky_affect := 0.5

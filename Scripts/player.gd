@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+signal tutattacktriggered
+
 enum State {
 	IDLE,
 	RUN,
@@ -9,7 +11,8 @@ enum State {
 	STUMBLE,
 	CLIMB,
 	KNEEL, #Look down
-	DEAD
+	DEAD,
+	TUTATTACK
 }
 
 
@@ -77,6 +80,12 @@ func _ready() -> void:
 	is_side_attack_unlocked = SaveManager.has_side_blast
 	is_down_attack_unlocked = SaveManager.has_down_blast
 	
+	if is_down_attack_unlocked:
+		mesh.set_surface_override_material(
+		0,
+		WITCH_ALT_SKIN_RESOURE
+	)
+	
 	mat = mesh.get_surface_override_material(0)
 
 func _physics_process(delta):
@@ -102,6 +111,9 @@ func apply_gravity(delta):
 
 func handle_input():
 	if current_state == State.DEAD:
+		return
+		
+	if current_state == State.TUTATTACK:
 		return
 
 	# Jump
@@ -175,12 +187,15 @@ func handle_state(delta):
 			
 		State.DEAD:
 			state_dead(delta)
+			
+		State.TUTATTACK:
+			state_tutattack(delta)
 
 
 func state_idle(delta):
 	
 	if is_afk:
-		print("Player is afk")
+		#print("Player is afk")
 		play_anim("Animpack5/sad_idle")
 	else:
 		play_anim("Animpack5/happy_idle2")
@@ -338,6 +353,15 @@ func state_dead(_delta):
 	velocity = Vector3.ZERO
 
 	play_anim("Animpack5/sad_idle")
+	
+func state_tutattack(delta):
+	handle_tutattack(delta)
+	
+
+func handle_tutattack(_delta):
+	if Input.is_action_just_pressed("attack_right"):
+		emit_signal("tutattacktriggered")
+		start_attack(false, 3)
 
 func handle_air_movement(delta):
 
@@ -384,7 +408,7 @@ func start_down_attack():
 	
 	end_down_attack()
 
-func start_attack(left_attack):
+func start_attack(left_attack, knockbackmultiplier := 1):
 
 	if current_state == State.ATTACK:
 		return
@@ -406,7 +430,7 @@ func start_attack(left_attack):
 
 		visuals.rotation.y = deg_to_rad(180)
 
-		apply_recoil(-1)
+		apply_recoil(-1 * knockbackmultiplier)
 
 	else:
 
@@ -419,7 +443,7 @@ func start_attack(left_attack):
 
 		visuals.rotation.y = deg_to_rad(0)
 
-		apply_recoil(1)
+		apply_recoil(1 * knockbackmultiplier)
 
 	end_attack()
 
@@ -475,10 +499,10 @@ func change_state(new_state):
 	current_state = new_state
 	
 	if current_state == State.IDLE:
-		print("starting idle time")
+		#print("starting idle time")
 		idle_timer.start()
 	else:
-		print("Stopping timer")
+		#print("Stopping timer")
 		idle_timer.stop()
 		is_afk = false
 
@@ -545,7 +569,7 @@ func start_invulnerability():
 	invulnerable = true
 
 	for i in range(5):
-
+		mat = mesh.get_surface_override_material(0)
 		mat.albedo_color = Color.RED
 
 		await get_tree().create_timer(0.1).timeout
@@ -561,6 +585,12 @@ func die():
 	velocity = Vector3.ZERO
 	await $PlayerHud.fade_to_black(3)
 	SaveManager.load_checkpoint()
+	
+func fade_to_black(duration):
+	$PlayerHud.fade_to_black(duration)
+	
+func fade_from_black(duration):
+	$PlayerHud.fade_from_black(duration)
 
 func _on_climb_detector_area_area_entered(area: Area3D) -> void:
 	
@@ -579,7 +609,7 @@ func _on_climb_detector_area_area_exited(area: Area3D) -> void:
 
 
 func _on_idle_timer_timeout() -> void:
-	print("IdleTimerTimeout")
+	#print("IdleTimerTimeout")
 	if current_state == State.IDLE:
 		is_afk = true
 		
@@ -590,3 +620,10 @@ func unlock_down_blast():
 			
 func unlock_side_blast():
 	is_side_attack_unlocked = true
+	
+func change_state_tutattack():
+	velocity.x = 0
+	velocity.y = 0
+	velocity.z = 0
+	animation_player.play("Animpack5/happy_idle2")
+	change_state(State.TUTATTACK)

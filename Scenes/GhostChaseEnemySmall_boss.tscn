@@ -1,30 +1,13 @@
-[gd_scene format=3 uid="uid://dimq4twyqegsa"]
+[gd_scene format=3 uid="uid://dedmw1i51a2x1"]
 
-[ext_resource type="Script" uid="uid://boggjtjv2a764" path="res://Scripts/ghost_chase_enemy_passthrough.gd" id="1_qshd6"]
-[ext_resource type="PackedScene" uid="uid://kk08ebym88fd" path="res://Scenes/m_ghost_enemy_rigged.tscn" id="2_oo87m"]
+[ext_resource type="Script" uid="uid://boggjtjv2a764" path="res://Scripts/ghost_chase_enemy_passthrough.gd" id="1_qxiyy"]
+[ext_resource type="PackedScene" uid="uid://kk08ebym88fd" path="res://Scenes/m_ghost_enemy_rigged.tscn" id="2_ymmvx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_30v6e"]
 size = Vector3(0.5, 0.5, 0.5)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_x7i3e"]
-radius = 4.0
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qshd6"]
-load_path = "res://.godot/imported/T_GhostBaseColor.png-08a7c1810737221690fa9e6c52b348b4.s3tc.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6d7ju"]
-load_path = "res://.godot/imported/T_GhostEmissive.png-ba3e4afa320242d76dfad0ca0dddf866.s3tc.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_oo87m"]
-load_path = "res://.godot/imported/T_GhostRoughness.png-145de4cf1dd9d1738158d78fd08c4b5b.s3tc.ctex"
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xiebv"]
-cull_mode = 2
-albedo_texture = SubResource("CompressedTexture2D_qshd6")
-roughness = 0.5
-roughness_texture = SubResource("CompressedTexture2D_oo87m")
-emission_enabled = true
-emission_texture = SubResource("CompressedTexture2D_6d7ju")
+radius = 5.0
 
 [sub_resource type="Animation" id="Animation_qshd6"]
 resource_name = "ArmatureAction"
@@ -170,8 +153,8 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_5euxl"]
 size = Vector3(0.25, 0.25, 0.25)
 
-[node name="GhostChaseEnemySmall" type="Area3D" unique_id=881452545 groups=["enemy"]]
-script = ExtResource("1_qshd6")
+[node name="GhostChaseEnemySmall" type="Area3D" unique_id=881452545 groups=["boss_minion", "enemy"]]
+script = ExtResource("1_qxiyy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=270263818]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -184,14 +167,11 @@ shape = SubResource("SphereShape3D_x7i3e")
 
 [node name="visuals" type="Node3D" parent="." unique_id=457490808]
 
-[node name="M_GhostEnemyRigged2" parent="visuals" unique_id=1742923672 instance=ExtResource("2_oo87m")]
+[node name="M_GhostEnemyRigged2" parent="visuals" unique_id=1742923672 instance=ExtResource("2_ymmvx")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 
 [node name="Armature" parent="visuals/M_GhostEnemyRigged2" index="0" unique_id=1958099752]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-
-[node name="GhostEnemy" parent="visuals/M_GhostEnemyRigged2/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1742923672, 176588521) index="0" unique_id=1123420743]
-surface_material_override/0 = SubResource("StandardMaterial3D_xiebv")
 
 [node name="AnimationPlayer" parent="visuals/M_GhostEnemyRigged2" index="1" unique_id=848850655]
 libraries/ = SubResource("AnimationLibrary_oo87m")

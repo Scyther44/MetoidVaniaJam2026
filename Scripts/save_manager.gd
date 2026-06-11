@@ -9,6 +9,7 @@ var player_max_health = 1
 
 var has_side_blast = false
 var has_down_blast = false
+var has_inital_dialog_been_shown = false
 
 var collected_pickups = []
 
@@ -29,7 +30,8 @@ func save_checkpoint(scene_path, position, health):
 		"max_health": player_max_health,
 		"side_blast": has_side_blast,
 		"down_blast": has_down_blast,
-		"pickups": collected_pickups
+		"pickups": collected_pickups,
+		"dialog": has_inital_dialog_been_shown
 	}
 
 	print("Saving at path: " + SAVE_PATH)
@@ -44,6 +46,7 @@ func load_checkpoint():
 
 	if !FileAccess.file_exists(SAVE_PATH):
 		print("No save file found")
+		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 		return
 
 	get_tree().paused = false
@@ -63,6 +66,7 @@ func load_checkpoint():
 	has_side_blast = data["side_blast"]
 	has_down_blast = data["down_blast"]
 	collected_pickups = data["pickups"]
+	has_inital_dialog_been_shown = data["dialog"]
 
 	checkpoint_position = Vector3(
 		data["x"],

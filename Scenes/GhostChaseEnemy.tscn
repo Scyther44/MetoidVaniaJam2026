@@ -138,7 +138,7 @@ shape = SubResource("SphereShape3D_x7i3e")
 [node name="M_GhostEnemyRigged" parent="visuals" unique_id=1742923672 instance=ExtResource("2_5euxl")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 
-[node name="AnimationPlayer" parent="visuals/M_GhostEnemyRigged" index="1" unique_id=71589769]
+[node name="AnimationPlayer" parent="visuals/M_GhostEnemyRigged" index="1" unique_id=848850655]
 libraries/ = SubResource("AnimationLibrary_6jgyj")
 
 [editable path="visuals/M_GhostEnemyRigged"]

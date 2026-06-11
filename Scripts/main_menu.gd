@@ -4,7 +4,8 @@ extends Control
 @onready var load_game_button = $LoadGameButton
 @onready var options_button = $OptionsButton
 
-const NEW_GAME_SCENE = preload("res://Scenes/Levels/world.tscn")
+
+const TUTORIAL_SCENE = preload("res://Scenes/tutorial_level.tscn")
 const OPTIONS_MENU = preload(
 	"res://Scenes/options_menu.tscn"
 )
@@ -73,7 +74,7 @@ func _on_new_game_button_pressed() -> void:
 	get_tree().paused = false
 
 	get_tree().change_scene_to_packed(
-		NEW_GAME_SCENE
+		TUTORIAL_SCENE
 	)
 
 func _on_load_game_button_pressed() -> void:
