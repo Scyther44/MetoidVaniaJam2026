@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://dpr30ffwv0kdl" path="res://Scenes/dialog.tscn" id="18_8e5no"]
 [ext_resource type="Script" uid="uid://cpyron6xts10s" path="res://Scripts/world_dialog_manager.gd" id="18_46y6x"]
 [ext_resource type="Texture2D" uid="uid://baq1logjuyjss" path="res://Assets/2Dsprites/S_HotrodOverallsShine.png" id="18_aum8j"]
+[ext_resource type="Texture2D" uid="uid://c3gk6q80g823k" path="res://Assets/S_MentorV1.png" id="20_aum8j"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8o7oj"]
 sky_top_color = Color(0.03163817, 0, 0.89537793, 1)
@@ -45,6 +46,9 @@ fog_sky_affect = 0.7
 fog_depth_curve = 0.133972
 fog_depth_begin = 1.0
 fog_depth_end = 5.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_uhib0"]
+radius = 3.0
 
 [node name="World" type="Node3D" unique_id=275477289]
 
@@ -371,8 +375,20 @@ dialog = NodePath("../Dialog")
 [node name="Dialog" parent="." unique_id=506109912 instance=ExtResource("18_8e5no")]
 visible = false
 
+[node name="MentorArea3D" type="Area3D" parent="." unique_id=1896384757]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 52.300003, -1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MentorArea3D" unique_id=911404321]
+shape = SubResource("SphereShape3D_uhib0")
+
+[node name="Sprite3D" type="Sprite3D" parent="MentorArea3D" unique_id=1564041065]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+flip_h = true
+texture = ExtResource("20_aum8j")
+
 [connection signal="boss_active" from="Rooms/WorldBlockout" to="MusicPlayer" method="_on_world_blockout_boss_active"]
 [connection signal="boss_dead" from="Rooms/WorldBlockout" to="MusicPlayer" method="_on_world_blockout_boss_dead"]
+[connection signal="body_entered" from="MentorArea3D" to="DialogManager" method="_on_mentor_area_3d_body_entered"]
 
 [editable path="Player"]
 [editable path="Player/visuals/M_WitchPlayerV1"]
