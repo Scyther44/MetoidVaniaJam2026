@@ -149,7 +149,7 @@ transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 libraries/ = SubResource("AnimationLibrary_6jgyj")
 
 [node name="Thorns2" parent="visuals" unique_id=784693613 instance=ExtResource("3_yh8jp")]
-transform = Transform3D(-1.7484556e-08, 0.4, 0, -0.4, -1.7484556e-08, 0, 0, 0, 0.4, 1.4620571, 2.5520022, 0)
+transform = Transform3D(-3.278354e-08, 0.75, 0, -0.75, -3.278354e-08, 0, 0, 0, 0.75, 1.1620572, 2.5520022, 0)
 visible = false
 
 [connection signal="body_entered" from="PlayerDetectionArea" to="." method="_on_player_detection_area_body_entered"]

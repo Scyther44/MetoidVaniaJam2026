@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://dpr30ffwv0kdl" path="res://Scenes/dialog.tscn" id="18_8e5no"]
 [ext_resource type="Script" uid="uid://cpyron6xts10s" path="res://Scripts/world_dialog_manager.gd" id="18_46y6x"]
 [ext_resource type="Texture2D" uid="uid://baq1logjuyjss" path="res://Assets/2Dsprites/S_HotrodOverallsShine.png" id="18_aum8j"]
+[ext_resource type="Texture2D" uid="uid://c3gk6q80g823k" path="res://Assets/S_MentorV1.png" id="20_aum8j"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8o7oj"]
 sky_top_color = Color(0.03163817, 0, 0.89537793, 1)
@@ -45,6 +46,9 @@ fog_sky_affect = 0.7
 fog_depth_curve = 0.133972
 fog_depth_begin = 1.0
 fog_depth_end = 5.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_uhib0"]
+radius = 3.0
 
 [node name="World" type="Node3D" unique_id=275477289]
 
@@ -311,6 +315,52 @@ Learning to make one is the first lesson a witch learns. The second is to always
 pickup_title = "Potion of Heartiness"
 pickup_id = "heath_pickup2"
 
+[node name="HealthPickup3" parent="Pickups" unique_id=816494310 instance=ExtResource("8_e366w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.899994, -9.4, 0)
+pickup_type = 1
+pickup_text = "Increases your health by 1.
+Learning to make one is the first lesson a witch learns. The second is to always keep one handy!"
+pickup_title = "Potion of Heartiness"
+pickup_id = "heath_pickup3"
+
+[node name="HealthPickup4" parent="Pickups" unique_id=1073795663 instance=ExtResource("8_e366w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.100006, 13.6, 0)
+pickup_type = 1
+pickup_text = "Increases your health by 1.
+Learning to make one is the first lesson a witch learns. The second is to always keep one handy!"
+pickup_title = "Potion of Heartiness"
+pickup_id = "heath_pickup4"
+
+[node name="LorePickup" parent="Pickups" unique_id=1746126476 instance=ExtResource("8_e366w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.899994, -2.4, 0)
+pickup_text = "A pile of old bones... they are suspiciosly witch shaped."
+pickup_title = "Pile Of Bones"
+pickup_id = "lore_pickup1"
+
+[node name="LorePickup2" parent="Pickups" unique_id=656013836 instance=ExtResource("8_e366w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.899994, -9.4, 0)
+pickup_text = "It has the inscription: \"You tried and that is what matters!\""
+pickup_title = "Participation Trophy"
+pickup_id = "lore_pickup2"
+
+[node name="LorePickup3" parent="Pickups" unique_id=679289265 instance=ExtResource("8_e366w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -187.9, -9.4, 0)
+pickup_text = "It seems one of the critters has been stashing stuff here. It's too bad it's mostly junk."
+pickup_title = "Shiny Goods"
+pickup_id = "lore_pickup3"
+
+[node name="LorePickup4" parent="Pickups" unique_id=462462654 instance=ExtResource("8_e366w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -241.9, 3.6000004, 0)
+pickup_text = "Dang if this was in one piece I might've been able to fly back... although with my skills that probably wouldn't be a good idea."
+pickup_title = "Broken Broom"
+pickup_id = "lore_pickup4"
+
+[node name="LorePickup5" parent="Pickups" unique_id=415367725 instance=ExtResource("8_e366w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.100006, 27.6, 0)
+pickup_text = "It's an old note with some writing on it. All I can make out is \"Big _____ _bove _ Danger!\""
+pickup_title = "Note"
+pickup_id = "lore_pickup4"
+
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=642194100]
 stream = ExtResource("17_fuv3b")
 autoplay = true
@@ -325,8 +375,20 @@ dialog = NodePath("../Dialog")
 [node name="Dialog" parent="." unique_id=506109912 instance=ExtResource("18_8e5no")]
 visible = false
 
+[node name="MentorArea3D" type="Area3D" parent="." unique_id=1896384757]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 52.300003, -1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MentorArea3D" unique_id=911404321]
+shape = SubResource("SphereShape3D_uhib0")
+
+[node name="Sprite3D" type="Sprite3D" parent="MentorArea3D" unique_id=1564041065]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+flip_h = true
+texture = ExtResource("20_aum8j")
+
 [connection signal="boss_active" from="Rooms/WorldBlockout" to="MusicPlayer" method="_on_world_blockout_boss_active"]
 [connection signal="boss_dead" from="Rooms/WorldBlockout" to="MusicPlayer" method="_on_world_blockout_boss_dead"]
+[connection signal="body_entered" from="MentorArea3D" to="DialogManager" method="_on_mentor_area_3d_body_entered"]
 
 [editable path="Player"]
 [editable path="Player/visuals/M_WitchPlayerV1"]

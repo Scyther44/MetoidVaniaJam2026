@@ -7221,12 +7221,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 1, 0)
 [node name="2x1x2levelblock18" parent="BossRoom" unique_id=1612711415 instance=ExtResource("6_miklt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 2, 0)
 
-[node name="2x1x2levelblock60" parent="BossRoom" unique_id=2087096680 instance=ExtResource("6_miklt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 3, 0)
-
-[node name="2x1x2levelblock61" parent="BossRoom" unique_id=2121923674 instance=ExtResource("6_miklt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 3, 0)
-
 [node name="2x1x2levelblock21" parent="BossRoom" unique_id=861221946 instance=ExtResource("6_miklt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1, 0)
 
@@ -7329,12 +7323,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 4, 0)
 [node name="2x1x2levelblock985" parent="BossRoom" unique_id=1820561049 instance=ExtResource("5_rg6li")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 4, 0)
 
-[node name="2x1x2levelblock990" parent="BossRoom" unique_id=543641470 instance=ExtResource("5_rg6li")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 4, 0)
-
-[node name="2x1x2levelblock991" parent="BossRoom" unique_id=70090819 instance=ExtResource("5_rg6li")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 4, 0)
-
 [node name="2x1x2levelblock988" parent="BossRoom" unique_id=1781681232 instance=ExtResource("5_rg6li")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 4, 0)
 
@@ -7382,6 +7370,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 4, 0)
 
 [node name="Thorns25" parent="BossRoom" unique_id=1595867285 instance=ExtResource("3_miklt")]
 transform = Transform3D(1, 1.7484555e-07, 0, -1.7484555e-07, 1, 0, 0, 0, 1, -8, 3, 0)
+
+[node name="Thorns28" parent="BossRoom" unique_id=993832035 instance=ExtResource("3_miklt")]
+transform = Transform3D(1, 1.7484555e-07, 0, -1.7484555e-07, 1, 0, 0, 0, 1, -4, 3, 0)
+
+[node name="Thorns29" parent="BossRoom" unique_id=1818757182 instance=ExtResource("3_miklt")]
+transform = Transform3D(1, 1.7484555e-07, 0, -1.7484555e-07, 1, 0, 0, 0, 1, -20, 3, 0)
 
 [node name="Thorns26" parent="BossRoom" unique_id=771887887 instance=ExtResource("3_miklt")]
 transform = Transform3D(1, 1.7484555e-07, 0, -1.7484555e-07, 1, 0, 0, 0, 1, -12, 3, 0)
