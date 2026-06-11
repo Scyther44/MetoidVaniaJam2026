@@ -186,7 +186,7 @@ func handle_state(delta):
 func state_idle(delta):
 	
 	if is_afk:
-		print("Player is afk")
+		#print("Player is afk")
 		play_anim("Animpack5/sad_idle")
 	else:
 		play_anim("Animpack5/happy_idle2")
@@ -481,10 +481,10 @@ func change_state(new_state):
 	current_state = new_state
 	
 	if current_state == State.IDLE:
-		print("starting idle time")
+		#print("starting idle time")
 		idle_timer.start()
 	else:
-		print("Stopping timer")
+		#print("Stopping timer")
 		idle_timer.stop()
 		is_afk = false
 
@@ -585,7 +585,7 @@ func _on_climb_detector_area_area_exited(area: Area3D) -> void:
 
 
 func _on_idle_timer_timeout() -> void:
-	print("IdleTimerTimeout")
+	#print("IdleTimerTimeout")
 	if current_state == State.IDLE:
 		is_afk = true
 		

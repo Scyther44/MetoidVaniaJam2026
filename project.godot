@@ -41,6 +41,7 @@ enemy="group for enemy characters"
 player=""
 climbable=""
 breakable=""
+boss_minion=""
 
 [input]
 

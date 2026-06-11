@@ -15,11 +15,11 @@ emission_texture = ExtResource("3_utb1d")
 
 [node name="M_GhostEnemyRigged" unique_id=1742923672 instance=ExtResource("1_q5ykv")]
 
-[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(280206064) index="0" unique_id=1348167099]
+[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(1958099752) index="0" unique_id=176588521]
 bones/3/position = Vector3(-0.2985167, 0.7018984, -0.35504347)
 bones/3/rotation = Quaternion(-0.7029302, 0.034836687, 0.011681444, 0.7103092)
 bones/4/position = Vector3(0.2985167, 0.7018984, -0.35504347)
 bones/4/rotation = Quaternion(-0.7029302, -0.034836687, -0.011681444, 0.7103092)
 
-[node name="GhostEnemy" parent="Armature/Skeleton3D" index="0" unique_id=2055824522]
+[node name="GhostEnemy" parent="Armature/Skeleton3D" index="0" unique_id=1123420743]
 surface_material_override/0 = SubResource("StandardMaterial3D_xk5qq")
