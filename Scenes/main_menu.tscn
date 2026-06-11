@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bl7w5sjho2ue7" path="res://Scripts/main_menu.gd" id="1_1ehe0"]
 [ext_resource type="FontFile" uid="uid://dac1ectubqowc" path="res://Assets/Fonts/Agbalumo-Regular.ttf" id="2_1ehe0"]
+[ext_resource type="Texture2D" uid="uid://2i7i4obk2ylq" path="res://Assets/UI/S_Title.png" id="3_vr1f0"]
 [ext_resource type="AudioStream" uid="uid://n7xu0ati4tmg" path="res://Music/Witchy Main Menu.mp3" id="4_ce3w2"]
 [ext_resource type="Texture2D" uid="uid://b6li3i5vnf6lf" path="res://Assets/UI/S_TitleScreen.png" id="4_n45e2"]
 [ext_resource type="Texture2D" uid="uid://b0yfkv30wiw4o" path="res://Assets/UI/S_StartButton.png" id="4_opfnp"]
@@ -77,15 +78,27 @@ grow_vertical = 2
 texture = ExtResource("4_n45e2")
 expand_mode = 2
 
+[node name="Title" type="TextureRect" parent="." unique_id=960376147]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.54700005
+anchor_bottom = 0.57500005
+offset_right = -0.16003418
+offset_bottom = -3.0517578e-05
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_vr1f0")
+expand_mode = 2
+
 [node name="NewGameButton" type="Button" parent="." unique_id=64120243]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 53.0
-offset_top = -444.0
+offset_top = -377.0
 offset_right = 2026.0
-offset_bottom = -49.0
+offset_bottom = 18.0
 grow_vertical = 0
 scale = Vector2(0.25, 0.25)
 focus_neighbor_left = NodePath("../OptionsButton")
@@ -107,9 +120,9 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 53.0
-offset_top = -327.0
+offset_top = -260.0
 offset_right = 2026.0
-offset_bottom = 68.0
+offset_bottom = 135.0
 grow_vertical = 0
 scale = Vector2(0.25, 0.25)
 focus_neighbor_left = NodePath("../NewGameButton")
@@ -134,9 +147,9 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 53.0
-offset_top = -214.0
+offset_top = -147.0
 offset_right = 2026.0
-offset_bottom = 181.0
+offset_bottom = 248.0
 grow_vertical = 0
 scale = Vector2(0.25, 0.25)
 focus_neighbor_left = NodePath("../LoadGameButton")
@@ -153,6 +166,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_wyh8j")
 theme_override_styles/focus = SubResource("StyleBoxTexture_ujyyl")
 
 [node name="Label" type="Label" parent="." unique_id=1133811338]
+visible = false
 layout_mode = 0
 offset_top = 33.0
 offset_right = 602.0

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://11o2m8b4g0jc"]
+
+[ext_resource type="PackedScene" uid="uid://nrrcb74lq264" path="res://Assets/BuildingBlocks/M_VinesV2.glb" id="1_wbvjv"]
+[ext_resource type="Texture2D" uid="uid://c5ruyyf8d8tfr" path="res://Assets/BuildingBlocks/M_VinesV2_T_Vines.png" id="2_3uw34"]
+[ext_resource type="Texture2D" uid="uid://bdf5jgobskeht" path="res://Assets/BuildingBlocks/T_VinesTransparency.png" id="3_gk3id"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wbvjv"]
+transparency = 3
+alpha_hash_scale = 1.0
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("2_3uw34")
+emission_enabled = true
+emission_operator = 1
+emission_texture = ExtResource("3_gk3id")
+
+[node name="M_VinesV2" unique_id=1864807918 instance=ExtResource("1_wbvjv")]
+
+[node name="Plane" parent="." index="0" unique_id=2110141409]
+surface_material_override/0 = SubResource("StandardMaterial3D_wbvjv")

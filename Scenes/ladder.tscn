@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://582f4j8e66h2"]
 
-[ext_resource type="PackedScene" uid="uid://cl85musovdv4t" path="res://Scenes/levelbuilding/m_vines.tscn" id="1_75hc7"]
+[ext_resource type="PackedScene" uid="uid://11o2m8b4g0jc" path="res://Scenes/levelbuilding/m_vines_v_2.tscn" id="2_fnw1j"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_ly8pi"]
 top_radius = 0.1
@@ -24,5 +24,5 @@ surface_material_override/0 = SubResource("StandardMaterial3D_75hc7")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=709473525]
 shape = SubResource("CylinderShape3D_fnw1j")
 
-[node name="M_Vines" parent="." unique_id=1315293032 instance=ExtResource("1_75hc7")]
+[node name="M_VinesV2" parent="." unique_id=1864807918 instance=ExtResource("2_fnw1j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
