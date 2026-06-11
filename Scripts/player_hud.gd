@@ -35,3 +35,18 @@ func fade_to_black(duration := 1.0):
 	)
 
 	await tween.finished
+	
+func fade_from_black(duration := 1.0):
+
+	rect.color.a = 1
+
+	var tween = create_tween()
+
+	tween.tween_property(
+		rect,
+		"color:a",
+		0.0,
+		duration
+	)
+
+	await tween.finished

@@ -16,6 +16,8 @@
 [ext_resource type="Script" uid="uid://dnm2dxavoepmr" path="res://Scripts/music_player.gd" id="17_8e5no"]
 [ext_resource type="Texture2D" uid="uid://djsyefj7v4xb0" path="res://Assets/2Dsprites/S_HotrodOverallsIconV2.png" id="17_46y6x"]
 [ext_resource type="AudioStream" uid="uid://cuhka32cuc8qx" path="res://Music/Witchy Ps1 Level.mp3" id="17_fuv3b"]
+[ext_resource type="PackedScene" uid="uid://dpr30ffwv0kdl" path="res://Scenes/dialog.tscn" id="18_8e5no"]
+[ext_resource type="Script" uid="uid://cpyron6xts10s" path="res://Scripts/world_dialog_manager.gd" id="18_46y6x"]
 [ext_resource type="Texture2D" uid="uid://baq1logjuyjss" path="res://Assets/2Dsprites/S_HotrodOverallsShine.png" id="18_aum8j"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8o7oj"]
@@ -25,12 +27,12 @@ sky_energy_multiplier = 0.5
 ground_bottom_color = Color(0.17810842, 0.288111, 0.119871765, 1)
 ground_horizon_color = Color(8.4980854e-08, 0.10601502, 0.021593181, 1)
 
-[sub_resource type="Sky" id="Sky_00tp4"]
+[sub_resource type="Sky" id="Sky_fuv3b"]
 sky_material = SubResource("ProceduralSkyMaterial_8o7oj")
 
 [sub_resource type="Environment" id="Environment_ws78m"]
 background_mode = 2
-sky = SubResource("Sky_00tp4")
+sky = SubResource("Sky_fuv3b")
 ambient_light_color = Color(0, 0.124055676, 0.99998647, 1)
 glow_enabled = true
 fog_enabled = true
@@ -51,7 +53,7 @@ environment = SubResource("Environment_ws78m")
 script = ExtResource("1_8e5no")
 
 [node name="Player" parent="." unique_id=775848779 instance=ExtResource("1_03d5g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4035797, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 45.40358, 0)
 
 [node name="PauseMenu" parent="." unique_id=1771188108 instance=ExtResource("7_vegga")]
 visible = false
@@ -302,7 +304,7 @@ pickup_title = "Potion of Heartiness"
 pickup_id = "heath_pickup1"
 
 [node name="HealthPickup2" parent="Pickups" unique_id=2029754559 instance=ExtResource("8_e366w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9, 2.6, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -167.9, -1.4000001, 0)
 pickup_type = 1
 pickup_text = "Increases your health by 1.
 Learning to make one is the first lesson a witch learns. The second is to always keep one handy!"
@@ -315,6 +317,13 @@ autoplay = true
 bus = &"Music"
 parameters/looping = true
 script = ExtResource("17_8e5no")
+
+[node name="DialogManager" type="Node" parent="." unique_id=1560311240 node_paths=PackedStringArray("dialog")]
+script = ExtResource("18_46y6x")
+dialog = NodePath("../Dialog")
+
+[node name="Dialog" parent="." unique_id=506109912 instance=ExtResource("18_8e5no")]
+visible = false
 
 [connection signal="boss_active" from="Rooms/WorldBlockout" to="MusicPlayer" method="_on_world_blockout_boss_active"]
 [connection signal="boss_dead" from="Rooms/WorldBlockout" to="MusicPlayer" method="_on_world_blockout_boss_dead"]
