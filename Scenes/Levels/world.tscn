@@ -311,6 +311,52 @@ Learning to make one is the first lesson a witch learns. The second is to always
 pickup_title = "Potion of Heartiness"
 pickup_id = "heath_pickup2"
 
+[node name="HealthPickup3" parent="Pickups" unique_id=816494310 instance=ExtResource("8_e366w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.899994, -9.4, 0)
+pickup_type = 1
+pickup_text = "Increases your health by 1.
+Learning to make one is the first lesson a witch learns. The second is to always keep one handy!"
+pickup_title = "Potion of Heartiness"
+pickup_id = "heath_pickup3"
+
+[node name="HealthPickup4" parent="Pickups" unique_id=1073795663 instance=ExtResource("8_e366w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.100006, 13.6, 0)
+pickup_type = 1
+pickup_text = "Increases your health by 1.
+Learning to make one is the first lesson a witch learns. The second is to always keep one handy!"
+pickup_title = "Potion of Heartiness"
+pickup_id = "heath_pickup4"
+
+[node name="LorePickup" parent="Pickups" unique_id=1746126476 instance=ExtResource("8_e366w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.899994, -2.4, 0)
+pickup_text = "A pile of old bones... they are suspiciosly witch shaped."
+pickup_title = "Pile Of Bones"
+pickup_id = "lore_pickup1"
+
+[node name="LorePickup2" parent="Pickups" unique_id=656013836 instance=ExtResource("8_e366w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.899994, -9.4, 0)
+pickup_text = "It has the inscription: \"You tried and that is what matters!\""
+pickup_title = "Participation Trophy"
+pickup_id = "lore_pickup2"
+
+[node name="LorePickup3" parent="Pickups" unique_id=679289265 instance=ExtResource("8_e366w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -187.9, -9.4, 0)
+pickup_text = "It seems one of the critters has been stashing stuff here. It's too bad it's mostly junk."
+pickup_title = "Shiny Goods"
+pickup_id = "lore_pickup3"
+
+[node name="LorePickup4" parent="Pickups" unique_id=462462654 instance=ExtResource("8_e366w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -241.9, 3.6000004, 0)
+pickup_text = "Dang if this was in one piece I might've been able to fly back... although with my skills that probably wouldn't be a good idea."
+pickup_title = "Broken Broom"
+pickup_id = "lore_pickup4"
+
+[node name="LorePickup5" parent="Pickups" unique_id=415367725 instance=ExtResource("8_e366w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.100006, 27.6, 0)
+pickup_text = "It's an old note with some writing on it. All I can make out is \"Big _____ _bove _ Danger!\""
+pickup_title = "Note"
+pickup_id = "lore_pickup4"
+
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=642194100]
 stream = ExtResource("17_fuv3b")
 autoplay = true

@@ -51,6 +51,16 @@ layout_mode = 2
 texture = ExtResource("3_pkmr8")
 expand_mode = 2
 
+[node name="Heart4" type="TextureRect" parent="HBoxContainer" unique_id=1175655803]
+layout_mode = 2
+texture = ExtResource("3_pkmr8")
+expand_mode = 2
+
+[node name="Heart5" type="TextureRect" parent="HBoxContainer" unique_id=1039284623]
+layout_mode = 2
+texture = ExtResource("3_pkmr8")
+expand_mode = 2
+
 [node name="ColorRect" type="ColorRect" parent="." unique_id=492145137]
 layout_mode = 1
 anchors_preset = 15

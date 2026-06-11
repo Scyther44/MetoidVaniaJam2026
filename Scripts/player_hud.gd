@@ -4,6 +4,8 @@ extends Control
 @onready var heart1 = $HBoxContainer/Heart1
 @onready var heart2 = $HBoxContainer/Heart2
 @onready var heart3 = $HBoxContainer/Heart3
+@onready var heart4 = $HBoxContainer/Heart4
+@onready var heart5 = $HBoxContainer/Heart5
 @onready var rect = $ColorRect
 
 # Called when the node enters the scene tree for the first time.
@@ -19,6 +21,8 @@ func update_hearts():
 	heart1.visible = player.health >= 1
 	heart2.visible = player.health >= 2
 	heart3.visible = player.health >= 3
+	heart4.visible = player.health >= 4
+	heart5.visible = player.health >= 5
 
 
 func fade_to_black(duration := 1.0):
