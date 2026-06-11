@@ -3,6 +3,9 @@ extends Node
 @export var dialog : CanvasLayer
 
 func _ready() -> void:
+	if (SaveManager.has_inital_dialog_been_shown):
+		return
+		
 	await get_tree().create_timer(5).timeout
 	dialog.start_dialog([
 		{
@@ -22,3 +25,5 @@ func _ready() -> void:
 			"text": "I better find it and try making my way back up to where my mentor was."
 		},
 	])
+	
+	SaveManager.has_inital_dialog_been_shown = true

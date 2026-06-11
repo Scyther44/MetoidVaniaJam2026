@@ -59,7 +59,7 @@ func complete_move_room():
 		},
 		{
 			"speaker": "Mentor",
-			"text": "Every which will have obstacles in their way. You must overcome them."
+			"text": "Every witch will have obstacles in their way. You must overcome them."
 		},
 		{
 			"speaker": "Mentor",

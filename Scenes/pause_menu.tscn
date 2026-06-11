@@ -3,18 +3,52 @@
 [ext_resource type="Script" uid="uid://b7tgrsbv6oadu" path="res://Scripts/pause_menu.gd" id="1_1och7"]
 [ext_resource type="PackedScene" uid="uid://cnem2s7md2dw5" path="res://Scenes/StyledUIButton.tscn" id="1_k0w1u"]
 [ext_resource type="FontFile" uid="uid://dac1ectubqowc" path="res://Assets/Fonts/Agbalumo-Regular.ttf" id="2_1och7"]
+[ext_resource type="Texture2D" uid="uid://guluik76416a" path="res://Assets/UI/pause/S_Resume.png" id="3_bpi0q"]
+[ext_resource type="Texture2D" uid="uid://b5b6ytpib1qks" path="res://Assets/UI/pause/S_ResumeSelected.png" id="4_vmyb1"]
+[ext_resource type="Texture2D" uid="uid://dhae27ob58b8m" path="res://Assets/UI/pause/S_ReloadCheckpoint.png" id="5_sjs17"]
+[ext_resource type="Texture2D" uid="uid://dsvywpar10tu6" path="res://Assets/UI/pause/S_ReloadCheckpointSelected.png" id="6_u8tnp"]
+[ext_resource type="Texture2D" uid="uid://bvo0ahie01uiw" path="res://Assets/UI/pause/S_QuitToMenu.png" id="7_stj27"]
+[ext_resource type="Texture2D" uid="uid://7gc4jqnkb2a7" path="res://Assets/UI/pause/S_QuitToMenuSelected.png" id="8_ix48p"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1och7"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.1, 0.1, 0.1, 0.3)
-corner_radius_top_left = 3
-corner_radius_top_right = 300
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 300
-corner_detail = 5
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vmyb1"]
+texture = ExtResource("3_bpi0q")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_myy0f"]
+texture = ExtResource("4_vmyb1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sjs17"]
+texture = ExtResource("3_bpi0q")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u8tnp"]
+texture = ExtResource("3_bpi0q")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_stj27"]
+texture = ExtResource("5_sjs17")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ix48p"]
+texture = ExtResource("6_u8tnp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_524vl"]
+texture = ExtResource("5_sjs17")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0fi7f"]
+texture = ExtResource("5_sjs17")
+modulate_color = Color(1, 1, 1, 0.34901962)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uscpe"]
+texture = ExtResource("5_sjs17")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_taale"]
+texture = ExtResource("7_stj27")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q7fiq"]
+texture = ExtResource("8_ix48p")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6wqnn"]
+texture = ExtResource("7_stj27")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1ymcx"]
+texture = ExtResource("7_stj27")
 
 [sub_resource type="LabelSettings" id="LabelSettings_bpi0q"]
 font = ExtResource("2_1och7")
@@ -59,7 +93,11 @@ focus_neighbor_right = NodePath("../Reload")
 focus_neighbor_bottom = NodePath("../Reload")
 focus_next = NodePath("../Reload")
 focus_previous = NodePath("../Quit")
-text = "Resume"
+theme_override_styles/normal = SubResource("StyleBoxTexture_vmyb1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_myy0f")
+theme_override_styles/hover = SubResource("StyleBoxTexture_sjs17")
+theme_override_styles/focus = SubResource("StyleBoxTexture_u8tnp")
+text = ""
 
 [node name="Reload" parent="." unique_id=1643316335 instance=ExtResource("1_k0w1u")]
 layout_mode = 1
@@ -80,9 +118,14 @@ focus_neighbor_right = NodePath("../Quit")
 focus_neighbor_bottom = NodePath("../Quit")
 focus_next = NodePath("../Quit")
 focus_previous = NodePath("../Resume")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_1och7")
+theme_override_styles/normal = SubResource("StyleBoxTexture_stj27")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ix48p")
+theme_override_styles/hover = SubResource("StyleBoxTexture_524vl")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_0fi7f")
+theme_override_styles/focus = SubResource("StyleBoxTexture_uscpe")
 disabled = true
-text = "Reload Checkpoint"
+text = "
+"
 
 [node name="Quit" parent="." unique_id=1633453212 instance=ExtResource("1_k0w1u")]
 layout_mode = 1
@@ -103,7 +146,11 @@ focus_neighbor_right = NodePath("../Resume")
 focus_neighbor_bottom = NodePath("../Resume")
 focus_next = NodePath("../Resume")
 focus_previous = NodePath("../Reload")
-text = "Quit To Main Menu"
+theme_override_styles/normal = SubResource("StyleBoxTexture_taale")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_q7fiq")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6wqnn")
+theme_override_styles/focus = SubResource("StyleBoxTexture_1ymcx")
+text = ""
 
 [node name="Label" type="Label" parent="." unique_id=383881752]
 layout_mode = 1
