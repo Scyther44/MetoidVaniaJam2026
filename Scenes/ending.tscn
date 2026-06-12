@@ -1,0 +1,166 @@
+[gd_scene format=3 uid="uid://qbpcf13mro1q"]
+
+[ext_resource type="Texture2D" uid="uid://b2p516mg8kvix" path="res://Assets/ending.png" id="1_5jm55"]
+[ext_resource type="Script" uid="uid://di5yfodrwby0q" path="res://Scripts/ending.gd" id="1_kg0jb"]
+[ext_resource type="FontFile" uid="uid://dac1ectubqowc" path="res://Assets/Fonts/Agbalumo-Regular.ttf" id="3_6u0w7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6u0w7"]
+font = ExtResource("3_6u0w7")
+font_size = 26
+font_color = Color(1, 1, 1, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ib4ol"]
+font = ExtResource("3_6u0w7")
+font_size = 26
+font_color = Color(1, 1, 1, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bxiex"]
+font = ExtResource("3_6u0w7")
+font_size = 26
+font_color = Color(1, 1, 1, 0)
+
+[sub_resource type="Animation" id="Animation_bfdlc"]
+resource_name = "endme"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:label_settings:font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label2:label_settings:font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 6, 7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label3:label_settings:font_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 7, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1, 5, 10, 15),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8w7g3"]
+_data = {
+&"endme": SubResource("Animation_bfdlc")
+}
+
+[node name="Ending" type="Control" unique_id=1588602578]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kg0jb")
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=2050240123]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1432348393]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_5jm55")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="." unique_id=110142808]
+layout_mode = 1
+offset_left = 61.0
+offset_top = 35.0
+offset_right = 311.0
+offset_bottom = 123.0
+text = "Programming:
+Simon Yacoub (SCY4)"
+label_settings = SubResource("LabelSettings_6u0w7")
+
+[node name="Label2" type="Label" parent="." unique_id=1560057354]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -82.0
+offset_top = 35.0
+offset_right = 81.5
+offset_bottom = 376.0
+grow_horizontal = 2
+text = "Art:
+NoelleThorup"
+label_settings = SubResource("LabelSettings_ib4ol")
+
+[node name="Label3" type="Label" parent="." unique_id=727407417]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -294.0
+offset_top = 35.0
+offset_right = -15.0
+offset_bottom = 376.0
+grow_horizontal = 0
+text = "Music and Sound:
+ElessarBarea"
+label_settings = SubResource("LabelSettings_bxiex")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=880802668]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1494885865]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=322417280]
+libraries/ = SubResource("AnimationLibrary_8w7g3")

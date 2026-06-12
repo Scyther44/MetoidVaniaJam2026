@@ -50,6 +50,7 @@ func _ready() -> void:
 func complete_move_room():
 	animation_player.play("move1")
 	await animation_player.animation_finished
+	animation_player.play("bobble")
 	current_step = Step.JUMP
 
 	dialog.start_dialog([
@@ -75,6 +76,7 @@ func _on_complete_move_room_body_entered(body: Node3D) -> void:
 func complete_jump_room():
 	animation_player.play("move2")
 	await animation_player.animation_finished
+	animation_player.play("bobble")
 	current_step = Step.BONFIRE
 
 	dialog.start_dialog([
@@ -113,6 +115,7 @@ func complete_bonfire_room():
 	await get_tree().create_timer(5).timeout
 	$"../Player".global_position = Vector3(7, 1.6, 0.0)
 	$"../Mentor".global_position = MENTOR_POS2
+	animation_player.play("bobble")
 	$"../Player".fade_from_black(5)
 	await get_tree().create_timer(5).timeout
 	$"../AfterCamera3D".current = true

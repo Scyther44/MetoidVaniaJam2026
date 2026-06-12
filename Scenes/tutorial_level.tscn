@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://c5igmu58oueq6" path="res://Scenes/levelbuilding/2x1x2Dirtlevelblock.tscn" id="1_o8ev7"]
 [ext_resource type="PackedScene" uid="uid://bmk1tayxw3iun" path="res://Scenes/levelbuilding/2x1x2levelblock.tscn" id="2_k8hhx"]
-[ext_resource type="Texture2D" uid="uid://c3gk6q80g823k" path="res://Assets/S_MentorV1.png" id="3_k8hhx"]
 [ext_resource type="PackedScene" uid="uid://2hfjj034svw7" path="res://Scenes/player.tscn" id="4_7t4b2"]
+[ext_resource type="Texture2D" uid="uid://ddqccrtwctsk5" path="res://Assets/S_MentorV2.png" id="4_gh2jb"]
 [ext_resource type="Script" uid="uid://t6p844v26bds" path="res://Scripts/tutorial_manager.gd" id="5_b8nu6"]
 [ext_resource type="PackedScene" uid="uid://dpr30ffwv0kdl" path="res://Scenes/dialog.tscn" id="6_addnb"]
 [ext_resource type="Script" uid="uid://b8ecnh2igpgc0" path="res://Scripts/darkness_with_time.gd" id="7_3jdy6"]
@@ -73,6 +73,35 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Mentor/Sprite3D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.5, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gh2jb"]
+resource_name = "bobble"
+length = 3.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mentor/Sprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0.2, 0), Vector3(0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_3jdy6"]
 resource_name = "Move1"
@@ -133,6 +162,7 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_105ll"]
 _data = {
 &"RESET": SubResource("Animation_105ll"),
+&"bobble": SubResource("Animation_gh2jb"),
 &"move1": SubResource("Animation_3jdy6"),
 &"move2": SubResource("Animation_ptwdd")
 }
@@ -168,8 +198,8 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 107, 3.1999998, -1.0000001)
 
 [node name="Sprite3D" type="Sprite3D" parent="Mentor" unique_id=1565684151]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-texture = ExtResource("3_k8hhx")
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.5, 0)
+texture = ExtResource("4_gh2jb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Mentor" unique_id=1157227246]
 shape = SubResource("SphereShape3D_k8hhx")
@@ -1740,6 +1770,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 109, 1, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=4757586]
 libraries/ = SubResource("AnimationLibrary_105ll")
+autoplay = &"bobble"
 
 [node name="Campfire" type="Area3D" parent="." unique_id=621915228]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53, 1.5, 0)

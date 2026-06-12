@@ -2,6 +2,7 @@ extends Node
 
 @export var dialog : CanvasLayer
 var is_endgame = false
+const ENDING = preload("res://Scenes/ending.tscn")
 
 func _ready() -> void:
 	if (SaveManager.has_inital_dialog_been_shown):
@@ -79,4 +80,4 @@ func _on_mentor_area_3d_body_entered(body: Node3D) -> void:
 		
 		$"../Player".fade_to_black(5)
 		await get_tree().create_timer(5).timeout
-		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+		get_tree().change_scene_to_packed(ENDING)
