@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://582f4j8e66h2"]
 
+[ext_resource type="PackedScene" uid="uid://cl85musovdv4t" path="res://Scenes/levelbuilding/m_vines.tscn" id="1_75hc7"]
 [ext_resource type="PackedScene" uid="uid://11o2m8b4g0jc" path="res://Scenes/levelbuilding/m_vines_v_2.tscn" id="2_fnw1j"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_ly8pi"]
@@ -26,3 +27,7 @@ shape = SubResource("CylinderShape3D_fnw1j")
 
 [node name="M_VinesV2" parent="." unique_id=1864807918 instance=ExtResource("2_fnw1j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
+
+[node name="M_Vines" parent="." unique_id=1315293032 instance=ExtResource("1_75hc7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0, -0.2)
+visible = false

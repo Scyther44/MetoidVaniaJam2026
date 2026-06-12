@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cc438hbhl8quw" path="res://Assets/S_BackgroundMountain.1.png" id="11_gh2jb"]
 [ext_resource type="Texture2D" uid="uid://dufd5717nxgf7" path="res://Assets/S_BackgroundTrees.1.png" id="13_hy7s5"]
 [ext_resource type="Texture2D" uid="uid://b8478rhfj85or" path="res://Assets/S_BackgroundTreesAlt1.png" id="14_0jq2i"]
+[ext_resource type="Texture2D" uid="uid://bpgo5g6xo2mrb" path="res://Assets/WitchHut.png" id="14_gh2jb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_105ll"]
 sky_top_color = Color(0.03163817, 0, 0.89537793, 1)
@@ -1798,6 +1799,12 @@ transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -665, -28, -513)
 pixel_size = 1.0
 alpha_cut = 1
 texture = ExtResource("14_0jq2i")
+
+[node name="Sprite3D2" type="Sprite3D" parent="." unique_id=1309175926]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 14, 5.9, -1.2)
+flip_h = true
+alpha_cut = 1
+texture = ExtResource("14_gh2jb")
 
 [connection signal="tutattacktriggered" from="Player" to="TutorialManager" method="_on_player_tutattacktriggered"]
 [connection signal="body_entered" from="CompleteMoveRoom" to="TutorialManager" method="_on_complete_move_room_body_entered"]

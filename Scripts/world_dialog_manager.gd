@@ -48,7 +48,7 @@ func _on_mentor_area_3d_body_entered(body: Node3D) -> void:
 			},
 			{
 				"speaker": "Tabi",
-				"text": "Your 'little adventure' involved me falling off a cliff and bunch of angry ghosts!"
+				"text": "My 'little adventure' involved me falling off a cliff and bunch of angry ghosts!"
 			},
 			{
 				"speaker": "Mentor",

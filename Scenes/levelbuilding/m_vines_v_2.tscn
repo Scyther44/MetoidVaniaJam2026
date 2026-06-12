@@ -5,10 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://bdf5jgobskeht" path="res://Assets/BuildingBlocks/T_VinesTransparency.png" id="3_gk3id"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wbvjv"]
-transparency = 3
-alpha_hash_scale = 1.0
+transparency = 2
+alpha_scissor_threshold = 0.05
 alpha_antialiasing_mode = 0
 albedo_texture = ExtResource("2_3uw34")
+metallic_specular = 0.0
 emission_enabled = true
 emission_operator = 1
 emission_texture = ExtResource("3_gk3id")

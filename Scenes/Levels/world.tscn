@@ -20,6 +20,7 @@
 [ext_resource type="Script" uid="uid://cpyron6xts10s" path="res://Scripts/world_dialog_manager.gd" id="18_46y6x"]
 [ext_resource type="Texture2D" uid="uid://baq1logjuyjss" path="res://Assets/2Dsprites/S_HotrodOverallsShine.png" id="18_aum8j"]
 [ext_resource type="Texture2D" uid="uid://c3gk6q80g823k" path="res://Assets/S_MentorV1.png" id="20_aum8j"]
+[ext_resource type="Texture2D" uid="uid://bpgo5g6xo2mrb" path="res://Assets/WitchHut.png" id="21_uhib0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8o7oj"]
 sky_top_color = Color(0.03163817, 0, 0.89537793, 1)
@@ -382,9 +383,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 52.300003, -1)
 shape = SubResource("SphereShape3D_uhib0")
 
 [node name="Sprite3D" type="Sprite3D" parent="MentorArea3D" unique_id=1564041065]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0.7)
 flip_h = true
+alpha_cut = 1
 texture = ExtResource("20_aum8j")
+
+[node name="Sprite3D2" type="Sprite3D" parent="MentorArea3D" unique_id=416363661]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 4.7, 2.7999992, 0.39999998)
+flip_h = true
+alpha_cut = 1
+texture = ExtResource("21_uhib0")
 
 [connection signal="boss_active" from="Rooms/WorldBlockout" to="MusicPlayer" method="_on_world_blockout_boss_active"]
 [connection signal="boss_dead" from="Rooms/WorldBlockout" to="MusicPlayer" method="_on_world_blockout_boss_dead"]
