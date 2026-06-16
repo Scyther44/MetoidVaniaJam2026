@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://c1tdijwr28yor" path="res://Sound/Step 1.mp3" id="13_ukyrk"]
 [ext_resource type="AudioStream" uid="uid://dot6w6j5yw5us" path="res://Sound/Fireball Vocal 1.mp3" id="14_7dp3o"]
 [ext_resource type="AudioStream" uid="uid://dcypw08ba0tjq" path="res://Sound/Jump 1.mp3" id="15_h4iuc"]
+[ext_resource type="AudioStream" uid="uid://50hj8mq3s5it" path="res://Sound/Witch hurt.mp3" id="16_fd4e3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mf4mk"]
 height = 1.5
@@ -2172,6 +2173,10 @@ volume_db = -2.0
 
 [node name="Jump" type="AudioStreamPlayer3D" parent="." unique_id=1544913145]
 stream = ExtResource("15_h4iuc")
+attenuation_model = 3
+
+[node name="Hurt" type="AudioStreamPlayer3D" parent="." unique_id=64129677]
+stream = ExtResource("16_fd4e3")
 attenuation_model = 3
 
 [connection signal="timeout" from="IdleTimer" to="." method="_on_idle_timer_timeout"]

@@ -52,6 +52,7 @@ var invulnerable := false
 @onready var down_hitbox = $DHitBoxArea3D
 @onready var idle_timer = $IdleTimer
 @onready var mesh = $visuals/M_WitchPlayerV1/Armature_001/GeneralSkeleton/Witch
+@onready var hurt_sound = $Hurt
 var mat = StandardMaterial3D
 
 
@@ -547,7 +548,10 @@ func take_damage(amount):
 
 	if invulnerable or is_dead:
 		return
-
+	
+	hurt_sound.pitch_scale = randf_range(0.75, 1.25)
+	hurt_sound.play()
+	
 	health -= amount
 
 	velocity.y = 2

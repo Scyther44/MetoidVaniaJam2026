@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://boggjtjv2a764" path="res://Scripts/ghost_chase_enemy_passthrough.gd" id="1_qxiyy"]
 [ext_resource type="PackedScene" uid="uid://kk08ebym88fd" path="res://Scenes/m_ghost_enemy_rigged.tscn" id="2_ymmvx"]
+[ext_resource type="AudioStream" uid="uid://dodda7qsn44go" path="res://Sound/Ghost sfx.mp3" id="3_ymmvx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_30v6e"]
 size = Vector3(0.5, 0.5, 0.5)
@@ -184,6 +185,10 @@ monitoring = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.649493e-08, 0.25, -0.25)
 shape = SubResource("BoxShape3D_5euxl")
 debug_color = Color(0.96168846, 1.540184e-06, 0.51167804, 0.41960785)
+
+[node name="attack" type="AudioStreamPlayer3D" parent="." unique_id=1015843383]
+stream = ExtResource("3_ymmvx")
+volume_db = -3.0
 
 [connection signal="body_entered" from="visuals/M_GhostEnemyRigged2/PlayerHitboxArea3D" to="." method="_on_player_hitbox_area_3d_body_entered"]
 

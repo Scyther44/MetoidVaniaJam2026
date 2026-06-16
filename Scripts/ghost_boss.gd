@@ -14,8 +14,8 @@ signal boss_active
 
 @onready var animation_player = $visuals/M_GhostEnemyRigged/AnimationPlayer
 
-var max_health = 6
-var health = 6
+var max_health = 8
+var health = 8
 
 var target_position : Vector3
 var start_position : Vector3

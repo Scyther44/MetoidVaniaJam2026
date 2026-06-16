@@ -126,7 +126,7 @@ offset_right = 81.5
 offset_bottom = 376.0
 grow_horizontal = 2
 text = "Art:
-NoelleThorup"
+Noelle Thorup"
 label_settings = SubResource("LabelSettings_ib4ol")
 
 [node name="Label3" type="Label" parent="." unique_id=727407417]
@@ -140,7 +140,7 @@ offset_right = -15.0
 offset_bottom = 376.0
 grow_horizontal = 0
 text = "Music and Sound:
-ElessarBarea"
+Elessar Barea"
 label_settings = SubResource("LabelSettings_bxiex")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=880802668]
